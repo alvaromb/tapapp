@@ -12,7 +12,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Tapapp.sqlite"];
+    [TATapaMapper insertDummyTapas];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    UINavigationController *cercaNavController = [[UINavigationController alloc] initWithRootViewController:[[TACercaViewController alloc] init]];
+    UINavigationController *tapasNavController = [[UINavigationController alloc] initWithRootViewController:[[TATapasViewController alloc] init]];
+    UINavigationController *perfilNavController = [[UINavigationController alloc] initWithRootViewController:[[TAPerfilViewController alloc] init]];
+    tabBarController.viewControllers = @[cercaNavController, tapasNavController, perfilNavController];
+    self.window.rootViewController = tabBarController;
     return YES;
 }
 							
@@ -40,7 +50,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [MagicalRecord cleanUp];
+}
+
+
+#pragma mark - Application's Documents directory
+
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end

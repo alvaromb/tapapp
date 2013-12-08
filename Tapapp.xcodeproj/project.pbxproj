@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EA3126191E547A38136C5D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A1506FFE03482A86698F5C /* libPods.a */; };
 		3812612F1853993200F59EE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3812612E1853993200F59EE4 /* Foundation.framework */; };
 		381261311853993200F59EE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261301853993200F59EE4 /* CoreGraphics.framework */; };
 		381261331853993200F59EE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261321853993200F59EE4 /* UIKit.framework */; };
 		381261391853993200F59EE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 381261371853993200F59EE4 /* InfoPlist.strings */; };
 		3812613B1853993200F59EE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812613A1853993200F59EE4 /* main.m */; };
 		3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812613E1853993200F59EE4 /* TAAppDelegate.m */; };
-		381261421853993200F59EE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381261401853993200F59EE4 /* Main.storyboard */; };
-		381261451853993200F59EE4 /* TAMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381261441853993200F59EE4 /* TAMasterViewController.m */; };
-		381261481853993200F59EE4 /* TADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381261471853993200F59EE4 /* TADetailViewController.m */; };
 		3812614A1853993200F59EE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381261491853993200F59EE4 /* Images.xcassets */; };
 		381261511853993300F59EE4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261501853993300F59EE4 /* XCTest.framework */; };
 		381261521853993300F59EE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3812612E1853993200F59EE4 /* Foundation.framework */; };
 		381261531853993300F59EE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261321853993200F59EE4 /* UIKit.framework */; };
 		3812615B1853993300F59EE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 381261591853993300F59EE4 /* InfoPlist.strings */; };
 		3812615D1853993300F59EE4 /* TapappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812615C1853993300F59EE4 /* TapappTests.m */; };
+		3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381261681853999200F59EE4 /* TACercaViewController.m */; };
+		3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812616A1853999200F59EE4 /* TATapasViewController.m */; };
+		3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812616C1853999200F59EE4 /* TAPerfilViewController.m */; };
+		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
+		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
+		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
+		38A07D5F1854BAA600545211 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D5E1854BAA600545211 /* MapKit.framework */; };
+		38A07D611854BAD600545211 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D601854BAD600545211 /* CoreData.framework */; };
+		38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */; };
+		38A07D681854BB8E00545211 /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D671854BB8E00545211 /* Tapa.m */; };
+		38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D6A1854BBB500545211 /* TATapaMapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +54,30 @@
 		3812613C1853993200F59EE4 /* Tapapp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tapapp-Prefix.pch"; sourceTree = "<group>"; };
 		3812613D1853993200F59EE4 /* TAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAAppDelegate.h; sourceTree = "<group>"; };
 		3812613E1853993200F59EE4 /* TAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAAppDelegate.m; sourceTree = "<group>"; };
-		381261411853993200F59EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		381261431853993200F59EE4 /* TAMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAMasterViewController.h; sourceTree = "<group>"; };
-		381261441853993200F59EE4 /* TAMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAMasterViewController.m; sourceTree = "<group>"; };
-		381261461853993200F59EE4 /* TADetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TADetailViewController.h; sourceTree = "<group>"; };
-		381261471853993200F59EE4 /* TADetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TADetailViewController.m; sourceTree = "<group>"; };
 		381261491853993200F59EE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3812614F1853993300F59EE4 /* TapappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		381261501853993300F59EE4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		381261581853993300F59EE4 /* TapappTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapappTests-Info.plist"; sourceTree = "<group>"; };
 		3812615A1853993300F59EE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3812615C1853993300F59EE4 /* TapappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapappTests.m; sourceTree = "<group>"; };
+		381261671853999200F59EE4 /* TACercaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACercaViewController.h; sourceTree = "<group>"; };
+		381261681853999200F59EE4 /* TACercaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACercaViewController.m; sourceTree = "<group>"; };
+		381261691853999200F59EE4 /* TATapasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapasViewController.h; sourceTree = "<group>"; };
+		3812616A1853999200F59EE4 /* TATapasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapasViewController.m; sourceTree = "<group>"; };
+		3812616B1853999200F59EE4 /* TAPerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPerfilViewController.h; sourceTree = "<group>"; };
+		3812616C1853999200F59EE4 /* TAPerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPerfilViewController.m; sourceTree = "<group>"; };
+		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
+		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
+		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
+		38A07D5E1854BAA600545211 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		38A07D601854BAD600545211 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		38A07D641854BB0600545211 /* Tapapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tapapp.xcdatamodel; sourceTree = "<group>"; };
+		38A07D661854BB8E00545211 /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
+		38A07D671854BB8E00545211 /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
+		38A07D691854BBB500545211 /* TATapaMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapaMapper.h; sourceTree = "<group>"; };
+		38A07D6A1854BBB500545211 /* TATapaMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapaMapper.m; sourceTree = "<group>"; };
+		47A1506FFE03482A86698F5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2F78734A19458D8677FF94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +85,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A07D611854BAD600545211 /* CoreData.framework in Frameworks */,
 				381261311853993200F59EE4 /* CoreGraphics.framework in Frameworks */,
 				381261331853993200F59EE4 /* UIKit.framework in Frameworks */,
+				38A07D5F1854BAA600545211 /* MapKit.framework in Frameworks */,
 				3812612F1853993200F59EE4 /* Foundation.framework in Frameworks */,
+				2EA3126191E547A38136C5D3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +114,7 @@
 				381261561853993300F59EE4 /* TapappTests */,
 				3812612D1853993200F59EE4 /* Frameworks */,
 				3812612C1853993200F59EE4 /* Products */,
+				8C2F78734A19458D8677FF94 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,10 +130,13 @@
 		3812612D1853993200F59EE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38A07D601854BAD600545211 /* CoreData.framework */,
+				38A07D5E1854BAA600545211 /* MapKit.framework */,
 				3812612E1853993200F59EE4 /* Foundation.framework */,
 				381261301853993200F59EE4 /* CoreGraphics.framework */,
 				381261321853993200F59EE4 /* UIKit.framework */,
 				381261501853993300F59EE4 /* XCTest.framework */,
+				47A1506FFE03482A86698F5C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,13 +144,11 @@
 		381261341853993200F59EE4 /* Tapapp */ = {
 			isa = PBXGroup;
 			children = (
+				38A07D621854BAE900545211 /* CoreData */,
+				381680D718539E16003ADAE1 /* Images */,
+				381261661853997F00F59EE4 /* ViewControllers */,
 				3812613D1853993200F59EE4 /* TAAppDelegate.h */,
 				3812613E1853993200F59EE4 /* TAAppDelegate.m */,
-				381261401853993200F59EE4 /* Main.storyboard */,
-				381261431853993200F59EE4 /* TAMasterViewController.h */,
-				381261441853993200F59EE4 /* TAMasterViewController.m */,
-				381261461853993200F59EE4 /* TADetailViewController.h */,
-				381261471853993200F59EE4 /* TADetailViewController.m */,
 				381261491853993200F59EE4 /* Images.xcassets */,
 				381261351853993200F59EE4 /* Supporting Files */,
 			);
@@ -157,6 +184,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		381261661853997F00F59EE4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				381261671853999200F59EE4 /* TACercaViewController.h */,
+				381261681853999200F59EE4 /* TACercaViewController.m */,
+				381261691853999200F59EE4 /* TATapasViewController.h */,
+				3812616A1853999200F59EE4 /* TATapasViewController.m */,
+				3812616B1853999200F59EE4 /* TAPerfilViewController.h */,
+				3812616C1853999200F59EE4 /* TAPerfilViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		381680D718539E16003ADAE1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				381680D118539E12003ADAE1 /* perfil@2x.png */,
+				381680D218539E12003ADAE1 /* tapas@2x.png */,
+				381680D318539E12003ADAE1 /* cerca@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		38A07D621854BAE900545211 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */,
+				38A07D661854BB8E00545211 /* Tapa.h */,
+				38A07D671854BB8E00545211 /* Tapa.m */,
+				38A07D691854BBB500545211 /* TATapaMapper.h */,
+				38A07D6A1854BBB500545211 /* TATapaMapper.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381261601853993300F59EE4 /* Build configuration list for PBXNativeTarget "Tapapp" */;
 			buildPhases = (
+				63794741747046DBB931D612 /* Check Pods Manifest.lock */,
 				381261271853993200F59EE4 /* Sources */,
 				381261281853993200F59EE4 /* Frameworks */,
 				381261291853993200F59EE4 /* Resources */,
+				6943139D8C55457D84419AD7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +269,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Álvaro Medina Ballester";
 				TargetAttributes = {
+					3812612A1853993200F59EE4 = {
+						DevelopmentTeam = D3W274AZ6P;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					3812614E1853993300F59EE4 = {
 						TestTargetID = 3812612A1853993200F59EE4;
 					};
@@ -235,8 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3812614A1853993200F59EE4 /* Images.xcassets in Resources */,
+				381680D418539E12003ADAE1 /* perfil@2x.png in Resources */,
+				381680D518539E12003ADAE1 /* tapas@2x.png in Resources */,
+				381680D618539E12003ADAE1 /* cerca@2x.png in Resources */,
 				381261391853993200F59EE4 /* InfoPlist.strings in Resources */,
-				381261421853993200F59EE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,15 +324,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		63794741747046DBB931D612 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6943139D8C55457D84419AD7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		381261271853993200F59EE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3812613B1853993200F59EE4 /* main.m in Sources */,
+				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
+				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
-				381261481853993200F59EE4 /* TADetailViewController.m in Sources */,
-				381261451853993200F59EE4 /* TAMasterViewController.m in Sources */,
+				38A07D681854BB8E00545211 /* Tapa.m in Sources */,
+				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
+				3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */,
+				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,14 +398,6 @@
 				381261381853993200F59EE4 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		381261401853993200F59EE4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				381261411853993200F59EE4 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		381261591853993300F59EE4 /* InfoPlist.strings */ = {
@@ -382,26 +485,34 @@
 		};
 		381261611853993300F59EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C2F78734A19458D8677FF94 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tapapp/Tapapp-Prefix.pch";
 				INFOPLIST_FILE = "Tapapp/Tapapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		381261621853993300F59EE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C2F78734A19458D8677FF94 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tapapp/Tapapp-Prefix.pch";
 				INFOPLIST_FILE = "Tapapp/Tapapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -467,6 +578,7 @@
 				381261621853993300F59EE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		381261631853993300F59EE4 /* Build configuration list for PBXNativeTarget "TapappTests" */ = {
 			isa = XCConfigurationList;
@@ -475,8 +587,22 @@
 				381261651853993300F59EE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				38A07D641854BB0600545211 /* Tapapp.xcdatamodel */,
+			);
+			currentVersion = 38A07D641854BB0600545211 /* Tapapp.xcdatamodel */;
+			path = Tapapp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 381261231853993200F59EE4 /* Project object */;
 }

@@ -6,10 +6,15 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TATapaMapper.h"
+#import "TACercaViewController.h"
+#import "TATapasViewController.h"
+#import "TAPerfilViewController.h"
 
 @interface TAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (NSURL *)applicationDocumentsDirectory;
 
 @end
