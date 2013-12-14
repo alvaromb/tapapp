@@ -26,11 +26,15 @@
 		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
+		3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */; };
 		38A07D5F1854BAA600545211 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D5E1854BAA600545211 /* MapKit.framework */; };
 		38A07D611854BAD600545211 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D601854BAD600545211 /* CoreData.framework */; };
 		38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */; };
-		38A07D681854BB8E00545211 /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D671854BB8E00545211 /* Tapa.m */; };
 		38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D6A1854BBB500545211 /* TATapaMapper.m */; };
+		38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D6D18564F3E00545211 /* TipoTapa.m */; };
+		38A07D7118564F3E00545211 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D7018564F3E00545211 /* Local.m */; };
+		38A07D7418564F6200545211 /* TALocalMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D7318564F6200545211 /* TALocalMapper.m */; };
+		38A07D771856573200545211 /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D761856573200545211 /* Tapa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,13 +73,21 @@
 		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
 		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
+		3841BB3D1857A1C9004BC85D /* TALocalCercaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocalCercaCell.h; sourceTree = "<group>"; };
+		3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalCercaCell.m; sourceTree = "<group>"; };
 		38A07D5E1854BAA600545211 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		38A07D601854BAD600545211 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38A07D641854BB0600545211 /* Tapapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tapapp.xcdatamodel; sourceTree = "<group>"; };
-		38A07D661854BB8E00545211 /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
-		38A07D671854BB8E00545211 /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
 		38A07D691854BBB500545211 /* TATapaMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapaMapper.h; sourceTree = "<group>"; };
 		38A07D6A1854BBB500545211 /* TATapaMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapaMapper.m; sourceTree = "<group>"; };
+		38A07D6C18564F3E00545211 /* TipoTapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoTapa.h; sourceTree = "<group>"; };
+		38A07D6D18564F3E00545211 /* TipoTapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoTapa.m; sourceTree = "<group>"; };
+		38A07D6F18564F3E00545211 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		38A07D7018564F3E00545211 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
+		38A07D7218564F6200545211 /* TALocalMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocalMapper.h; sourceTree = "<group>"; };
+		38A07D7318564F6200545211 /* TALocalMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalMapper.m; sourceTree = "<group>"; };
+		38A07D751856573200545211 /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
+		38A07D761856573200545211 /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
 		47A1506FFE03482A86698F5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2F78734A19458D8677FF94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,8 +199,7 @@
 		381261661853997F00F59EE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				381261671853999200F59EE4 /* TACercaViewController.h */,
-				381261681853999200F59EE4 /* TACercaViewController.m */,
+				3841BB3C1857A1AD004BC85D /* Cerca */,
 				381261691853999200F59EE4 /* TATapasViewController.h */,
 				3812616A1853999200F59EE4 /* TATapasViewController.m */,
 				3812616B1853999200F59EE4 /* TAPerfilViewController.h */,
@@ -207,14 +218,31 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		3841BB3C1857A1AD004BC85D /* Cerca */ = {
+			isa = PBXGroup;
+			children = (
+				381261671853999200F59EE4 /* TACercaViewController.h */,
+				381261681853999200F59EE4 /* TACercaViewController.m */,
+				3841BB3D1857A1C9004BC85D /* TALocalCercaCell.h */,
+				3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */,
+			);
+			name = Cerca;
+			sourceTree = "<group>";
+		};
 		38A07D621854BAE900545211 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */,
-				38A07D661854BB8E00545211 /* Tapa.h */,
-				38A07D671854BB8E00545211 /* Tapa.m */,
+				38A07D751856573200545211 /* Tapa.h */,
+				38A07D761856573200545211 /* Tapa.m */,
+				38A07D6F18564F3E00545211 /* Local.h */,
+				38A07D7018564F3E00545211 /* Local.m */,
+				38A07D6C18564F3E00545211 /* TipoTapa.h */,
+				38A07D6D18564F3E00545211 /* TipoTapa.m */,
 				38A07D691854BBB500545211 /* TATapaMapper.h */,
 				38A07D6A1854BBB500545211 /* TATapaMapper.m */,
+				38A07D7218564F6200545211 /* TALocalMapper.h */,
+				38A07D7318564F6200545211 /* TALocalMapper.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -363,12 +391,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3812613B1853993200F59EE4 /* main.m in Sources */,
+				38A07D7118564F3E00545211 /* Local.m in Sources */,
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
+				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
+				38A07D771856573200545211 /* Tapa.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
+				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
-				38A07D681854BB8E00545211 /* Tapa.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
 				3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */,
+				38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

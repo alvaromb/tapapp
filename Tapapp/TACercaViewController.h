@@ -8,6 +8,7 @@
 
 #import <MapKit/MapKit.h>
 #import "TATapaMapper.h"
+#import "TALocalMapper.h"
 
 @interface TACercaViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 

@@ -1,22 +1,23 @@
 //
-//  Tapa.m
+//  Local.m
 //  Tapapp
 //
 //  Created by Álvaro on 09/12/13.
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
-#import "Tapa.h"
 #import "Local.h"
-#import "TipoTapa.h"
+#import "Tapa.h"
 
 
-@implementation Tapa
+@implementation Local
 
 @dynamic nombre;
+@dynamic latitud;
+@dynamic longitud;
+@dynamic calle;
 @dynamic path_imagen;
-@dynamic rating;
-@dynamic tipo;
-@dynamic local;
+@dynamic zip;
+@dynamic tapas;
 
 @end

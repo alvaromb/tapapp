@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A3017" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Local" representedClassName="Local" syncable="YES">
+        <attribute name="calle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path_imagen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="local" inverseEntity="Tapa" syncable="YES"/>
+    </entity>
     <entity name="Tapa" representedClassName="Tapa" syncable="YES">
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path_imagen" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="rating" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="local" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Local" inverseName="tapas" inverseEntity="Local" syncable="YES"/>
+        <relationship name="tipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoTapa" inverseName="tapas" inverseEntity="TipoTapa" syncable="YES"/>
+    </entity>
+    <entity name="TipoTapa" representedClassName="TipoTapa" syncable="YES">
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="tipo" inverseEntity="Tapa" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tapa" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Tapa" positionX="97" positionY="81" width="128" height="118"/>
+        <element name="Local" positionX="313" positionY="81" width="128" height="148"/>
+        <element name="TipoTapa" positionX="-117" positionY="86" width="128" height="73"/>
     </elements>
 </model>

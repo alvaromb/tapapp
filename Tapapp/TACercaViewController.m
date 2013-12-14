@@ -45,8 +45,7 @@
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (!_fetchedResultsController) {
-        _fetchedResultsController = [TATapaMapper fetchedResultsControllerWithDelegate:self
-                                                                             inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+        _fetchedResultsController = [TALocalMapper allLocalsWithDelegate:self];
     }
     return _fetchedResultsController;
 }
@@ -118,8 +117,8 @@
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    Tapa *tapa = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    cell.textLabel.text = tapa.nombre;
+    Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    cell.textLabel.text = local.nombre;
     return cell;
 }
 
