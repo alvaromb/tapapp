@@ -26,8 +26,11 @@
 {
     if (!_mapView) {
         _mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+        _mapView.delegate = self;
         _mapView.zoomEnabled = NO;
         _mapView.scrollEnabled = NO;
+        _mapView.showsUserLocation = YES;
+        _mapView.userTrackingMode = MKUserTrackingModeFollow;
     }
     return _mapView;
 }
@@ -120,6 +123,16 @@
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.textLabel.text = local.nombre;
     return cell;
+}
+
+
+#pragma mark - MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationCoordinate2D coordinate = userLocation.location.coordinate;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+    mapView.region = region;
 }
 
 

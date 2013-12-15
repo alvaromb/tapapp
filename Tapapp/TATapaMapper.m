@@ -59,8 +59,8 @@
     newTapa01.rating = @(5.0);
     Local *newLocal01 = [Local MR_createInContext:context];
     newLocal01.nombre = @"Bar Bosch";
-    newLocal01.latitud = @(0.0);
-    newLocal01.longitud = @(0.0);
+    newLocal01.latitud = @(39.5716);
+    newLocal01.longitud = @(2.64698);
     newLocal01.calle = @"Plaza de las Tortugas";
     newLocal01.path_imagen = @"1.jpg";
     newLocal01.zip = @(07002);
@@ -73,8 +73,8 @@
     newTapa02.rating = @(3.5);
     Local *newLocal02 = [Local MR_createInContext:context];
     newLocal02.nombre = @"Bar Las Palmas";
-    newLocal02.latitud = @(0.0);
-    newLocal02.longitud = @(0.0);
+    newLocal02.latitud = @(39.569711);
+    newLocal02.longitud = @(2.6607389);
     newLocal02.calle = @"Foners";
     newLocal02.path_imagen = @"1.jpg";
     newLocal02.zip = @(07006);
@@ -87,8 +87,8 @@
     newTapa03.rating = @(4.5);
     Local *newLocal03 = [Local MR_createInContext:context];
     newLocal03.nombre = @"El rincón Rociero";
-    newLocal03.latitud = @(0.0);
-    newLocal03.longitud = @(0.0);
+    newLocal03.latitud = @(39.5873309);
+    newLocal03.longitud = @(2.6623928000000205);
     newLocal03.calle = @"Fuera";
     newLocal03.path_imagen = @"1.jpg";
     newLocal03.zip = @(07002);
@@ -101,8 +101,8 @@
     newTapa04.rating = @(4.5);
     Local *newLocal04 = [Local MR_createInContext:context];
     newLocal04.nombre = @"La Bodega de las Ramblas";
-    newLocal04.latitud = @(0.0);
-    newLocal04.longitud = @(0.0);
+    newLocal04.latitud = @(39.5731427);
+    newLocal04.longitud = @(2.6495568);
     newLocal04.calle = @"Las Ramblas";
     newLocal04.path_imagen = @"1.jpg";
     newLocal04.zip = @(07002);
@@ -115,8 +115,8 @@
     newTapa05.rating = @(4.5);
     Local *newLocal05 = [Local MR_createInContext:context];
     newLocal05.nombre = @"100 Montaditos";
-    newLocal05.latitud = @(0.0);
-    newLocal05.longitud = @(0.0);
+    newLocal05.latitud = @(39.573745);
+    newLocal05.longitud = @(2.6526859000000513);
     newLocal05.calle = @"Plaza España";
     newLocal05.path_imagen = @"1.jpg";
     newLocal05.zip = @(07002);

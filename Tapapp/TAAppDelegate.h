@@ -7,6 +7,7 @@
 //
 
 #import "TATapaMapper.h"
+#import "TALocationManager.h"
 #import "TACercaViewController.h"
 #import "TATapasViewController.h"
 #import "TAPerfilViewController.h"
