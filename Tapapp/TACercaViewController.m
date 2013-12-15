@@ -14,6 +14,8 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) UIButton *checkInButton;
+@property (strong, nonatomic) UIButton *newBarButton;
 
 @end
 
@@ -27,8 +29,8 @@
     if (!_mapView) {
         _mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
         _mapView.delegate = self;
-        _mapView.zoomEnabled = NO;
-        _mapView.scrollEnabled = NO;
+        _mapView.zoomEnabled = YES;
+        _mapView.scrollEnabled = YES;
         _mapView.showsUserLocation = YES;
         _mapView.userTrackingMode = MKUserTrackingModeFollow;
     }
@@ -62,6 +64,28 @@
     return _refreshControl;
 }
 
+- (UIButton *)checkInButton
+{
+    if (!_checkInButton) {
+        _checkInButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+        [_checkInButton setTitle:@"Check-In" forState:UIControlStateNormal];
+        [_checkInButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_checkInButton addTarget:self action:@selector(newCheckIn) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _checkInButton;
+}
+
+- (UIButton *)newBarButton
+{
+    if (!_newBarButton) {
+        _newBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+        [_newBarButton setTitle:@"Nuevo Bar" forState:UIControlStateNormal];
+        [_newBarButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_newBarButton addTarget:self action:@selector(newBar) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _newBarButton;
+}
+
 
 #pragma mark - Lifecycle
 
@@ -71,6 +95,10 @@
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"cerca.png"];
         self.title = @"Cerca";
+        UIBarButtonItem *checkInBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.checkInButton];
+        self.navigationItem.leftBarButtonItem = checkInBarButton;
+        UIBarButtonItem *newBarBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.newBarButton];
+        self.navigationItem.rightBarButtonItem = newBarBarButton;
     }
     return self;
 }
@@ -78,9 +106,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 	[self.view addSubview:self.mapView];
     [self.view addSubview:self.tableView];
     [self.tableView addSubview:self.refreshControl];
+    
+    // Add the annotations of each local
+    // TODO: subclass MKPointAnnotation and add custom annotation
+    for (Local *local in self.fetchedResultsController.fetchedObjects) {
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        annotation.coordinate = CLLocationCoordinate2DMake([local.latitud doubleValue], [local.longitud doubleValue]);
+        annotation.title = local.nombre;
+        [self.mapView addAnnotation:annotation];
+    }
+    MKCoordinateRegion region = MKCoordinateRegionForMapRect([self mapRectToFitAllAnnotations]);
+    [self.mapView setRegion:region];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,7 +128,7 @@
     [super viewWillAppear:animated];
     self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 200);
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
-    self.tableView.frame = CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - 200 - navigationBarHeight);
+    self.tableView.frame = CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - navigationBarHeight);
 }
 
 - (void)didReceiveMemoryWarning
@@ -130,9 +170,9 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    CLLocationCoordinate2D coordinate = userLocation.location.coordinate;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
-    mapView.region = region;
+//    CLLocationCoordinate2D coordinate = userLocation.location.coordinate;
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+//    mapView.region = region;
 }
 
 
@@ -145,6 +185,29 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self.refreshControl endRefreshing];
     });
+}
+
+- (void)newCheckIn
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo check-in" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+    [alertView show];
+}
+
+- (void)newBar
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo bar" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+    [alertView show];
+}
+
+- (MKMapRect)mapRectToFitAllAnnotations
+{
+    MKMapPoint points[[self.mapView.annotations count]];
+    for (int i = 0; i < [self.mapView.annotations count]; i++) {
+        MKPointAnnotation *annotation = [self.mapView.annotations objectAtIndex:i];
+        points[i] = MKMapPointForCoordinate(annotation.coordinate);
+    }
+    MKPolygon *polygon = [MKPolygon polygonWithPoints:points count:[self.mapView.annotations count]];
+    return [polygon boundingMapRect];
 }
 
 @end
