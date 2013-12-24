@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 alvaromb. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TABaseViewController.h"
 
-@interface TAPerfilViewController : UIViewController
+@interface TAPerfilViewController : TABaseViewController
 
 @end

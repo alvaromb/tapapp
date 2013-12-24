@@ -10,7 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TATapaMapper.h"
 #import "TALocalMapper.h"
+#import "TABaseViewController.h"
 
-@interface TACercaViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MKMapViewDelegate>
+@interface TACercaViewController : TABaseViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MKMapViewDelegate>
 
 @end

@@ -14,13 +14,10 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property (strong, nonatomic) UIButton *checkInButton;
-@property (strong, nonatomic) UIButton *newBarButton;
 
 @end
 
 @implementation TACercaViewController
-
 
 #pragma mark - Lazy instantiation
 
@@ -64,29 +61,6 @@
     return _refreshControl;
 }
 
-- (UIButton *)checkInButton
-{
-    if (!_checkInButton) {
-        _checkInButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-        [_checkInButton setTitle:@"Check-In" forState:UIControlStateNormal];
-        [_checkInButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
-        [_checkInButton addTarget:self action:@selector(newCheckIn) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _checkInButton;
-}
-
-- (UIButton *)newBarButton
-{
-    if (!_newBarButton) {
-        _newBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-        [_newBarButton setTitle:@"Nuevo Bar" forState:UIControlStateNormal];
-        [_newBarButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
-        [_newBarButton addTarget:self action:@selector(newBar) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _newBarButton;
-}
-
-
 #pragma mark - Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -95,10 +69,6 @@
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"cerca.png"];
         self.title = @"Cerca";
-        UIBarButtonItem *checkInBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.checkInButton];
-        self.navigationItem.leftBarButtonItem = checkInBarButton;
-        UIBarButtonItem *newBarBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.newBarButton];
-        self.navigationItem.rightBarButtonItem = newBarBarButton;
     }
     return self;
 }
@@ -137,14 +107,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50.0f;
 }
-
 
 #pragma mark - UITableViewDataSource
 
@@ -165,7 +133,6 @@
     return cell;
 }
 
-
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -174,7 +141,6 @@
 //    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
 //    mapView.region = region;
 }
-
 
 #pragma mark - Actions
 
@@ -185,18 +151,6 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self.refreshControl endRefreshing];
     });
-}
-
-- (void)newCheckIn
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo check-in" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-    [alertView show];
-}
-
-- (void)newBar
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo bar" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-    [alertView show];
 }
 
 - (MKMapRect)mapRectToFitAllAnnotations

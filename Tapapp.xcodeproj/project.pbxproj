@@ -37,6 +37,7 @@
 		38A07D7118564F3E00545211 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D7018564F3E00545211 /* Local.m */; };
 		38A07D7418564F6200545211 /* TALocalMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D7318564F6200545211 /* TALocalMapper.m */; };
 		38A07D771856573200545211 /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D761856573200545211 /* Tapa.m */; };
+		38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		38A07D7318564F6200545211 /* TALocalMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalMapper.m; sourceTree = "<group>"; };
 		38A07D751856573200545211 /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
 		38A07D761856573200545211 /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
+		38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseViewController.h; sourceTree = "<group>"; };
+		38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseViewController.m; sourceTree = "<group>"; };
 		47A1506FFE03482A86698F5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2F78734A19458D8677FF94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,11 +210,11 @@
 		381261661853997F00F59EE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */,
+				38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */,
 				3841BB3C1857A1AD004BC85D /* Cerca */,
-				381261691853999200F59EE4 /* TATapasViewController.h */,
-				3812616A1853999200F59EE4 /* TATapasViewController.m */,
-				3812616B1853999200F59EE4 /* TAPerfilViewController.h */,
-				3812616C1853999200F59EE4 /* TAPerfilViewController.m */,
+				38DFBAE71869B57A00B1D369 /* Tapas */,
+				38DFBAE81869B57F00B1D369 /* Perfil */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +265,24 @@
 				38A07D7318564F6200545211 /* TALocalMapper.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		38DFBAE71869B57A00B1D369 /* Tapas */ = {
+			isa = PBXGroup;
+			children = (
+				381261691853999200F59EE4 /* TATapasViewController.h */,
+				3812616A1853999200F59EE4 /* TATapasViewController.m */,
+			);
+			name = Tapas;
+			sourceTree = "<group>";
+		};
+		38DFBAE81869B57F00B1D369 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				3812616B1853999200F59EE4 /* TAPerfilViewController.h */,
+				3812616C1853999200F59EE4 /* TAPerfilViewController.m */,
+			);
+			name = Perfil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +436,7 @@
 				38A07D771856573200545211 /* Tapa.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
 				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
+				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
 				3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */,
