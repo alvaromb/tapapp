@@ -44,10 +44,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Hack to align the UIBarButtons in iOS 7 
+        UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        space.width = -11;
         UIBarButtonItem *checkInBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.checkInButton];
-        self.navigationItem.leftBarButtonItem = checkInBarButton;
+        self.navigationItem.leftBarButtonItems = @[space, checkInBarButton];
         UIBarButtonItem *newBarBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.newBarButton];
-        self.navigationItem.rightBarButtonItem = newBarBarButton;
+        self.navigationItem.rightBarButtonItems = @[space, newBarBarButton];
     }
     return self;
 }

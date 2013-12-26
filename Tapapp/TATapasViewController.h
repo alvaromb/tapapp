@@ -7,7 +7,8 @@
 //
 
 #import "TABaseViewController.h"
+#import "TATapaMapper.h"
 
-@interface TATapasViewController : TABaseViewController
+@interface TATapasViewController : TABaseViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @end
