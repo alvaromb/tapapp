@@ -39,6 +39,14 @@
     return [Tapa MR_fetchAllSortedBy:nil ascending:NO withPredicate:nil groupBy:nil delegate:delegate];
 }
 
++ (NSFetchedResultsController *)fetchedResultsControllerWithSearch:(NSString *)search
+                                                          delegate:(id)delegate
+                                                         inContext:(NSManagedObjectContext *)context
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[cd] %@", search];
+    return [Tapa MR_fetchAllSortedBy:nil ascending:NO withPredicate:predicate groupBy:nil delegate:delegate];
+}
+
 
 #pragma mark - Update
 

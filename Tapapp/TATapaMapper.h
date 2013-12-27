@@ -21,6 +21,9 @@
 #pragma mark - Read
 + (NSFetchedResultsController *)fetchedResultsControllerWithDelegate:(id)delegate
                                                            inContext:(NSManagedObjectContext *)context;
++ (NSFetchedResultsController *)fetchedResultsControllerWithSearch:(NSString *)search
+                                                          delegate:(id)delegate
+                                                         inContext:(NSManagedObjectContext *)context;
 
 #pragma mark - Update
 

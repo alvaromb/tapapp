@@ -11,7 +11,10 @@
 @interface TATapasViewController ()
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController *searchedResultsController;
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UISearchDisplayController *searchController;
 
 @end
 
@@ -27,6 +30,14 @@
     return _fetchedResultsController;
 }
 
+- (NSFetchedResultsController *)searchedResultsController
+{
+    if (!_searchedResultsController) {
+        _searchedResultsController = [TATapaMapper fetchedResultsControllerWithSearch:self.searchController.searchBar.text delegate:self inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+    }
+    return _searchedResultsController;
+}
+
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -35,6 +46,26 @@
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+- (UISearchBar *)searchBar
+{
+    if (!_searchBar) {
+        _searchBar = [[UISearchBar alloc] init];
+        _searchBar.delegate = self;
+    }
+    return _searchBar;
+}
+
+- (UISearchDisplayController *)searchController
+{
+    if (!_searchController) {
+        _searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+        _searchController.delegate = self;
+        _searchController.searchResultsDelegate = self;
+        _searchController.searchResultsDataSource = self;
+    }
+    return _searchController;
 }
 
 #pragma mark - Lifecycle
@@ -53,11 +84,14 @@
 {
     [super viewDidLoad];
 	[self.view addSubview:self.tableView];
+    self.searchController.searchResultsTableView.rowHeight = 50.0f;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.searchBar sizeToFit];
+    [self.tableView setTableHeaderView:self.searchBar];
     self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
@@ -71,7 +105,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.fetchedResultsController.fetchedObjects.count;
+    id sectionInfo = [[[self fetchedResultsControllerForTableView:tableView] sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,9 +116,16 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    Tapa *tapa = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    cell.textLabel.text = tapa.nombre;
+    [self configureCell:cell atIndexPath:indexPath withFetchedResultsController:[self fetchedResultsControllerForTableView:tableView]];
     return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell
+          atIndexPath:(NSIndexPath *)indexPath
+withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
+{
+    Tapa *tapa = [fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d - %@", indexPath.row, tapa.nombre];
 }
 
 #pragma mark - UITableViewDelegate
@@ -94,5 +136,74 @@
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    UITableView *tableView = (controller == self.fetchedResultsController) ? self.tableView : self.searchController.searchResultsTableView;
+    [tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = (controller == self.fetchedResultsController) ? self.tableView : self.searchController.searchResultsTableView;
+    switch (type) {
+        case NSFetchedResultsChangeInsert: {
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        }
+        case NSFetchedResultsChangeDelete: {
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        }
+        case NSFetchedResultsChangeUpdate: {
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath withFetchedResultsController:controller];
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    UITableView *tableView = (controller == self.fetchedResultsController) ? self.tableView : self.searchController.searchResultsTableView;
+    [tableView endUpdates];
+}
+
+#pragma mark - UISearchDisplayDelegate
+
+- (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
+{
+    return (tableView == self.tableView) ? self.fetchedResultsController : self.searchedResultsController;
+}
+
+- (void)filterContentForSearchText:(NSString *)searchText scope:(NSInteger)scope
+{
+    self.searchedResultsController.delegate = nil;
+    self.searchedResultsController = nil;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView
+{
+    self.searchedResultsController.delegate = nil;
+    self.searchedResultsController = nil;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[self.searchController.searchBar selectedScopeButtonIndex]];
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:self.searchController.searchBar.text scope:[self.searchController.searchBar selectedScopeButtonIndex]];
+    return YES;
+}
 
 @end
