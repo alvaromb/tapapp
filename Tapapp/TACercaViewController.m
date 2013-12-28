@@ -124,13 +124,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"tapaCercaCellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    TALocalCercaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[TALocalCercaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    cell.textLabel.text = local.nombre;
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (void)configureCell:(TALocalCercaCell *)cell
+          atIndexPath:(NSIndexPath *)indexPath
+{
+    Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    cell.localLabel.text = local.nombre;
+    cell.distanceLabel.text = @"A 5 minutos";
 }
 
 #pragma mark - MKMapViewDelegate

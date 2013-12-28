@@ -15,4 +15,8 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "CoreData+MagicalRecord.h"
+    #import "UIImage+RoundedCorner.h"
+    #import "UIImage+RoundedImage.h"
+    #import "UIImage+Alpha.h"
+    #import "UIImage+Resize.h"
 #endif

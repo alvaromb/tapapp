@@ -27,6 +27,13 @@
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
 		3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */; };
+		384D9D7D186E017800ED6D18 /* TATapaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D7C186E017800ED6D18 /* TATapaCell.m */; };
+		384D9D7F186F673A00ED6D18 /* perfil-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384D9D7E186F673A00ED6D18 /* perfil-bg@2x.png */; };
+		384D9D83186F68EC00ED6D18 /* UIImage+RoundedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D82186F68EC00ED6D18 /* UIImage+RoundedImage.m */; };
+		384D9D85186F69DB00ED6D18 /* alvaro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384D9D84186F69DB00ED6D18 /* alvaro@2x.png */; };
+		384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D87186F6AB000ED6D18 /* UIImage+Alpha.m */; };
+		384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */; };
+		384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
 		389C1C17185DCA200064A523 /* TALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 389C1C16185DCA200064A523 /* TALocationManager.m */; };
 		38A07D5F1854BAA600545211 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D5E1854BAA600545211 /* MapKit.framework */; };
@@ -78,6 +85,18 @@
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
 		3841BB3D1857A1C9004BC85D /* TALocalCercaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocalCercaCell.h; sourceTree = "<group>"; };
 		3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalCercaCell.m; sourceTree = "<group>"; };
+		384D9D7B186E017800ED6D18 /* TATapaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapaCell.h; sourceTree = "<group>"; };
+		384D9D7C186E017800ED6D18 /* TATapaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapaCell.m; sourceTree = "<group>"; };
+		384D9D7E186F673A00ED6D18 /* perfil-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil-bg@2x.png"; sourceTree = "<group>"; };
+		384D9D81186F68EC00ED6D18 /* UIImage+RoundedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedImage.h"; sourceTree = "<group>"; };
+		384D9D82186F68EC00ED6D18 /* UIImage+RoundedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedImage.m"; sourceTree = "<group>"; };
+		384D9D84186F69DB00ED6D18 /* alvaro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alvaro@2x.png"; sourceTree = "<group>"; };
+		384D9D86186F6AB000ED6D18 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		384D9D87186F6AB000ED6D18 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		384D9D88186F6AB000ED6D18 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		384D9D8A186F6AB000ED6D18 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		389C1C12185CD68F0064A523 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		389C1C15185DCA200064A523 /* TALocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocationManager.h; sourceTree = "<group>"; };
 		389C1C16185DCA200064A523 /* TALocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocationManager.m; sourceTree = "<group>"; };
@@ -166,6 +185,7 @@
 		381261341853993200F59EE4 /* Tapapp */ = {
 			isa = PBXGroup;
 			children = (
+				384D9D80186F68DD00ED6D18 /* Library */,
 				389C1C14185CD6E00064A523 /* Location */,
 				38A07D621854BAE900545211 /* CoreData */,
 				381680D718539E16003ADAE1 /* Images */,
@@ -222,9 +242,11 @@
 		381680D718539E16003ADAE1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				384D9D84186F69DB00ED6D18 /* alvaro@2x.png */,
 				381680D118539E12003ADAE1 /* perfil@2x.png */,
 				381680D218539E12003ADAE1 /* tapas@2x.png */,
 				381680D318539E12003ADAE1 /* cerca@2x.png */,
+				384D9D7E186F673A00ED6D18 /* perfil-bg@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -238,6 +260,21 @@
 				3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */,
 			);
 			name = Cerca;
+			sourceTree = "<group>";
+		};
+		384D9D80186F68DD00ED6D18 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				384D9D86186F6AB000ED6D18 /* UIImage+Alpha.h */,
+				384D9D87186F6AB000ED6D18 /* UIImage+Alpha.m */,
+				384D9D88186F6AB000ED6D18 /* UIImage+Resize.h */,
+				384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */,
+				384D9D8A186F6AB000ED6D18 /* UIImage+RoundedCorner.h */,
+				384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */,
+				384D9D81186F68EC00ED6D18 /* UIImage+RoundedImage.h */,
+				384D9D82186F68EC00ED6D18 /* UIImage+RoundedImage.m */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		389C1C14185CD6E00064A523 /* Location */ = {
@@ -272,6 +309,8 @@
 			children = (
 				381261691853999200F59EE4 /* TATapasViewController.h */,
 				3812616A1853999200F59EE4 /* TATapasViewController.m */,
+				384D9D7B186E017800ED6D18 /* TATapaCell.h */,
+				384D9D7C186E017800ED6D18 /* TATapaCell.m */,
 			);
 			name = Tapas;
 			sourceTree = "<group>";
@@ -374,9 +413,11 @@
 			files = (
 				3812614A1853993200F59EE4 /* Images.xcassets in Resources */,
 				381680D418539E12003ADAE1 /* perfil@2x.png in Resources */,
+				384D9D85186F69DB00ED6D18 /* alvaro@2x.png in Resources */,
 				381680D518539E12003ADAE1 /* tapas@2x.png in Resources */,
 				381680D618539E12003ADAE1 /* cerca@2x.png in Resources */,
 				381261391853993200F59EE4 /* InfoPlist.strings in Resources */,
+				384D9D7F186F673A00ED6D18 /* perfil-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +470,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3812613B1853993200F59EE4 /* main.m in Sources */,
+				384D9D83186F68EC00ED6D18 /* UIImage+RoundedImage.m in Sources */,
 				38A07D7118564F3E00545211 /* Local.m in Sources */,
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,
+				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
+				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
+				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
 				38A07D771856573200545211 /* Tapa.m in Sources */,
@@ -439,6 +484,7 @@
 				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
+				384D9D7D186E017800ED6D18 /* TATapaCell.m in Sources */,
 				3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */,
 				38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,

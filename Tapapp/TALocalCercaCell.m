@@ -16,6 +16,7 @@
 {
     if (!_localImageView) {
         _localImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _localImageView.backgroundColor = [UIColor grayColor];
     }
     return _localImageView;
 }
@@ -24,6 +25,7 @@
 {
     if (!_localLabel) {
         _localLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _localLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     }
     return _localLabel;
 }
@@ -32,6 +34,8 @@
 {
     if (!_distanceLabel) {
         _distanceLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _distanceLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+        _distanceLabel.textColor = [UIColor lightGrayColor];
     }
     return _distanceLabel;
 }
@@ -48,6 +52,14 @@
         [self.contentView addSubview:self.distanceLabel];
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.localLabel.frame = CGRectMake(5, 0, 270, 22);
+    self.distanceLabel.frame = CGRectMake(5, 22, 270, 18);
+    self.localImageView.frame = CGRectMake(270, 0, 50, 50);
 }
 
 @end

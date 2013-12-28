@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
-@interface TALocalCercaCell : UITableViewCell\
+@interface TALocalCercaCell : UITableViewCell
 
 @property (strong, nonatomic) UIImageView *localImageView;
 @property (strong, nonatomic) UILabel *localLabel;

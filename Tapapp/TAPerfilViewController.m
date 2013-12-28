@@ -10,9 +10,20 @@
 
 @interface TAPerfilViewController ()
 
+@property (strong, nonatomic) UIImageView *backgroundImageView;
+@property (strong, nonatomic) UIImageView *userImageView;
+
 @end
 
 @implementation TAPerfilViewController
+
+- (UIImageView *)userImageView
+{
+    if (!_userImageView) {
+        _userImageView = [[UIImageView alloc] init];
+    }
+    return _userImageView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +38,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"perfil-bg.png"]];
+	[self.view addSubview:self.backgroundImageView];
+    UIImage *originalImage = [UIImage imageNamed:@"alvaro.png"];
+    self.userImageView.image = [[originalImage resizedImage:(CGSize){120, 120} interpolationQuality:kCGInterpolationDefault] roundedCornerImage:60 borderSize:0];
+    [self.view addSubview:self.userImageView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.backgroundImageView.frame = self.view.bounds;
+    self.userImageView.frame = CGRectMake(ceil(self.view.bounds.size.width/2 - 30), 150, 60, 60);
 }
 
 - (void)didReceiveMemoryWarning

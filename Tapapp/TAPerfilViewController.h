@@ -7,6 +7,7 @@
 //
 
 #import "TABaseViewController.h"
+#import "UIImage+RoundedCorner.h"
 
 @interface TAPerfilViewController : TABaseViewController
 

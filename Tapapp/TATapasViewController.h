@@ -8,6 +8,7 @@
 
 #import "TABaseViewController.h"
 #import "TATapaMapper.h"
+#import "TATapaCell.h"
 
 @interface TATapasViewController : TABaseViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 

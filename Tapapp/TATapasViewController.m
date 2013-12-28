@@ -112,20 +112,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"tapaCellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    TATapaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[TATapaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     [self configureCell:cell atIndexPath:indexPath withFetchedResultsController:[self fetchedResultsControllerForTableView:tableView]];
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell
+- (void)configureCell:(TATapaCell *)cell
           atIndexPath:(NSIndexPath *)indexPath
 withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
 {
     Tapa *tapa = [fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%d - %@", indexPath.row, tapa.nombre];
+    cell.tapaLabel.text = tapa.nombre;
+    cell.distanciaLabel.text = @"A 5 minutos";
 }
 
 #pragma mark - UITableViewDelegate
