@@ -58,7 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,8 +71,10 @@
 
 - (void)newCheckIn
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo check-in" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-    [alertView show];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo check-in" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+//    [alertView show];
+    UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[[TACheckInViewController alloc] init]];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (void)newBar

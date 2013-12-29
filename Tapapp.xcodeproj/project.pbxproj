@@ -23,6 +23,7 @@
 		3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381261681853999200F59EE4 /* TACercaViewController.m */; };
 		3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812616A1853999200F59EE4 /* TATapasViewController.m */; };
 		3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812616C1853999200F59EE4 /* TAPerfilViewController.m */; };
+		3815FBBA1870A6EC00BEB85A /* TACheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3815FBB91870A6EC00BEB85A /* TACheckInViewController.m */; };
 		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
@@ -80,6 +81,8 @@
 		3812616A1853999200F59EE4 /* TATapasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapasViewController.m; sourceTree = "<group>"; };
 		3812616B1853999200F59EE4 /* TAPerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPerfilViewController.h; sourceTree = "<group>"; };
 		3812616C1853999200F59EE4 /* TAPerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPerfilViewController.m; sourceTree = "<group>"; };
+		3815FBB81870A6EC00BEB85A /* TACheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACheckInViewController.h; sourceTree = "<group>"; };
+		3815FBB91870A6EC00BEB85A /* TACheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACheckInViewController.m; sourceTree = "<group>"; };
 		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
 		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
@@ -235,8 +238,18 @@
 				3841BB3C1857A1AD004BC85D /* Cerca */,
 				38DFBAE71869B57A00B1D369 /* Tapas */,
 				38DFBAE81869B57F00B1D369 /* Perfil */,
+				3815FBB71870A10700BEB85A /* Check-in */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3815FBB71870A10700BEB85A /* Check-in */ = {
+			isa = PBXGroup;
+			children = (
+				3815FBB81870A6EC00BEB85A /* TACheckInViewController.h */,
+				3815FBB91870A6EC00BEB85A /* TACheckInViewController.m */,
+			);
+			name = "Check-in";
 			sourceTree = "<group>";
 		};
 		381680D718539E16003ADAE1 /* Images */ = {
@@ -470,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3812613B1853993200F59EE4 /* main.m in Sources */,
+				3815FBBA1870A6EC00BEB85A /* TACheckInViewController.m in Sources */,
 				384D9D83186F68EC00ED6D18 /* UIImage+RoundedImage.m in Sources */,
 				38A07D7118564F3E00545211 /* Local.m in Sources */,
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,

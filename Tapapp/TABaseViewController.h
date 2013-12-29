@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
+#import "TACheckInViewController.h"
+
 @interface TABaseViewController : UIViewController
 
 @property (strong, nonatomic) UIButton *checkInButton;

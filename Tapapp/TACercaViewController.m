@@ -76,8 +76,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-	[self.view addSubview:self.mapView];
+    [self.view addSubview:self.mapView];
     [self.view addSubview:self.tableView];
     [self.tableView addSubview:self.refreshControl];
     
