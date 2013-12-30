@@ -161,7 +161,9 @@ withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsControl
             break;
         }
         case NSFetchedResultsChangeUpdate: {
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath withFetchedResultsController:controller];
+            [self configureCell:(TATapaCell *)[tableView cellForRowAtIndexPath:indexPath]
+                    atIndexPath:indexPath
+   withFetchedResultsController:controller];
             break;
         }
         default: {

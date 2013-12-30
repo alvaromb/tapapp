@@ -57,7 +57,7 @@
     if (self) {
         self.title = @"Nuevo Check-in";
         UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        space.width = -11;
+        space.width = -15;
         UIBarButtonItem *closeBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
         self.navigationItem.leftBarButtonItems = @[space, closeBarButton];
     }

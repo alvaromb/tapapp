@@ -184,17 +184,17 @@
 {
     [super viewWillAppear:animated];
     self.backgroundImageView.frame = self.view.bounds;
-    self.userImageView.frame = CGRectMake(ceil(self.view.bounds.size.width/2 - 40), 80, 80, 80);
-    self.fullNameLabel.frame = CGRectMake(0, 180, self.view.bounds.size.width, 26);
-    self.usernameLabel.frame = CGRectMake(0, 210, self.view.bounds.size.width, 20);
-    self.checkinLabel.frame = CGRectMake(10, 260, 90, 18);
-    self.commentsLabel.frame = CGRectMake(115, 260, 90, 18);
-    self.favsLabel.frame = CGRectMake(220, 260, 90, 18);
-    self.checkinNumberLabel.frame = CGRectMake(10, 280, 90, 50);
-    self.commentsNumberLabel.frame = CGRectMake(115, 280, 90, 50);
-    self.favsNumberLabel.frame = CGRectMake(220, 280, 90, 50);
-    self.commentAuthorLabel.frame = CGRectMake(20, 335, 280, 20);
-    self.commentLabel.frame = CGRectMake(20, 360, 280, 150);
+    self.userImageView.frame        = CGRectMake(ceil(self.view.bounds.size.width/2 - 40), 20, 80, 80);
+    self.fullNameLabel.frame        = CGRectMake(0, 120, self.view.bounds.size.width, 26);
+    self.usernameLabel.frame        = CGRectMake(0, 150, self.view.bounds.size.width, 20);
+    self.checkinLabel.frame         = CGRectMake(10, 200, 90, 18);
+    self.commentsLabel.frame        = CGRectMake(115, 200, 90, 18);
+    self.favsLabel.frame            = CGRectMake(220, 200, 90, 18);
+    self.checkinNumberLabel.frame   = CGRectMake(10, 220, 90, 50);
+    self.commentsNumberLabel.frame  = CGRectMake(115, 220, 90, 50);
+    self.favsNumberLabel.frame      = CGRectMake(220, 220, 90, 50);
+    self.commentAuthorLabel.frame   = CGRectMake(20, 275, 280, 20);
+    self.commentLabel.frame         = CGRectMake(20, 300, 280, 150);
     
     self.fullNameLabel.text = @"Alvaro Medina Ballester";
     self.usernameLabel.text = @"@alvaro";

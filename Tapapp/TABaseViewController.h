@@ -7,6 +7,7 @@
 //
 
 #import "TACheckInViewController.h"
+#import "TANuevoBarViewController.h"
 
 @interface TABaseViewController : UIViewController
 

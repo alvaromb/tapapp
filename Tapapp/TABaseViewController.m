@@ -46,7 +46,7 @@
     if (self) {
         // Hack to align the UIBarButtons in iOS 7 
         UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        space.width = -11;
+        space.width = -15;
         UIBarButtonItem *checkInBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.checkInButton];
         self.navigationItem.leftBarButtonItems = @[space, checkInBarButton];
         UIBarButtonItem *newBarBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.newBarButton];
@@ -71,16 +71,14 @@
 
 - (void)newCheckIn
 {
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo check-in" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-//    [alertView show];
     UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[[TACheckInViewController alloc] init]];
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (void)newBar
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Nuevo bar" message:Nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-    [alertView show];
+    UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:[[TANuevoBarViewController alloc] init]];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end

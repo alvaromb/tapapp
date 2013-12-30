@@ -35,6 +35,7 @@
 		384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D87186F6AB000ED6D18 /* UIImage+Alpha.m */; };
 		384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */; };
 		384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */; };
+		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
 		389C1C17185DCA200064A523 /* TALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 389C1C16185DCA200064A523 /* TALocationManager.m */; };
 		38A07D5F1854BAA600545211 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D5E1854BAA600545211 /* MapKit.framework */; };
@@ -100,6 +101,8 @@
 		384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		384D9D8A186F6AB000ED6D18 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		3878120C1871A06F00DDA967 /* TANuevoBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoBarViewController.h; sourceTree = "<group>"; };
+		3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoBarViewController.m; sourceTree = "<group>"; };
 		389C1C12185CD68F0064A523 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		389C1C15185DCA200064A523 /* TALocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocationManager.h; sourceTree = "<group>"; };
 		389C1C16185DCA200064A523 /* TALocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocationManager.m; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 				38DFBAE71869B57A00B1D369 /* Tapas */,
 				38DFBAE81869B57F00B1D369 /* Perfil */,
 				3815FBB71870A10700BEB85A /* Check-in */,
+				3878120B1871A05700DDA967 /* Nuevo Bar */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -288,6 +292,15 @@
 				384D9D82186F68EC00ED6D18 /* UIImage+RoundedImage.m */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		3878120B1871A05700DDA967 /* Nuevo Bar */ = {
+			isa = PBXGroup;
+			children = (
+				3878120C1871A06F00DDA967 /* TANuevoBarViewController.h */,
+				3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */,
+			);
+			name = "Nuevo Bar";
 			sourceTree = "<group>";
 		};
 		389C1C14185CD6E00064A523 /* Location */ = {
@@ -495,6 +508,7 @@
 				38A07D771856573200545211 /* Tapa.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
 				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
+				3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */,
 				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
