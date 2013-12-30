@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface TANuevoBarViewController : UIViewController
+@interface TANuevoBarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @end

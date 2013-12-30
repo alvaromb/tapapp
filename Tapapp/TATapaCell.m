@@ -33,6 +33,8 @@
 {
     if (!_tapaImageView) {
         _tapaImageView = [[UIImageView alloc] init];
+        _tapaImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _tapaImageView.clipsToBounds = YES;
         _tapaImageView.backgroundColor = [UIColor grayColor];
     }
     return _tapaImageView;

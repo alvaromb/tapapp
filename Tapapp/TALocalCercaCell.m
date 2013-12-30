@@ -16,6 +16,8 @@
 {
     if (!_localImageView) {
         _localImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _localImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _localImageView.clipsToBounds = YES;
         _localImageView.backgroundColor = [UIColor grayColor];
     }
     return _localImageView;
