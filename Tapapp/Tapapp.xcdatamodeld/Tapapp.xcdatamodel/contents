@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A3017" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B3116" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Local" representedClassName="Local" syncable="YES">
         <attribute name="calle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distancia" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,8 +22,8 @@
         <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="tipo" inverseEntity="Tapa" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Local" positionX="313" positionY="81" width="128" height="163"/>
         <element name="Tapa" positionX="97" positionY="81" width="128" height="118"/>
-        <element name="Local" positionX="313" positionY="81" width="128" height="148"/>
         <element name="TipoTapa" positionX="-117" positionY="86" width="128" height="73"/>
     </elements>
 </model>

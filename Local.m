@@ -2,7 +2,7 @@
 //  Local.m
 //  Tapapp
 //
-//  Created by Álvaro on 09/12/13.
+//  Created by Álvaro on 31/12/13.
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -12,12 +12,13 @@
 
 @implementation Local
 
-@dynamic nombre;
+@dynamic calle;
 @dynamic latitud;
 @dynamic longitud;
-@dynamic calle;
+@dynamic nombre;
 @dynamic path_imagen;
 @dynamic zip;
+@dynamic distancia;
 @dynamic tapas;
 
 @end

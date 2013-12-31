@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIButton *addPhotoButton;
 @property (strong, nonatomic) UIImagePickerController *picker;
 @property (strong, nonatomic) UIButton *selectedImageButton;
+@property (nonatomic) BOOL deleteImageButtonPressed;
 
 @end
 
@@ -113,6 +114,8 @@
     if (!_selectedImageButton) {
         _selectedImageButton = [[UIButton alloc] init];
         _selectedImageButton.backgroundColor = [UIColor lightGrayColor];
+        [_selectedImageButton addTarget:self action:@selector(photoMenu) forControlEvents:UIControlEventTouchUpInside];
+        _selectedImageButton.enabled = NO;
     }
     return _selectedImageButton;
 }
@@ -131,6 +134,7 @@
         self.navigationItem.leftBarButtonItems = @[space, closeBarButton];
         UIBarButtonItem *newBarBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.newBarButton];
         self.navigationItem.rightBarButtonItems = @[space, newBarBarButton];
+        self.deleteImageButtonPressed = NO;
     }
     return self;
 }
@@ -172,7 +176,10 @@
     if (nil == selectedImage) {
         selectedImage = info[UIImagePickerControllerOriginalImage];
     }
-    [self.selectedImageButton setImage:selectedImage forState:UIControlStateNormal];
+    if (selectedImage) {
+        [self.selectedImageButton setImage:selectedImage forState:UIControlStateNormal];
+        self.selectedImageButton.enabled = YES;
+    }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -180,19 +187,33 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
-        case 0: {
-            self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:self.picker animated:YES completion:nil];
-            break;
+    NSLog(@"Button index %d", buttonIndex);
+    if (self.deleteImageButtonPressed) {
+        switch (buttonIndex) {
+            case 0: {
+                [self.selectedImageButton setImage:nil forState:UIControlStateNormal];
+                break;
+            }
+            default:
+                break;
         }
-        case 1: {
-            self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            [self presentViewController:self.picker animated:YES completion:nil];
-            break;
+        self.deleteImageButtonPressed = NO;
+    }
+    else {
+        switch (buttonIndex) {
+            case 0: {
+                self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                [self presentViewController:self.picker animated:YES completion:nil];
+                break;
+            }
+            case 1: {
+                self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:self.picker animated:YES completion:nil];
+                break;
+            }
+            default:
+                break;
         }
-        default:
-            break;
     }
 }
 
@@ -220,6 +241,17 @@
                                                     cancelButtonTitle:@"Cancelar"
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:@"Album", @"Camara", nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)photoMenu
+{
+    self.deleteImageButtonPressed = YES;
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"¿Eliminar la foto?"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancelar"
+                                               destructiveButtonTitle:@"Eliminar"
+                                                    otherButtonTitles:nil];
     [actionSheet showInView:self.view];
 }
 

@@ -61,6 +61,8 @@
     [Tapa MR_truncateAllInContext:context];
     [Local MR_truncateAllInContext:context];
     
+    TALocationManager *locationManager = [TALocationManager sharedInstance];
+    
     Tapa *newTapa01 = [Tapa MR_createInContext:context];
     newTapa01.nombre = @"Patatas bravas";
     newTapa01.path_imagen = @"1.jpg";
@@ -69,6 +71,8 @@
     newLocal01.nombre = @"Bar Bosch";
     newLocal01.latitud = @(39.5716);
     newLocal01.longitud = @(2.64698);
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:[newLocal01.latitud doubleValue] longitude:[newLocal01.longitud doubleValue]];
+    newLocal01.distancia = [NSNumber numberWithDouble:[locationManager.locationManager.location distanceFromLocation:location]];
     newLocal01.calle = @"Plaza de las Tortugas";
     newLocal01.path_imagen = @"1.jpg";
     newLocal01.zip = @(07002);
@@ -83,6 +87,8 @@
     newLocal02.nombre = @"Bar Las Palmas";
     newLocal02.latitud = @(39.569711);
     newLocal02.longitud = @(2.6607389);
+    location = [[CLLocation alloc] initWithLatitude:[newLocal02.latitud doubleValue] longitude:[newLocal02.longitud doubleValue]];
+    newLocal02.distancia = [NSNumber numberWithDouble:[locationManager.locationManager.location distanceFromLocation:location]];
     newLocal02.calle = @"Foners";
     newLocal02.path_imagen = @"1.jpg";
     newLocal02.zip = @(07006);
@@ -97,6 +103,8 @@
     newLocal03.nombre = @"El rincón Rociero";
     newLocal03.latitud = @(39.5873309);
     newLocal03.longitud = @(2.6623928000000205);
+    location = [[CLLocation alloc] initWithLatitude:[newLocal03.latitud doubleValue] longitude:[newLocal03.longitud doubleValue]];
+    newLocal03.distancia = [NSNumber numberWithDouble:[locationManager.locationManager.location distanceFromLocation:location]];
     newLocal03.calle = @"Fuera";
     newLocal03.path_imagen = @"1.jpg";
     newLocal03.zip = @(07002);
@@ -111,6 +119,8 @@
     newLocal04.nombre = @"La Bodega de las Ramblas";
     newLocal04.latitud = @(39.5731427);
     newLocal04.longitud = @(2.6495568);
+    location = [[CLLocation alloc] initWithLatitude:[newLocal04.latitud doubleValue] longitude:[newLocal04.longitud doubleValue]];
+    newLocal04.distancia = [NSNumber numberWithDouble:[locationManager.locationManager.location distanceFromLocation:location]];
     newLocal04.calle = @"Las Ramblas";
     newLocal04.path_imagen = @"1.jpg";
     newLocal04.zip = @(07002);
@@ -125,6 +135,8 @@
     newLocal05.nombre = @"100 Montaditos";
     newLocal05.latitud = @(39.573745);
     newLocal05.longitud = @(2.6526859000000513);
+    location = [[CLLocation alloc] initWithLatitude:[newLocal05.latitud doubleValue] longitude:[newLocal05.longitud doubleValue]];
+    newLocal05.distancia = [NSNumber numberWithDouble:[locationManager.locationManager.location distanceFromLocation:location]];
     newLocal05.calle = @"Plaza España";
     newLocal05.path_imagen = @"1.jpg";
     newLocal05.zip = @(07002);
