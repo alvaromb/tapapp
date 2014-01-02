@@ -8,9 +8,7 @@
 
 #import "TATapaMapper.h"
 #import "TALocationManager.h"
-#import "TACercaViewController.h"
-#import "TATapasViewController.h"
-#import "TAPerfilViewController.h"
+#import "TAMainViewController.h"
 
 @interface TAAppDelegate : UIResponder <UIApplicationDelegate>
 

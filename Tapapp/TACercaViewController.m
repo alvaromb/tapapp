@@ -136,7 +136,8 @@
 {
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.localLabel.text = local.nombre;
-    cell.distanceLabel.text = @"A 5 minutos";
+    cell.distanceLabel.text = [NSString stringWithFormat:@"A %@", local.distancia];
+//    NSLog(@"Distancia %f", local.distancia.doubleValue);
 }
 
 #pragma mark - MKMapViewDelegate

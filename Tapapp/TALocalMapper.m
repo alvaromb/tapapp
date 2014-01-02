@@ -31,12 +31,11 @@
     }
 }
 
-
 #pragma mark - Read
 
 + (NSFetchedResultsController *)allLocalsWithDelegate:(id)delegate
 {
-    return [Local MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:nil ascending:NO delegate:delegate];
+    return [Local MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"distancia" ascending:YES delegate:delegate];
 }
 
 @end

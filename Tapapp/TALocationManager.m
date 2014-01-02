@@ -57,7 +57,12 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    NSLog(@"Location updated %@", [locations lastObject]);
+    CLLocation *lastLocation = [locations lastObject];
+    NSLog(@"Location updated %@ // interval %f", lastLocation, [lastLocation.timestamp timeIntervalSinceNow]);
+    if ([lastLocation.timestamp timeIntervalSinceNow] > 10) {
+        return;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

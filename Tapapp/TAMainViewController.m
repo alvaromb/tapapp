@@ -35,6 +35,7 @@
         _loadingLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:14];
         _loadingLabel.textColor = [UIColor grayColor];
         _loadingLabel.textAlignment = NSTextAlignmentCenter;
+        _loadingLabel.text = @"Obteniendo posición";
     }
     return _loadingLabel;
 }
@@ -43,9 +44,10 @@
 {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
+        _titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:26];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.text = @"Tapapp";
     }
     return _titleLabel;
 }
@@ -67,17 +69,47 @@
 	[self.view addSubview:self.titleLabel];
     [self.view addSubview:self.loadingLabel];
     [self.view addSubview:self.activityIndicator];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationAvailable) name:@"locationAvailable" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.titleLabel.frame   = CGRectMake(0, 100, self.view.bounds.size.width, 30);
+    self.loadingLabel.frame = CGRectMake(0, 140, self.view.bounds.size.width, 18);
+    self.activityIndicator.frame = CGRectMake((self.view.bounds.size.width - self.activityIndicator.frame.size.width)/2, 165, self.activityIndicator.frame.size.width, self.activityIndicator.frame.size.height);
+    [self.activityIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Actions
+
+- (void)locationAvailable
+{
+    [TATapaMapper insertDummyTapas];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    UINavigationController *cercaNavController = [[UINavigationController alloc] initWithRootViewController:[[TACercaViewController alloc] init]];
+    UINavigationController *tapasNavController = [[UINavigationController alloc] initWithRootViewController:[[TATapasViewController alloc] init]];
+    UINavigationController *perfilNavController = [[UINavigationController alloc] initWithRootViewController:[[TAPerfilViewController alloc] init]];
+    tabBarController.viewControllers = @[cercaNavController, tapasNavController, perfilNavController];
+    [self presentViewController:tabBarController animated:YES completion:^{
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator = nil;
+        self.titleLabel = nil;
+        self.loadingLabel = nil;
+    }];
 }
 
 @end

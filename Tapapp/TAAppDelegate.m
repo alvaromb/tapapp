@@ -13,7 +13,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Tapapp.sqlite"];
-    [TATapaMapper insertDummyTapas];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -21,12 +20,7 @@
     TALocationManager *locationManager = [TALocationManager sharedInstance];
     [locationManager setup];
     
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    UINavigationController *cercaNavController = [[UINavigationController alloc] initWithRootViewController:[[TACercaViewController alloc] init]];
-    UINavigationController *tapasNavController = [[UINavigationController alloc] initWithRootViewController:[[TATapasViewController alloc] init]];
-    UINavigationController *perfilNavController = [[UINavigationController alloc] initWithRootViewController:[[TAPerfilViewController alloc] init]];
-    tabBarController.viewControllers = @[cercaNavController, tapasNavController, perfilNavController];
-    self.window.rootViewController = tabBarController;
+    self.window.rootViewController = [[TAMainViewController alloc] init];    
     return YES;
 }
 							

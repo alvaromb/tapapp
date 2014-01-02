@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TACercaViewController.h"
+#import "TATapasViewController.h"
+#import "TAPerfilViewController.h"
 
 @interface TAMainViewController : UIViewController
 
