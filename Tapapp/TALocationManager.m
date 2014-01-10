@@ -22,7 +22,6 @@
     return _locationManager;
 }
 
-
 #pragma mark - Shared instance
 
 + (TALocationManager *)sharedInstance
@@ -34,7 +33,6 @@
     });
     return instance;
 }
-
 
 #pragma mark - Setup methods
 
@@ -51,7 +49,6 @@
     }
     [self.locationManager startMonitoringSignificantLocationChanges];
 }
-
 
 #pragma mark - CLLocationManagerDelegate
 

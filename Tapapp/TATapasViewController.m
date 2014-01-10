@@ -126,7 +126,7 @@ withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsControl
 {
     Tapa *tapa = [fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.tapaLabel.text = tapa.nombre;
-    cell.distanciaLabel.text = @"A 5 minutos";
+    cell.distanciaLabel.text = [NSString stringWithFormat:@"A %@", tapa.local.distancia];
 }
 
 #pragma mark - UITableViewDelegate

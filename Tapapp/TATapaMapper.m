@@ -10,7 +10,6 @@
 
 @implementation TATapaMapper
 
-
 #pragma mark - Create
 
 + (void)insertTapa:(NSDictionary *)tapa
@@ -30,13 +29,12 @@
     }
 }
 
-
 #pragma mark - Read
 
 + (NSFetchedResultsController *)fetchedResultsControllerWithDelegate:(id)delegate
                                                            inContext:(NSManagedObjectContext *)context
 {
-    return [Tapa MR_fetchAllSortedBy:nil ascending:NO withPredicate:nil groupBy:nil delegate:delegate];
+    return [Tapa MR_fetchAllSortedBy:@"local.distancia" ascending:YES withPredicate:nil groupBy:nil delegate:delegate];
 }
 
 + (NSFetchedResultsController *)fetchedResultsControllerWithSearch:(NSString *)search
@@ -44,9 +42,16 @@
                                                          inContext:(NSManagedObjectContext *)context
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[cd] %@", search];
-    return [Tapa MR_fetchAllSortedBy:nil ascending:NO withPredicate:predicate groupBy:nil delegate:delegate];
+    return [Tapa MR_fetchAllSortedBy:@"local.distancia" ascending:YES withPredicate:predicate groupBy:nil delegate:delegate];
 }
 
++ (NSFetchedResultsController *)fetchedTapasForLocal:(NSString *)local
+                                            delegate:(id)delegate
+                                           inContext:(NSManagedObjectContext *)context
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"local.nombre == %@", local];
+    return [Tapa MR_fetchAllGroupedBy:nil withPredicate:predicate sortedBy:nil ascending:NO];
+}
 
 #pragma mark - Update
 

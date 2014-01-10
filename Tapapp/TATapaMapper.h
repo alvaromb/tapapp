@@ -24,6 +24,9 @@
 + (NSFetchedResultsController *)fetchedResultsControllerWithSearch:(NSString *)search
                                                           delegate:(id)delegate
                                                          inContext:(NSManagedObjectContext *)context;
++ (NSFetchedResultsController *)fetchedTapasForLocal:(NSString *)local
+                                            delegate:(id)delegate
+                                           inContext:(NSManagedObjectContext *)context;
 
 #pragma mark - Update
 

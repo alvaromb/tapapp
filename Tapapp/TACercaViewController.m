@@ -140,6 +140,14 @@
 //    NSLog(@"Distancia %f", local.distancia.doubleValue);
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    TAInfoLocalViewController *viewController = [[TAInfoLocalViewController alloc] init];
+    [viewController setLocal:local];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation

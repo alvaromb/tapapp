@@ -12,6 +12,7 @@
 #import "TALocalMapper.h"
 #import "TABaseViewController.h"
 #import "TALocalCercaCell.h"
+#import "TAInfoLocalViewController.h"
 
 @interface TACercaViewController : TABaseViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MKMapViewDelegate>
 

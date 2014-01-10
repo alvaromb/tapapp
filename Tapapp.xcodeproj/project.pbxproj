@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EA3126191E547A38136C5D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A1506FFE03482A86698F5C /* libPods.a */; };
+		3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803102218788444008A012E /* TAInfoLocalViewController.m */; };
 		3812612F1853993200F59EE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3812612E1853993200F59EE4 /* Foundation.framework */; };
 		381261311853993200F59EE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261301853993200F59EE4 /* CoreGraphics.framework */; };
 		381261331853993200F59EE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261321853993200F59EE4 /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3803102118788444008A012E /* TAInfoLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAInfoLocalViewController.h; sourceTree = "<group>"; };
+		3803102218788444008A012E /* TAInfoLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAInfoLocalViewController.m; sourceTree = "<group>"; };
 		3812612B1853993200F59EE4 /* Tapapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tapapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3812612E1853993200F59EE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		381261301853993200F59EE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -156,6 +159,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380310201878840F008A012E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				3803102118788444008A012E /* TAInfoLocalViewController.h */,
+				3803102218788444008A012E /* TAInfoLocalViewController.m */,
+			);
+			name = Local;
+			sourceTree = "<group>";
+		};
 		381261221853993200F59EE4 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 				3841BB3C1857A1AD004BC85D /* Cerca */,
 				38DFBAE71869B57A00B1D369 /* Tapas */,
 				38DFBAE81869B57F00B1D369 /* Perfil */,
+				380310201878840F008A012E /* Local */,
 				3815FBB71870A10700BEB85A /* Check-in */,
 				3878120B1871A05700DDA967 /* Nuevo Bar */,
 			);
@@ -513,6 +526,7 @@
 				3815FBBA1870A6EC00BEB85A /* TACheckInViewController.m in Sources */,
 				384D9D83186F68EC00ED6D18 /* UIImage+RoundedImage.m in Sources */,
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,
+				3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */,
 				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
 				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
 				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
