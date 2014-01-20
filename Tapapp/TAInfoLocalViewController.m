@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UILabel *descripcionLabel;
 @property (strong, nonatomic) UIImageView *localImageView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) UIButton *favoritoButton;
 
 @end
 
@@ -51,12 +52,23 @@
     return _localImageView;
 }
 
-- (NSFetchedResultsController *)fetchedResultsController
+//- (NSFetchedResultsController *)fetchedResultsController
+//{
+//    if (!_fetchedResultsController) {
+//        _fetchedResultsController = [TATapaMapper fetchedTapasForLocal:self.local.nombre delegate:self inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+//    }
+//    return _fetchedResultsController;
+//}
+
+- (UIButton *)favoritoButton
 {
-    if (!_fetchedResultsController) {
-        _fetchedResultsController = [TATapaMapper fetchedTapasForLocal:self.local.nombre delegate:self inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+    if (!_favoritoButton) {
+        _favoritoButton = [[UIButton alloc] init];
+        [_favoritoButton setTitle:@"Añadir favorito" forState:UIControlStateNormal];
+        [_favoritoButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_favoritoButton addTarget:self action:@selector(addFavorito) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _fetchedResultsController;
+    return _favoritoButton;
 }
 
 #pragma mark - Lifecycle
@@ -78,6 +90,7 @@
 	[self.view addSubview:self.localLabel];
     [self.view addSubview:self.descripcionLabel];
     [self.view addSubview:self.localImageView];
+    [self.view addSubview:self.favoritoButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -86,6 +99,7 @@
     self.localLabel.frame = CGRectMake(0, 20, self.view.bounds.size.width, 22);
     self.descripcionLabel.frame = CGRectMake(0, 50, self.view.bounds.size.width, 20);
     self.localImageView.frame = CGRectMake(0, 0, 0, 0);
+    self.favoritoButton.frame = CGRectMake(20, 150, 150, 30);
     
     self.localLabel.text = self.local.nombre;
     self.descripcionLabel.text = self.local.calle;
@@ -95,6 +109,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+- (void)addFavorito
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Añadir favorito"
+                                                        message:[NSString stringWithFormat:@"%@ añadido a favoritos", self.local.nombre]
+                                                       delegate:nil
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"Ok", nil];
+    [alertView show];
 }
 
 @end

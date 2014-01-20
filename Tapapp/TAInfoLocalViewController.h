@@ -8,7 +8,7 @@
 
 #import "TATapaMapper.h"
 
-@interface TAInfoLocalViewController : UIViewController
+@interface TAInfoLocalViewController : TABaseViewController
 
 @property (strong, nonatomic) Local *local;
 
