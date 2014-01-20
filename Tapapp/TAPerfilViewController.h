@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 alvaromb. All rights reserved.
 //
 
-#import "TABaseViewController.h"
 #import "UIImage+RoundedCorner.h"
 
 @interface TAPerfilViewController : TABaseViewController

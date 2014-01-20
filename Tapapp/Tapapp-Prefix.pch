@@ -24,4 +24,5 @@
     #import "CoreData+MagicalRecord.h"
     #import "NSPersistentStore+MagicalRecord.h"
     #import "TALocationManager.h"
+    #import "TABaseViewController.h"
 #endif

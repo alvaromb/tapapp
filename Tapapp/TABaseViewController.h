@@ -8,8 +8,9 @@
 
 #import "TACheckInViewController.h"
 #import "TANuevoBarViewController.h"
+#import "TABaseTableViewController.h"
 
-@interface TABaseViewController : UIViewController
+@interface TABaseViewController : TABaseTableViewController
 
 @property (strong, nonatomic) UIButton *checkInButton;
 @property (strong, nonatomic) UIButton *newBarButton;

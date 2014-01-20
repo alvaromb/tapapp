@@ -36,6 +36,8 @@
 		384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D87186F6AB000ED6D18 /* UIImage+Alpha.m */; };
 		384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */; };
 		384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */; };
+		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
+		386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */; };
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
 		387812111872F58B00DDA967 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812101872F58B00DDA967 /* Local.m */; };
 		387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812141872F5FD00DDA967 /* TAMainViewController.m */; };
@@ -105,6 +107,10 @@
 		384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		384D9D8A186F6AB000ED6D18 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		386B382C188C04D7004B49DC /* TABaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseTableViewController.h; sourceTree = "<group>"; };
+		386B382D188C04D7004B49DC /* TABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseTableViewController.m; sourceTree = "<group>"; };
+		386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseFetchedViewController.h; sourceTree = "<group>"; };
+		386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseFetchedViewController.m; sourceTree = "<group>"; };
 		3878120C1871A06F00DDA967 /* TANuevoBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoBarViewController.h; sourceTree = "<group>"; };
 		3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoBarViewController.m; sourceTree = "<group>"; };
 		3878120F1872F58B00DDA967 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Local.h; path = ../Local.h; sourceTree = "<group>"; };
@@ -251,9 +257,7 @@
 		381261661853997F00F59EE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */,
-				38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */,
-				387812121872F5E300DDA967 /* Main */,
+				386B382B188C0213004B49DC /* Base */,
 				3841BB3C1857A1AD004BC85D /* Cerca */,
 				38DFBAE71869B57A00B1D369 /* Tapas */,
 				38DFBAE81869B57F00B1D369 /* Perfil */,
@@ -309,6 +313,20 @@
 				384D9D82186F68EC00ED6D18 /* UIImage+RoundedImage.m */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		386B382B188C0213004B49DC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */,
+				38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */,
+				386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */,
+				386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */,
+				386B382C188C04D7004B49DC /* TABaseTableViewController.h */,
+				386B382D188C04D7004B49DC /* TABaseTableViewController.m */,
+				387812121872F5E300DDA967 /* Main */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		3878120B1871A05700DDA967 /* Nuevo Bar */ = {
@@ -539,9 +557,11 @@
 				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
+				386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */,
 				384D9D7D186E017800ED6D18 /* TATapaCell.m in Sources */,
 				3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */,
 				38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */,
+				386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */,
 				387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);

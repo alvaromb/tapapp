@@ -10,9 +10,7 @@
 
 @interface TATapasViewController ()
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSFetchedResultsController *searchedResultsController;
-@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) UISearchDisplayController *searchController;
 
@@ -22,30 +20,12 @@
 
 #pragma mark - Lazy instantiation
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (!_fetchedResultsController) {
-        _fetchedResultsController = [TATapaMapper fetchedResultsControllerWithDelegate:self inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
-    }
-    return _fetchedResultsController;
-}
-
 - (NSFetchedResultsController *)searchedResultsController
 {
     if (!_searchedResultsController) {
         _searchedResultsController = [TATapaMapper fetchedResultsControllerWithSearch:self.searchController.searchBar.text delegate:self inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
     }
     return _searchedResultsController;
-}
-
-- (UITableView *)tableView
-{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
 }
 
 - (UISearchBar *)searchBar
@@ -85,6 +65,7 @@
     [super viewDidLoad];
 	[self.view addSubview:self.tableView];
     self.searchController.searchResultsTableView.rowHeight = 50.0f;
+    self.fetchedResultsController = [TATapaMapper fetchedResultsControllerWithDelegate:self inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

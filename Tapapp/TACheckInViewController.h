@@ -6,9 +6,10 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
-#import "TALocalCercaCell.h"
 #import "TALocalMapper.h"
+#import "TALocalCercaCell.h"
+#import "TABaseTableViewController.h"
 
-@interface TACheckInViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
+@interface TACheckInViewController : TABaseTableViewController <UIAlertViewDelegate>
 
 @end

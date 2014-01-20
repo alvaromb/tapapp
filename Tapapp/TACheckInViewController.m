@@ -10,25 +10,13 @@
 
 @interface TACheckInViewController ()
 
-@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UIButton *closeButton;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation TACheckInViewController
 
 #pragma mark - Lazy instantiation
-
-- (UITableView *)tableView
-{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
 
 - (UIButton *)closeButton
 {
@@ -39,14 +27,6 @@
         [_closeButton addTarget:self action:@selector(cancelCheckIn) forControlEvents:UIControlEventTouchUpInside];
     }
     return _closeButton;
-}
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (!_fetchedResultsController) {
-        _fetchedResultsController = [TALocalMapper allLocalsWithDelegate:self];
-    }
-    return _fetchedResultsController;
 }
 
 #pragma mark - Lifecycle
@@ -68,6 +48,7 @@
 {
     [super viewDidLoad];
 	[self.view addSubview:self.tableView];
+    self.fetchedResultsController = [TALocalMapper allLocalsWithDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,11 +64,6 @@
 }
 
 #pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.fetchedResultsController.fetchedObjects.count;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

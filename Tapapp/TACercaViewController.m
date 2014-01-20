@@ -11,8 +11,6 @@
 @interface TACercaViewController ()
 
 @property (strong, nonatomic) MKMapView *mapView;
-@property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
@@ -34,24 +32,6 @@
     return _mapView;
 }
 
-- (UITableView *)tableView
-{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (!_fetchedResultsController) {
-        _fetchedResultsController = [TALocalMapper allLocalsWithDelegate:self];
-    }
-    return _fetchedResultsController;
-}
-
 - (UIRefreshControl *)refreshControl
 {
     if (!_refreshControl) {
@@ -69,6 +49,7 @@
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"cerca.png"];
         self.title = @"Cerca";
+        self.fetchedResultsController = [TALocalMapper allLocalsWithDelegate:self];
     }
     return self;
 }
@@ -79,6 +60,7 @@
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.tableView];
     [self.tableView addSubview:self.refreshControl];
+    self.fetchedResultsController = [TALocalMapper allLocalsWithDelegate:self];
     
     // Add the annotations of each local
     // TODO: subclass MKPointAnnotation and add custom annotation
@@ -88,8 +70,10 @@
         annotation.title = local.nombre;
         [self.mapView addAnnotation:annotation];
     }
-    MKCoordinateRegion region = MKCoordinateRegionForMapRect([self mapRectToFitAllAnnotations]);
-    [self.mapView setRegion:region];
+    if (self.fetchedResultsController.fetchedObjects.count > 0) {
+        MKCoordinateRegion region = MKCoordinateRegionForMapRect([self mapRectToFitAllAnnotations]);
+        [self.mapView setRegion:region];
+    }    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -115,11 +99,6 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.fetchedResultsController.fetchedObjects.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"tapaCercaCellIdentifier";
@@ -137,7 +116,6 @@
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.localLabel.text = local.nombre;
     cell.distanceLabel.text = [NSString stringWithFormat:@"A %@", local.distancia];
-//    NSLog(@"Distancia %f", local.distancia.doubleValue);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
