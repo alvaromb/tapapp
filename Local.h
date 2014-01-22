@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSNumber * zip;
 @property (nonatomic, retain) NSNumber * distancia;
 @property (nonatomic, retain) NSSet *tapas;
+@property (nonatomic, retain) NSSet *comentarios;
 @end
 
 @interface Local (CoreDataGeneratedAccessors)

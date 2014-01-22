@@ -78,7 +78,7 @@
     if (!_comentariosButton) {
         _comentariosButton = [[UIButton alloc] init];
         _comentariosButton.titleLabel.textAlignment = NSTextAlignmentLeft;
-        [_comentariosButton setTitle:@"Comentarios (12)" forState:UIControlStateNormal];
+        [_comentariosButton setTitle:@"Comentarios (-)" forState:UIControlStateNormal];
         [_comentariosButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
         [_comentariosButton addTarget:self action:@selector(viewComments) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -119,6 +119,8 @@
     
     self.localLabel.text = self.local.nombre;
     self.descripcionLabel.text = self.local.calle;
+    NSInteger numberOfComments = [[self.local valueForKeyPath:@"comentarios.@count"] integerValue];
+    [self.comentariosButton setTitle:[NSString stringWithFormat:@"Comentarios (%d)", numberOfComments] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning

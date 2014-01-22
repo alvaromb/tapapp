@@ -20,5 +20,6 @@
 @dynamic zip;
 @dynamic distancia;
 @dynamic tapas;
+@dynamic comentarios;
 
 @end
