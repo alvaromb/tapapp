@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIImageView *localImageView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UIButton *favoritoButton;
+@property (strong, nonatomic) UIButton *comentariosButton;
 
 @end
 
@@ -64,11 +65,24 @@
 {
     if (!_favoritoButton) {
         _favoritoButton = [[UIButton alloc] init];
+        _favoritoButton.titleLabel.textAlignment = NSTextAlignmentLeft;
         [_favoritoButton setTitle:@"Añadir favorito" forState:UIControlStateNormal];
         [_favoritoButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
         [_favoritoButton addTarget:self action:@selector(addFavorito) forControlEvents:UIControlEventTouchUpInside];
     }
     return _favoritoButton;
+}
+
+- (UIButton *)comentariosButton
+{
+    if (!_comentariosButton) {
+        _comentariosButton = [[UIButton alloc] init];
+        _comentariosButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+        [_comentariosButton setTitle:@"Comentarios (12)" forState:UIControlStateNormal];
+        [_comentariosButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_comentariosButton addTarget:self action:@selector(viewComments) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _comentariosButton;
 }
 
 #pragma mark - Lifecycle
@@ -91,6 +105,7 @@
     [self.view addSubview:self.descripcionLabel];
     [self.view addSubview:self.localImageView];
     [self.view addSubview:self.favoritoButton];
+    [self.view addSubview:self.comentariosButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -99,7 +114,8 @@
     self.localLabel.frame = CGRectMake(0, 20, self.view.bounds.size.width, 22);
     self.descripcionLabel.frame = CGRectMake(0, 50, self.view.bounds.size.width, 20);
     self.localImageView.frame = CGRectMake(0, 0, 0, 0);
-    self.favoritoButton.frame = CGRectMake(20, 150, 150, 30);
+    self.favoritoButton.frame = CGRectMake(10, 150, 150, 30);
+    self.comentariosButton.frame = CGRectMake(160, 150, 150, 30);
     
     self.localLabel.text = self.local.nombre;
     self.descripcionLabel.text = self.local.calle;
@@ -121,6 +137,12 @@
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"Ok", nil];
     [alertView show];
+}
+
+- (void)viewComments
+{
+    TAComentariosLocalViewController *comentariosViewController = [[TAComentariosLocalViewController alloc] init];
+    [self.navigationController pushViewController:comentariosViewController animated:YES];
 }
 
 @end

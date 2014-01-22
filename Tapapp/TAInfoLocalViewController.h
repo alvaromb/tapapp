@@ -7,8 +7,9 @@
 //
 
 #import "TATapaMapper.h"
+#import "TAComentariosLocalViewController.h"
 
-@interface TAInfoLocalViewController : TABaseViewController
+@interface TAInfoLocalViewController : TABaseTableViewController
 
 @property (strong, nonatomic) Local *local;
 
