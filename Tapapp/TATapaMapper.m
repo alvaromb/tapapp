@@ -84,6 +84,15 @@
     newLocal01.tapas = [NSSet setWithObject:newTapa01];
     newTapa01.local = newLocal01;
     
+    Comentario *comentario = nil;
+    for (int i = 0; i < 12; i++) {
+        comentario = [Comentario MR_createEntity];
+        comentario.autor = (i % 2 == 0) ? @"Frankee" : @"Alvaro";
+        comentario.texto = @"Lorem ipsum dolor sit amet";
+        comentario.fecha = [NSDate new];
+        comentario.local = newLocal01;
+    }
+    
     Tapa *newTapa02 = [Tapa MR_createInContext:context];
     newTapa02.nombre = @"Pincho de tortilla";
     newTapa02.path_imagen = @"2.jpg";

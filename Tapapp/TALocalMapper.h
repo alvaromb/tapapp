@@ -7,6 +7,7 @@
 //
 
 #import "Local.h"
+#import "Comentario.h"
 
 @interface TALocalMapper : NSObject
 
@@ -18,6 +19,8 @@
 
 #pragma mark - Read
 + (NSFetchedResultsController *)allLocalsWithDelegate:(id)delegate;
++ (NSFetchedResultsController *)commentsForLocal:(Local *)local
+                                    withDelegate:(id)delegate;
 
 #pragma mark - Update
 

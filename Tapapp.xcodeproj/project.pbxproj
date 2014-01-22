@@ -37,6 +37,8 @@
 		384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D89186F6AB000ED6D18 /* UIImage+Resize.m */; };
 		384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */; };
 		386314591890458100EE92C7 /* TAComentariosLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314581890458100EE92C7 /* TAComentariosLocalViewController.m */; };
+		3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145B18904A8600EE92C7 /* TAComentarioCell.m */; };
+		3863145F18904F7B00EE92C7 /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145E18904F7B00EE92C7 /* Comentario.m */; };
 		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
 		386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */; };
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
@@ -110,6 +112,10 @@
 		384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		386314571890458100EE92C7 /* TAComentariosLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAComentariosLocalViewController.h; sourceTree = "<group>"; };
 		386314581890458100EE92C7 /* TAComentariosLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAComentariosLocalViewController.m; sourceTree = "<group>"; };
+		3863145A18904A8600EE92C7 /* TAComentarioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAComentarioCell.h; sourceTree = "<group>"; };
+		3863145B18904A8600EE92C7 /* TAComentarioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAComentarioCell.m; sourceTree = "<group>"; };
+		3863145D18904F7B00EE92C7 /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
+		3863145E18904F7B00EE92C7 /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
 		386B382C188C04D7004B49DC /* TABaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseTableViewController.h; sourceTree = "<group>"; };
 		386B382D188C04D7004B49DC /* TABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseTableViewController.m; sourceTree = "<group>"; };
 		386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseFetchedViewController.h; sourceTree = "<group>"; };
@@ -324,6 +330,8 @@
 			children = (
 				386314571890458100EE92C7 /* TAComentariosLocalViewController.h */,
 				386314581890458100EE92C7 /* TAComentariosLocalViewController.m */,
+				3863145A18904A8600EE92C7 /* TAComentarioCell.h */,
+				3863145B18904A8600EE92C7 /* TAComentarioCell.m */,
 			);
 			name = Comentarios;
 			sourceTree = "<group>";
@@ -373,6 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */,
+				3863145D18904F7B00EE92C7 /* Comentario.h */,
+				3863145E18904F7B00EE92C7 /* Comentario.m */,
 				3878120F1872F58B00DDA967 /* Local.h */,
 				387812101872F58B00DDA967 /* Local.m */,
 				38A07D751856573200545211 /* Tapa.h */,
@@ -563,6 +573,8 @@
 				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
 				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
+				3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */,
+				3863145F18904F7B00EE92C7 /* Comentario.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
 				38A07D771856573200545211 /* Tapa.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,

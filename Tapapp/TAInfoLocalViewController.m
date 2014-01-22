@@ -142,6 +142,7 @@
 - (void)viewComments
 {
     TAComentariosLocalViewController *comentariosViewController = [[TAComentariosLocalViewController alloc] init];
+    [comentariosViewController setLocal:self.local];
     [self.navigationController pushViewController:comentariosViewController animated:YES];
 }
 

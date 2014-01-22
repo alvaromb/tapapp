@@ -29,6 +29,14 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.tableView];
+    self.fetchedResultsController = [TALocalMapper commentsForLocal:self.local withDelegate:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.tableView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +45,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
+#pragma mark - UITableViewDataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"CommentCellIdentifier";
+    TAComentarioCell *cell = (TAComentarioCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[TAComentarioCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Comentario *comentario = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    cell.textLabel.text = comentario.texto;
+}
 
 @end

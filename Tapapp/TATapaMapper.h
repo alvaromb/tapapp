@@ -8,6 +8,7 @@
 
 #import "Tapa.h"
 #import "TipoTapa.h"
+#import "Comentario.h"
 #import "TALocalMapper.h"
 
 @interface TATapaMapper : NSObject

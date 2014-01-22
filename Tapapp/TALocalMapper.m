@@ -38,4 +38,10 @@
     return [Local MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"distancia" ascending:YES delegate:delegate];
 }
 
++ (NSFetchedResultsController *)commentsForLocal:(Local *)local
+                                    withDelegate:(id)delegate
+{
+    return [Comentario MR_fetchAllGroupedBy:nil withPredicate:[NSPredicate predicateWithFormat:@"local == %@", local] sortedBy:@"fecha" ascending:NO];
+}
+
 @end
