@@ -65,6 +65,7 @@
     NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
     [Tapa MR_truncateAllInContext:context];
     [Local MR_truncateAllInContext:context];
+    [Comentario MR_truncateAllInContext:context];
     
     TALocationManager *locationManager = [TALocationManager sharedInstance];
     

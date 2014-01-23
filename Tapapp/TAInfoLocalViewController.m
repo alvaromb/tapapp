@@ -145,6 +145,7 @@
 {
     TAComentariosLocalViewController *comentariosViewController = [[TAComentariosLocalViewController alloc] init];
     [comentariosViewController setLocal:self.local];
+    [comentariosViewController setFetchedResultsController:[TALocalMapper commentsForLocal:self.local withDelegate:comentariosViewController]];
     [self.navigationController pushViewController:comentariosViewController animated:YES];
 }
 

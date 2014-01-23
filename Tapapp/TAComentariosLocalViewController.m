@@ -10,9 +10,34 @@
 
 @interface TAComentariosLocalViewController ()
 
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) UIButton *addCommentButton;
+
 @end
 
 @implementation TAComentariosLocalViewController
+
+#pragma mark - Lazy instantiation
+
+- (UIRefreshControl *)refreshControl
+{
+    if (!_refreshControl) {
+        _refreshControl = [[UIRefreshControl alloc] init];
+        [_refreshControl addTarget:self action:@selector(refreshComments) forControlEvents:UIControlEventValueChanged];
+    }
+    return _refreshControl;
+}
+
+- (UIButton *)addCommentButton
+{
+    if (!_addCommentButton) {
+        _addCommentButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+        [_addCommentButton setTitle:@"Añadir" forState:UIControlStateNormal];
+        [_addCommentButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_addCommentButton addTarget:self action:@selector(addComment) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _addCommentButton;
+}
 
 #pragma mark - Lifecycle
 
@@ -21,6 +46,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Comentarios";
+        // Hack to align the UIBarButtons in iOS 7
+        UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        space.width = -15;
+        UIBarButtonItem *newComment = [[UIBarButtonItem alloc] initWithCustomView:self.addCommentButton];
+        self.navigationItem.rightBarButtonItems = @[space, newComment];
     }
     return self;
 }
@@ -30,13 +60,20 @@
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
-    self.fetchedResultsController = [TALocalMapper commentsForLocal:self.local withDelegate:self];
+    [self.tableView addSubview:self.refreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.tableView.frame = self.view.bounds;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.fetchedResultsController performFetch:nil];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +99,27 @@
 {
     Comentario *comentario = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.textLabel.text = comentario.texto;
+}
+
+#pragma mark - Actions
+
+- (void)refreshComments
+{
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.fetchedResultsController performFetch:nil];
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    });
+}
+
+- (void)addComment
+{
+    TANuevoComentarioViewController *vc = [[TANuevoComentarioViewController alloc] init];
+    [vc setLocal:self.local];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 @end

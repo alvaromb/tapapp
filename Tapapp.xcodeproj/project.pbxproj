@@ -39,10 +39,11 @@
 		386314591890458100EE92C7 /* TAComentariosLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314581890458100EE92C7 /* TAComentariosLocalViewController.m */; };
 		3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145B18904A8600EE92C7 /* TAComentarioCell.m */; };
 		3863145F18904F7B00EE92C7 /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145E18904F7B00EE92C7 /* Comentario.m */; };
+		386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */; };
+		386314651891A2DF00EE92C7 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314641891A2DF00EE92C7 /* Local.m */; };
 		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
 		386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */; };
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
-		387812111872F58B00DDA967 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812101872F58B00DDA967 /* Local.m */; };
 		387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812141872F5FD00DDA967 /* TAMainViewController.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
 		389C1C17185DCA200064A523 /* TALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 389C1C16185DCA200064A523 /* TALocationManager.m */; };
@@ -116,14 +117,16 @@
 		3863145B18904A8600EE92C7 /* TAComentarioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAComentarioCell.m; sourceTree = "<group>"; };
 		3863145D18904F7B00EE92C7 /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
 		3863145E18904F7B00EE92C7 /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
+		386314601890635A00EE92C7 /* TANuevoComentarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoComentarioViewController.h; sourceTree = "<group>"; };
+		386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoComentarioViewController.m; sourceTree = "<group>"; };
+		386314631891A2DF00EE92C7 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		386314641891A2DF00EE92C7 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		386B382C188C04D7004B49DC /* TABaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseTableViewController.h; sourceTree = "<group>"; };
 		386B382D188C04D7004B49DC /* TABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseTableViewController.m; sourceTree = "<group>"; };
 		386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseFetchedViewController.h; sourceTree = "<group>"; };
 		386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseFetchedViewController.m; sourceTree = "<group>"; };
 		3878120C1871A06F00DDA967 /* TANuevoBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoBarViewController.h; sourceTree = "<group>"; };
 		3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoBarViewController.m; sourceTree = "<group>"; };
-		3878120F1872F58B00DDA967 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Local.h; path = ../Local.h; sourceTree = "<group>"; };
-		387812101872F58B00DDA967 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Local.m; path = ../Local.m; sourceTree = "<group>"; };
 		387812131872F5FD00DDA967 /* TAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAMainViewController.h; sourceTree = "<group>"; };
 		387812141872F5FD00DDA967 /* TAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAMainViewController.m; sourceTree = "<group>"; };
 		389C1C12185CD68F0064A523 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -332,6 +335,8 @@
 				386314581890458100EE92C7 /* TAComentariosLocalViewController.m */,
 				3863145A18904A8600EE92C7 /* TAComentarioCell.h */,
 				3863145B18904A8600EE92C7 /* TAComentarioCell.m */,
+				386314601890635A00EE92C7 /* TANuevoComentarioViewController.h */,
+				386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */,
 			);
 			name = Comentarios;
 			sourceTree = "<group>";
@@ -381,10 +386,10 @@
 			isa = PBXGroup;
 			children = (
 				38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */,
+				386314631891A2DF00EE92C7 /* Local.h */,
+				386314641891A2DF00EE92C7 /* Local.m */,
 				3863145D18904F7B00EE92C7 /* Comentario.h */,
 				3863145E18904F7B00EE92C7 /* Comentario.m */,
-				3878120F1872F58B00DDA967 /* Local.h */,
-				387812101872F58B00DDA967 /* Local.m */,
 				38A07D751856573200545211 /* Tapa.h */,
 				38A07D761856573200545211 /* Tapa.m */,
 				38A07D6C18564F3E00545211 /* TipoTapa.h */,
@@ -562,7 +567,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387812111872F58B00DDA967 /* Local.m in Sources */,
 				3812613B1853993200F59EE4 /* main.m in Sources */,
 				386314591890458100EE92C7 /* TAComentariosLocalViewController.m in Sources */,
 				3815FBBA1870A6EC00BEB85A /* TACheckInViewController.m in Sources */,
@@ -570,10 +574,12 @@
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,
 				3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */,
 				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
+				386314651891A2DF00EE92C7 /* Local.m in Sources */,
 				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
 				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
 				3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */,
+				386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */,
 				3863145F18904F7B00EE92C7 /* Comentario.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
 				38A07D771856573200545211 /* Tapa.m in Sources */,
