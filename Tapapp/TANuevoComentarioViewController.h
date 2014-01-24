@@ -7,6 +7,7 @@
 //
 
 #import "Comentario.h"
+#import "TAComentariosLocalViewController.h"
 
 @interface TANuevoComentarioViewController : UIViewController
 

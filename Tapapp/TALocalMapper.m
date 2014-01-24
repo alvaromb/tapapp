@@ -41,7 +41,7 @@
 + (NSFetchedResultsController *)commentsForLocal:(Local *)local
                                     withDelegate:(id)delegate
 {
-    return [Comentario MR_fetchAllGroupedBy:nil withPredicate:[NSPredicate predicateWithFormat:@"local == %@", local] sortedBy:@"fecha" ascending:NO];
+    return [Comentario MR_fetchAllGroupedBy:nil withPredicate:[NSPredicate predicateWithFormat:@"local == %@", local] sortedBy:@"fecha" ascending:NO delegate:delegate];
 }
 
 @end

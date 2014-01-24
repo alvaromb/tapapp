@@ -14,15 +14,15 @@
 
 #pragma mark - Lazy instantiation
 
-//- (NSFetchedResultsController *)fetchedResultsController
-//{
-//    if (!_fetchedResultsController) {
-//        _fetchedResultsController = [[NSFetchedResultsController alloc] init];
-//        _fetchedResultsController.delegate = self;
-//        [_fetchedResultsController performFetch:nil];
-//    }
-//    return _fetchedResultsController;
-//}
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (!_fetchedResultsController) {
+        _fetchedResultsController = [[NSFetchedResultsController alloc] init];
+        _fetchedResultsController.delegate = self;
+        [_fetchedResultsController performFetch:nil];
+    }
+    return _fetchedResultsController;
+}
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
 {

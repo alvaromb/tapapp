@@ -69,13 +69,6 @@
     self.tableView.frame = self.view.bounds;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self.fetchedResultsController performFetch:nil];
-    [self.tableView reloadData];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
