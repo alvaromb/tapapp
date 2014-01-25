@@ -23,10 +23,11 @@
 - (UIButton *)sendNewCommentButton
 {
     if (!_sendNewCommentButton) {
-        _sendNewCommentButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+        _sendNewCommentButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [_sendNewCommentButton setTitle:@"Enviar" forState:UIControlStateNormal];
         [_sendNewCommentButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
         [_sendNewCommentButton addTarget:self action:@selector(sendNewComment) forControlEvents:UIControlEventTouchUpInside];
+        [_sendNewCommentButton sizeToFit];
     }
     return _sendNewCommentButton;
 }
@@ -34,10 +35,11 @@
 - (UIButton *)closeView
 {
     if (!_closeView) {
-        _closeView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+        _closeView = [[UIButton alloc] initWithFrame:CGRectZero];
         [_closeView setTitle:@"Cerrar" forState:UIControlStateNormal];
         [_closeView setTitleColor:self.view.tintColor forState:UIControlStateNormal];
         [_closeView addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+        [_closeView sizeToFit];
     }
     return _closeView;
 }
@@ -59,7 +61,7 @@
         self.title = @"Nuevo comentario";
         // Hack to align the UIBarButtons in iOS 7
         UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        space.width = -15;
+        space.width = -10;
         UIBarButtonItem *newComment = [[UIBarButtonItem alloc] initWithCustomView:self.sendNewCommentButton];
         self.navigationItem.rightBarButtonItems = @[space, newComment];
         UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:self.closeView];
