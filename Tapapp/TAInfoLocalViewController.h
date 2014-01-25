@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
+#import "TATapaCell.h"
 #import "TATapaMapper.h"
+#import "TAAddTapaViewController.h"
 #import "TAComentariosLocalViewController.h"
 
 @interface TAInfoLocalViewController : TABaseTableViewController

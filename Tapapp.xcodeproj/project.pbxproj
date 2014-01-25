@@ -43,6 +43,7 @@
 		386314651891A2DF00EE92C7 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314641891A2DF00EE92C7 /* Local.m */; };
 		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
 		386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */; };
+		387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387110ED1894289E008AD1E6 /* TAAddTapaViewController.m */; };
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
 		387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812141872F5FD00DDA967 /* TAMainViewController.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
@@ -125,6 +126,8 @@
 		386B382D188C04D7004B49DC /* TABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseTableViewController.m; sourceTree = "<group>"; };
 		386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseFetchedViewController.h; sourceTree = "<group>"; };
 		386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseFetchedViewController.m; sourceTree = "<group>"; };
+		387110EC1894289E008AD1E6 /* TAAddTapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAddTapaViewController.h; sourceTree = "<group>"; };
+		387110ED1894289E008AD1E6 /* TAAddTapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAddTapaViewController.m; sourceTree = "<group>"; };
 		3878120C1871A06F00DDA967 /* TANuevoBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoBarViewController.h; sourceTree = "<group>"; };
 		3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoBarViewController.m; sourceTree = "<group>"; };
 		387812131872F5FD00DDA967 /* TAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAMainViewController.h; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 				3803102118788444008A012E /* TAInfoLocalViewController.h */,
 				3803102218788444008A012E /* TAInfoLocalViewController.m */,
 				386314561890455F00EE92C7 /* Comentarios */,
+				387110EA18942869008AD1E6 /* Nueva tapa */,
 			);
 			name = Local;
 			sourceTree = "<group>";
@@ -353,6 +357,15 @@
 				387812121872F5E300DDA967 /* Main */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		387110EA18942869008AD1E6 /* Nueva tapa */ = {
+			isa = PBXGroup;
+			children = (
+				387110EC1894289E008AD1E6 /* TAAddTapaViewController.h */,
+				387110ED1894289E008AD1E6 /* TAAddTapaViewController.m */,
+			);
+			name = "Nueva tapa";
 			sourceTree = "<group>";
 		};
 		3878120B1871A05700DDA967 /* Nuevo Bar */ = {
@@ -580,6 +593,7 @@
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
 				3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */,
 				386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */,
+				387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */,
 				3863145F18904F7B00EE92C7 /* Comentario.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
 				38A07D771856573200545211 /* Tapa.m in Sources */,

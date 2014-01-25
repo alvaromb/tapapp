@@ -45,12 +45,12 @@
     return [Tapa MR_fetchAllSortedBy:@"local.distancia" ascending:YES withPredicate:predicate groupBy:nil delegate:delegate];
 }
 
-+ (NSFetchedResultsController *)fetchedTapasForLocal:(NSString *)local
++ (NSFetchedResultsController *)fetchedTapasForLocal:(Local *)local
                                             delegate:(id)delegate
                                            inContext:(NSManagedObjectContext *)context
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"local.nombre == %@", local];
-    return [Tapa MR_fetchAllGroupedBy:nil withPredicate:predicate sortedBy:nil ascending:NO];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"local == %@", local];
+    return [Tapa MR_fetchAllGroupedBy:nil withPredicate:predicate sortedBy:nil ascending:NO delegate:delegate];
 }
 
 #pragma mark - Update
@@ -66,8 +66,14 @@
     [Tapa MR_truncateAllInContext:context];
     [Local MR_truncateAllInContext:context];
     [Comentario MR_truncateAllInContext:context];
+    [TipoTapa MR_truncateAllInContext:context];
     
     TALocationManager *locationManager = [TALocationManager sharedInstance];
+    
+    TipoTapa *tipoTapa01 = [TipoTapa MR_createInContext:context];
+    tipoTapa01.tipo = @"Pincho";
+    TipoTapa *tipoTapa02 = [TipoTapa MR_createInContext:context];
+    tipoTapa02.tipo = @"Plato";
     
     Tapa *newTapa01 = [Tapa MR_createInContext:context];
     newTapa01.nombre = @"Patatas bravas";
@@ -84,6 +90,7 @@
     newLocal01.zip = @(07002);
     newLocal01.tapas = [NSSet setWithObject:newTapa01];
     newTapa01.local = newLocal01;
+    newTapa01.tipo = tipoTapa01;
     
     Comentario *comentario = nil;
     for (int i = 0; i < 12; i++) {
@@ -109,6 +116,7 @@
     newLocal02.zip = @(07006);
     newLocal02.tapas = [NSSet setWithObject:newTapa02];
     newTapa02.local = newLocal02;
+    newTapa02.tipo = tipoTapa02;
     
     Tapa *newTapa03 = [Tapa MR_createInContext:context];
     newTapa03.nombre = @"Morcilla";
@@ -125,6 +133,7 @@
     newLocal03.zip = @(07002);
     newLocal03.tapas = [NSSet setWithObject:newTapa03];
     newTapa03.local = newLocal03;
+    newTapa03.tipo = tipoTapa01;
     
     Tapa *newTapa04 = [Tapa MR_createInContext:context];
     newTapa04.nombre = @"Calamares";
@@ -141,6 +150,7 @@
     newLocal04.zip = @(07002);
     newLocal04.tapas = [NSSet setWithObject:newTapa04];
     newTapa04.local = newLocal04;
+    newTapa04.tipo = tipoTapa01;
     
     Tapa *newTapa05 = [Tapa MR_createInContext:context];
     newTapa05.nombre = @"Queso con arándanos";
@@ -157,6 +167,7 @@
     newLocal05.zip = @(07002);
     newLocal05.tapas = [NSSet setWithObject:newTapa05];
     newTapa05.local = newLocal05;
+    newTapa05.tipo = tipoTapa01;
     
     NSError *error;
     [[NSManagedObjectContext MR_contextForCurrentThread] save:&error];

@@ -122,6 +122,9 @@
 {
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     TAInfoLocalViewController *viewController = [[TAInfoLocalViewController alloc] init];
+    [viewController setFetchedResultsController:[TATapaMapper fetchedTapasForLocal:local
+                                                                         delegate:viewController
+                                                                        inContext:[NSManagedObjectContext MR_contextForCurrentThread]]];
     [viewController setLocal:local];
     [self.navigationController pushViewController:viewController animated:YES];
 }

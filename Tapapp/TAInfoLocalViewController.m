@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UIButton *favoritoButton;
 @property (strong, nonatomic) UIButton *comentariosButton;
+@property (strong, nonatomic) UIButton *addTapaButton;
 
 @end
 
@@ -65,7 +66,7 @@
 {
     if (!_favoritoButton) {
         _favoritoButton = [[UIButton alloc] init];
-        _favoritoButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+        _favoritoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_favoritoButton setTitle:@"Añadir favorito" forState:UIControlStateNormal];
         [_favoritoButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
         [_favoritoButton addTarget:self action:@selector(addFavorito) forControlEvents:UIControlEventTouchUpInside];
@@ -77,12 +78,24 @@
 {
     if (!_comentariosButton) {
         _comentariosButton = [[UIButton alloc] init];
-        _comentariosButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+        _comentariosButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         [_comentariosButton setTitle:@"Comentarios (-)" forState:UIControlStateNormal];
         [_comentariosButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
         [_comentariosButton addTarget:self action:@selector(viewComments) forControlEvents:UIControlEventTouchUpInside];
     }
     return _comentariosButton;
+}
+
+- (UIButton *)addTapaButton
+{
+    if (!_addTapaButton) {
+        _addTapaButton = [[UIButton alloc] init];
+        _addTapaButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_addTapaButton setTitle:@"Añadir tapa" forState:UIControlStateNormal];
+        [_addTapaButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_addTapaButton addTarget:self action:@selector(addTapa) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _addTapaButton;
 }
 
 #pragma mark - Lifecycle
@@ -106,6 +119,11 @@
     [self.view addSubview:self.localImageView];
     [self.view addSubview:self.favoritoButton];
     [self.view addSubview:self.comentariosButton];
+    [self.view addSubview:self.addTapaButton];
+    [self.view addSubview:self.tableView];
+//    self.fetchedResultsController = [TATapaMapper fetchedTapasForLocal:self.local
+//                                                              delegate:self
+//                                                             inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,8 +132,10 @@
     self.localLabel.frame = CGRectMake(0, 20, self.view.bounds.size.width, 22);
     self.descripcionLabel.frame = CGRectMake(0, 50, self.view.bounds.size.width, 20);
     self.localImageView.frame = CGRectMake(0, 0, 0, 0);
-    self.favoritoButton.frame = CGRectMake(10, 150, 150, 30);
-    self.comentariosButton.frame = CGRectMake(160, 150, 150, 30);
+    self.favoritoButton.frame = CGRectMake(10, 140, 150, 30);
+    self.comentariosButton.frame = CGRectMake(160, 140, 150, 30);
+    self.addTapaButton.frame = CGRectMake(10, 175, 150, 30);
+    self.tableView.frame = CGRectMake(0, 210, 320, self.view.frame.size.height - 210);
     
     self.localLabel.text = self.local.nombre;
     self.descripcionLabel.text = self.local.calle;
@@ -127,6 +147,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"TapaCellIdentifier";
+    TATapaCell *cell = (TATapaCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[TATapaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Tapa *tapa = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    TATapaCell *tapaCell = (TATapaCell *)cell;
+    tapaCell.tapaLabel.text = tapa.nombre;
+//    tapaCell.distanciaLabel.text = [NSString stringWithFormat:@"A %@", tapa.local.distancia];
 }
 
 #pragma mark - Actions
@@ -147,6 +188,14 @@
     [comentariosViewController setLocal:self.local];
     [comentariosViewController setFetchedResultsController:[TALocalMapper commentsForLocal:self.local withDelegate:comentariosViewController]];
     [self.navigationController pushViewController:comentariosViewController animated:YES];
+}
+
+- (void)addTapa
+{
+    TAAddTapaViewController *vc = [[TAAddTapaViewController alloc] init];
+    [vc setLocal:self.local];
+    UINavigationController *addTapaViewController = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:addTapaViewController animated:YES completion:nil];
 }
 
 @end
