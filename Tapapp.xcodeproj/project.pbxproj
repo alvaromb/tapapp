@@ -55,6 +55,7 @@
 		38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D6D18564F3E00545211 /* TipoTapa.m */; };
 		38A07D7418564F6200545211 /* TALocalMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D7318564F6200545211 /* TALocalMapper.m */; };
 		38A07D771856573200545211 /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D761856573200545211 /* Tapa.m */; };
+		38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */; };
 		38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,8 @@
 		38A07D7318564F6200545211 /* TALocalMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalMapper.m; sourceTree = "<group>"; };
 		38A07D751856573200545211 /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
 		38A07D761856573200545211 /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
+		38CDB2DE189589B1009764BF /* TALoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALoginRegisterViewController.h; sourceTree = "<group>"; };
+		38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALoginRegisterViewController.m; sourceTree = "<group>"; };
 		38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseViewController.h; sourceTree = "<group>"; };
 		38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseViewController.m; sourceTree = "<group>"; };
 		47A1506FFE03482A86698F5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +277,7 @@
 		381261661853997F00F59EE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				38CDB2DD18958993009764BF /* Login */,
 				386B382B188C0213004B49DC /* Base */,
 				3841BB3C1857A1AD004BC85D /* Cerca */,
 				38DFBAE71869B57A00B1D369 /* Tapas */,
@@ -413,6 +417,15 @@
 				38A07D7318564F6200545211 /* TALocalMapper.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		38CDB2DD18958993009764BF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				38CDB2DE189589B1009764BF /* TALoginRegisterViewController.h */,
+				38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		38DFBAE71869B57A00B1D369 /* Tapas */ = {
@@ -609,6 +622,7 @@
 				38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */,
 				386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */,
 				387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */,
+				38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

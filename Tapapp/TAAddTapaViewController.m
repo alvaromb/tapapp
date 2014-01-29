@@ -52,7 +52,7 @@
     if (!_tapaTextView) {
         _tapaTextView = [[UITextView alloc] init];
         _tapaTextView.backgroundColor = [UIColor greenColor];
-        _tapaTextView.text = @" ";
+        _tapaTextView.text = @"";
     }
     return _tapaTextView;
 }

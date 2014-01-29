@@ -66,7 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.view addSubview:self.titleLabel];
+    [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.loadingLabel];
     [self.view addSubview:self.activityIndicator];
     
@@ -99,6 +99,18 @@
 - (void)locationAvailable
 {
     [TATapaMapper insertDummyTapas];
+    [self.activityIndicator stopAnimating];
+    NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"app_token"];
+    if (token) {
+        [self presentAppOnceLoggedIn];
+    }
+    else {
+        [self presentLoginWindow];
+    }
+}
+
+- (void)presentAppOnceLoggedIn
+{
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     UINavigationController *cercaNavController = [[UINavigationController alloc] initWithRootViewController:[[TACercaViewController alloc] init]];
     UINavigationController *tapasNavController = [[UINavigationController alloc] initWithRootViewController:[[TATapasViewController alloc] init]];
@@ -109,6 +121,39 @@
         self.activityIndicator = nil;
         self.titleLabel = nil;
         self.loadingLabel = nil;
+    }];
+}
+
+- (void)presentLoginWindow
+{
+    TALoginRegisterViewController *loginViewController = [[TALoginRegisterViewController alloc] init];
+    loginViewController.delegate = self;
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:loginViewController] animated:YES completion:nil];
+}
+
+#pragma mark - TALoginDelegate
+
+- (void)loginRegisterDidCancel:(TALoginRegisterViewController *)viewController
+{
+    [viewController dismissViewControllerAnimated:YES completion:^{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Error al registrarse"
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"Ok", nil];
+        [alertView show];
+    }];
+}
+
+- (void)loginRegisterDidFinishedWithSuccess:(TALoginRegisterViewController *)viewController
+{
+    [viewController dismissViewControllerAnimated:YES completion:^{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Enhorabuena!"
+                                                            message:@"Te has registrado correctamente"
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"Ok", nil];
+        [alertView show];
     }];
 }
 
