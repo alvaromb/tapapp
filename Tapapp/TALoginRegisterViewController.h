@@ -8,7 +8,7 @@
 
 @protocol TALoginDelegate;
 
-@interface TALoginRegisterViewController : UIViewController
+@interface TALoginRegisterViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) id<TALoginDelegate> delegate;
 
