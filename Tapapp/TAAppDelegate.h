@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
+#import "TATappapAPI.h"
 #import "TATapaMapper.h"
 #import "TALocationManager.h"
 #import "TAMainViewController.h"

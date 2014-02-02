@@ -134,12 +134,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.emailTextField.frame       = CGRectMake(10, 50, 300, 25);
-    self.passwordTextField.frame    = CGRectMake(10, 80, 300, 25);
-    self.usernameTextField.frame    = CGRectMake(10, 110, 300, 25);
-    self.nombreTextField.frame      = CGRectMake(10, 140, 300, 25);
-    self.profileImageButton.frame   = CGRectMake(10, 175, 50, 50);
-    self.switchRegisterButton.frame = CGRectMake(10, 250, 300, 30);
+    self.emailTextField.frame       = CGRectMake(10, 10, 300, 25);
+    self.passwordTextField.frame    = CGRectMake(10, 40, 300, 25);
+    self.usernameTextField.frame    = CGRectMake(10, 70, 300, 25);
+    self.nombreTextField.frame      = CGRectMake(10, 100, 300, 25);
+    self.profileImageButton.frame   = CGRectMake(10, 135, 50, 50);
+    self.switchRegisterButton.frame = CGRectMake(10, 210, 300, 30);
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -177,6 +177,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.allowsEditing = YES;
     picker.delegate = self;
     if (buttonIndex == 0) {
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;

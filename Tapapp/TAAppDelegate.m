@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Tapapp.sqlite"];
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"Reachability something");
+    }];
+
+    [[TATappapAPI sharedInstance] setBasicAuthorizationWithUsername:@"alvaro" password:@"medina"];
+    NSLog(@"%@", [[[TATappapAPI sharedInstance] requestSerializer] HTTPRequestHeaders]);
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -46,6 +46,7 @@
 		387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387110ED1894289E008AD1E6 /* TAAddTapaViewController.m */; };
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
 		387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812141872F5FD00DDA967 /* TAMainViewController.m */; };
+		388FCB83189EB52B00FB7531 /* TATappapAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 388FCB82189EB52B00FB7531 /* TATappapAPI.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
 		389C1C17185DCA200064A523 /* TALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 389C1C16185DCA200064A523 /* TALocationManager.m */; };
 		38A07D5F1854BAA600545211 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A07D5E1854BAA600545211 /* MapKit.framework */; };
@@ -133,6 +134,8 @@
 		3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoBarViewController.m; sourceTree = "<group>"; };
 		387812131872F5FD00DDA967 /* TAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAMainViewController.h; sourceTree = "<group>"; };
 		387812141872F5FD00DDA967 /* TAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAMainViewController.m; sourceTree = "<group>"; };
+		388FCB81189EB52B00FB7531 /* TATappapAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATappapAPI.h; sourceTree = "<group>"; };
+		388FCB82189EB52B00FB7531 /* TATappapAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATappapAPI.m; sourceTree = "<group>"; };
 		389C1C12185CD68F0064A523 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		389C1C15185DCA200064A523 /* TALocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocationManager.h; sourceTree = "<group>"; };
 		389C1C16185DCA200064A523 /* TALocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocationManager.m; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 		381261341853993200F59EE4 /* Tapapp */ = {
 			isa = PBXGroup;
 			children = (
+				388FCB80189EB48700FB7531 /* Networking */,
 				384D9D80186F68DD00ED6D18 /* Library */,
 				389C1C14185CD6E00064A523 /* Location */,
 				38A07D621854BAE900545211 /* CoreData */,
@@ -388,6 +392,15 @@
 				387812141872F5FD00DDA967 /* TAMainViewController.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		388FCB80189EB48700FB7531 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				388FCB81189EB52B00FB7531 /* TATappapAPI.h */,
+				388FCB82189EB52B00FB7531 /* TATappapAPI.m */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		389C1C14185CD6E00064A523 /* Location */ = {
@@ -622,6 +635,7 @@
 				38A07D6E18564F3E00545211 /* TipoTapa.m in Sources */,
 				386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */,
 				387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */,
+				388FCB83189EB52B00FB7531 /* TATappapAPI.m in Sources */,
 				38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);
