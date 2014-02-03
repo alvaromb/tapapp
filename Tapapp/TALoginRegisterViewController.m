@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UIButton *profileImageButton;
 @property (strong, nonatomic) UIButton *switchRegisterButton;
 @property (strong, nonatomic) UIButton *sendFormButton;
-@property (nonatomic) BOOL isRegistering;
+@property (nonatomic, getter = isRegistering) BOOL registering;
 
 @end
 
@@ -31,7 +31,6 @@
         _emailTextField = [[UITextField alloc] init];
         _emailTextField.placeholder = @"E-mail";
         _emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
-//        _emailTextField.backgroundColor = [UIColor redColor];
     }
     return _emailTextField;
 }
@@ -42,7 +41,6 @@
         _passwordTextField = [[UITextField alloc] init];
         _passwordTextField.placeholder = @"Contraseña";
         _passwordTextField.secureTextEntry = YES;
-//        _passwordTextField.backgroundColor = [UIColor blueColor];
     }
     return _passwordTextField;
 }
@@ -52,7 +50,6 @@
     if (!_usernameTextField) {
         _usernameTextField = [[UITextField alloc] init];
         _usernameTextField.placeholder = @"Nombre de usuario";
-//        _usernameTextField.backgroundColor = [UIColor greenColor];
     }
     return _usernameTextField;
 }
@@ -62,7 +59,6 @@
     if (!_nombreTextField) {
         _nombreTextField = [[UITextField alloc] init];
         _nombreTextField.placeholder = @"Nombre completo";
-//        _nombreTextField.backgroundColor = [UIColor orangeColor];
     }
     return _nombreTextField;
 }
@@ -128,7 +124,7 @@
     [self.view addSubview:self.nombreTextField];
     [self.view addSubview:self.profileImageButton];
     [self.view addSubview:self.switchRegisterButton];
-    self.isRegistering = YES;
+    self.registering = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -209,7 +205,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     if (self.isRegistering) {
         switchLoginRegister = ^(void){
             self.title = @"Login";
-            self.usernameTextField.alpha = 0;
+            self.emailTextField.alpha = 0;
             self.nombreTextField.alpha = 0;
             self.profileImageButton.alpha = 0;
             [self.switchRegisterButton setTitle:@"Pulsa aqui para registrarte" forState:UIControlStateNormal];
@@ -218,7 +214,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     else {
         switchLoginRegister = ^(void){
             self.title = @"Registro";
-            self.usernameTextField.alpha = 1;
+            self.emailTextField.alpha = 1;
             self.nombreTextField.alpha = 1;
             self.profileImageButton.alpha = 1;
             [self.switchRegisterButton setTitle:@"Pulsa aqui si ya tienes cuenta" forState:UIControlStateNormal];
@@ -228,12 +224,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [UIView animateWithDuration:0.4 animations:^{
         switchLoginRegister();
     }];
-    self.isRegistering = !self.isRegistering;
+    self.registering = !self.isRegistering;
 }
 
 - (void)sendRegisterLogin
 {
-    [self.delegate loginRegisterDidFinishedWithSuccess:self];
+    if (self.isRegistering) {
+        [[TATappapAPI sharedInstance]
+         registerWithEmail:self.emailTextField.text
+         password:self.passwordTextField.text
+         username:self.usernameTextField.text
+         name:self.nombreTextField.text
+         image:self.profileImageButton.imageView.image
+         completionBlock:^(id response) {
+             NSLog(@"Hemos llegado");
+         }];
+    }
+    else {
+        [[TATappapAPI sharedInstance]
+         loginWithUsername:self.usernameTextField.text
+         password:self.passwordTextField.text
+         completionBlock:^(id response) {
+             NSLog(@"Me he logueado");
+         }];
+    }
+//    [self.delegate loginRegisterDidFinishedWithSuccess:self];
 }
 
 @end

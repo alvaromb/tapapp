@@ -26,4 +26,5 @@
     #import "NSPersistentStore+MagicalRecord.h"
     #import "TALocationManager.h"
     #import "TABaseViewController.h"
+    #import "TATappapAPI.h"
 #endif

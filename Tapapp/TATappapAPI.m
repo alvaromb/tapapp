@@ -29,7 +29,59 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
                                  password:(NSString *)password
 {
     [self setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [self.requestSerializer clearAuthorizationHeader];
     [self.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+}
+
+#pragma mark - Login & register
+
+- (void)registerWithEmail:(NSString *)email
+                 password:(NSString *)password
+                 username:(NSString *)username
+                     name:(NSString *)name
+                    image:(UIImage *)image
+          completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSDictionary *parameters = @{@"email"       : email,
+                                 @"password"    : password,
+                                 @"username"    : username,
+                                 @"nombre"      : name};
+    [self POST:@"/user" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSData *imageData = UIImagePNGRepresentation(image);
+        [formData appendPartWithFileData:imageData name:@"imagen" fileName:@"imagen" mimeType:@"image/png"];
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@ %@", [responseObject class], responseObject);
+        NSString *username = responseObject[@"data"][@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self setBasicAuthorizationWithUsername:username password:password];
+        if (completionBlock) {
+            completionBlock(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"<%@> : %@ : ERROR %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
+    }];
+}
+
+- (void)loginWithUsername:(NSString *)username
+                 password:(NSString *)password
+          completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    [self setBasicAuthorizationWithUsername:username password:password];
+    [self POST:@"/user/check/credential" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@ %@", [responseObject class], responseObject);
+        NSString *username = responseObject[@"data"][@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self setBasicAuthorizationWithUsername:username password:password];
+        if (completionBlock) {
+            completionBlock(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"<%@> : %@ : ERROR %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
+    }];
 }
 
 @end

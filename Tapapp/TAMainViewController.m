@@ -100,8 +100,10 @@
 {
     [TATapaMapper insertDummyTapas];
     [self.activityIndicator stopAnimating];
-    NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"app_token"];
-    if (token) {
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    if (username && password) {
+        [[TATappapAPI sharedInstance] setBasicAuthorizationWithUsername:username password:password];
         [self presentAppOnceLoggedIn];
     }
     else {
