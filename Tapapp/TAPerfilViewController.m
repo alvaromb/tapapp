@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UILabel *favsNumberLabel;
 @property (strong, nonatomic) UILabel *commentAuthorLabel;
 @property (strong, nonatomic) UILabel *commentLabel;
+@property (strong, nonatomic) UIButton *logoutButton;
 
 @end
 
@@ -148,6 +149,17 @@
     return _commentLabel;
 }
 
+- (UIButton *)logoutButton
+{
+    if (!_logoutButton) {
+        _logoutButton = [[UIButton alloc] init];
+        [_logoutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_logoutButton setTitle:@"Logout" forState:UIControlStateNormal];
+        [_logoutButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _logoutButton;
+}
+
 #pragma mark - Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -178,6 +190,7 @@
     [self.view addSubview:self.favsNumberLabel];
     [self.view addSubview:self.commentAuthorLabel];
     [self.view addSubview:self.commentLabel];
+    [self.view addSubview:self.logoutButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -195,6 +208,7 @@
     self.favsNumberLabel.frame      = CGRectMake(220, 220, 90, 50);
     self.commentAuthorLabel.frame   = CGRectMake(20, 275, 280, 20);
     self.commentLabel.frame         = CGRectMake(20, 300, 280, 150);
+    self.logoutButton.frame         = CGRectMake(20, 400, 150, 30);
     
     self.fullNameLabel.text = @"Alvaro Medina Ballester";
     self.usernameLabel.text = @"@alvaro";
@@ -213,6 +227,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+- (void)logoutAction
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
+    }];
 }
 
 @end

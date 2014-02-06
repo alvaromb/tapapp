@@ -28,10 +28,21 @@
         <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="tipo" inverseEntity="Tapa" syncable="YES"/>
     </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="checkins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favoritos" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path_imagen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Local" positionX="313" positionY="81" width="128" height="178"/>
+        <element name="Comentario" positionX="54" positionY="299" width="128" height="103"/>
+        <element name="Local" positionX="313" positionY="81" width="128" height="193"/>
         <element name="Tapa" positionX="97" positionY="81" width="128" height="118"/>
         <element name="TipoTapa" positionX="-117" positionY="86" width="128" height="73"/>
-        <element name="Comentario" positionX="54" positionY="299" width="128" height="103"/>
+        <element name="User" positionX="-128" positionY="236" width="128" height="148"/>
     </elements>
 </model>

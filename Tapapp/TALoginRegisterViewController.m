@@ -237,7 +237,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
          name:self.nombreTextField.text
          image:self.profileImageButton.imageView.image
          completionBlock:^(id response) {
-             NSLog(@"Hemos llegado");
+             [self dismissViewControllerAnimated:YES completion:^{
+                 [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
+             }];
          }];
     }
     else {

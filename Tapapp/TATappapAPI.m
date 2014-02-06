@@ -54,11 +54,24 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
         NSString *username = responseObject[@"data"][@"username"];
         [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
         [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"data"][@"id"] forKey:@"user_code"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self setBasicAuthorizationWithUsername:username password:password];
-        if (completionBlock) {
-            completionBlock(responseObject);
-        }
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            User *selfUser = [User MR_createInContext:localContext];
+            NSDictionary *user = [responseObject objectForKey:@"data"];
+            selfUser.identifier = [NSNumber numberWithInteger:[user[@"id"] integerValue]];
+            selfUser.nombre = user[@"nombre"];
+            selfUser.username = user[@"username"];
+            selfUser.path_imagen = user[@"imagen"];
+            selfUser.checkins = [NSNumber numberWithInteger:[user[@"numero_checkins"] integerValue]];
+            selfUser.comments = [NSNumber numberWithInteger:[user[@"numero_comentarios"] integerValue]];
+            selfUser.favoritos = [NSNumber numberWithInteger:[user[@"numero_favoritos"] integerValue]];
+        } completion:^(BOOL success, NSError *error) {
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
+        }];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"<%@> : %@ : ERROR %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
     }];

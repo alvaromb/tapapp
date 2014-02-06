@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
+#import "User.h"
 #import "AFHTTPSessionManager.h"
 
 typedef void (^TATapappCompletionBlock)(id response);

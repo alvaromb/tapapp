@@ -28,6 +28,7 @@
 		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
+		383FEB7B18A40F78008FE503 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 383FEB7A18A40F78008FE503 /* User.m */; };
 		3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */; };
 		384D9D7D186E017800ED6D18 /* TATapaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D7C186E017800ED6D18 /* TATapaCell.m */; };
 		384D9D7F186F673A00ED6D18 /* perfil-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384D9D7E186F673A00ED6D18 /* perfil-bg@2x.png */; };
@@ -100,6 +101,8 @@
 		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
 		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
+		383FEB7918A40F78008FE503 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		383FEB7A18A40F78008FE503 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		3841BB3D1857A1C9004BC85D /* TALocalCercaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocalCercaCell.h; sourceTree = "<group>"; };
 		3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalCercaCell.m; sourceTree = "<group>"; };
 		384D9D7B186E017800ED6D18 /* TATapaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapaCell.h; sourceTree = "<group>"; };
@@ -235,15 +238,11 @@
 		381261341853993200F59EE4 /* Tapapp */ = {
 			isa = PBXGroup;
 			children = (
-				388FCB80189EB48700FB7531 /* Networking */,
-				384D9D80186F68DD00ED6D18 /* Library */,
-				389C1C14185CD6E00064A523 /* Location */,
-				38A07D621854BAE900545211 /* CoreData */,
-				381680D718539E16003ADAE1 /* Images */,
+				383FEB7518A407F3008FE503 /* Classes */,
+				38A07D621854BAE900545211 /* Model */,
 				381261661853997F00F59EE4 /* ViewControllers */,
 				3812613D1853993200F59EE4 /* TAAppDelegate.h */,
 				3812613E1853993200F59EE4 /* TAAppDelegate.m */,
-				381261491853993200F59EE4 /* Images.xcassets */,
 				381261351853993200F59EE4 /* Supporting Files */,
 			);
 			path = Tapapp;
@@ -252,6 +251,8 @@
 		381261351853993200F59EE4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				381261491853993200F59EE4 /* Images.xcassets */,
+				381680D718539E16003ADAE1 /* Images */,
 				381261361853993200F59EE4 /* Tapapp-Info.plist */,
 				381261371853993200F59EE4 /* InfoPlist.strings */,
 				3812613A1853993200F59EE4 /* main.m */,
@@ -312,6 +313,16 @@
 				384D9D7E186F673A00ED6D18 /* perfil-bg@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		383FEB7518A407F3008FE503 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				388FCB80189EB48700FB7531 /* Networking */,
+				384D9D80186F68DD00ED6D18 /* Library */,
+				389C1C14185CD6E00064A523 /* Location */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		3841BB3C1857A1AD004BC85D /* Cerca */ = {
@@ -412,10 +423,12 @@
 			name = Location;
 			sourceTree = "<group>";
 		};
-		38A07D621854BAE900545211 /* CoreData */ = {
+		38A07D621854BAE900545211 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */,
+				383FEB7918A40F78008FE503 /* User.h */,
+				383FEB7A18A40F78008FE503 /* User.m */,
 				386314631891A2DF00EE92C7 /* Local.h */,
 				386314641891A2DF00EE92C7 /* Local.m */,
 				3863145D18904F7B00EE92C7 /* Comentario.h */,
@@ -429,7 +442,7 @@
 				38A07D7218564F6200545211 /* TALocalMapper.h */,
 				38A07D7318564F6200545211 /* TALocalMapper.m */,
 			);
-			name = CoreData;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		38CDB2DD18958993009764BF /* Login */ = {
@@ -623,6 +636,7 @@
 				3863145F18904F7B00EE92C7 /* Comentario.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
 				38A07D771856573200545211 /* Tapa.m in Sources */,
+				383FEB7B18A40F78008FE503 /* User.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
 				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
 				3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */,
