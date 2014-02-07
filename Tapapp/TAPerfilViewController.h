@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 alvaromb. All rights reserved.
 //
 
+#import "TATappapAPI.h"
 #import "UIImage+RoundedCorner.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface TAPerfilViewController : TABaseViewController
 

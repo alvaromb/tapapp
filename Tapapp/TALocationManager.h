@@ -11,6 +11,7 @@
 @interface TALocationManager : NSObject <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *lastLocation;
 
 + (TALocationManager *)sharedInstance;
 - (void)setup;

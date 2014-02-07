@@ -98,7 +98,10 @@
 
 - (void)locationAvailable
 {
-    [TATapaMapper insertDummyTapas];
+//    [TATapaMapper insertDummyTapas];
+    [TipoTapa MR_truncateAll];
+    [Tapa MR_truncateAll];
+    [Local MR_truncateAll];
     [self.activityIndicator stopAnimating];
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];

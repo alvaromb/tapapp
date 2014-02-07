@@ -59,6 +59,7 @@
         return;
     }
     NSLog(@"Location updated %@ // interval %f", lastLocation, [lastLocation.timestamp timeIntervalSinceNow]);
+    self.lastLocation = lastLocation;
 //    if ([lastLocation.timestamp timeIntervalSinceNow] > 10) {
 //        return;
 //    }

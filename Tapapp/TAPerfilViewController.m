@@ -177,8 +177,6 @@
     [super viewDidLoad];
     self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"perfil-bg.png"]];
 	[self.view addSubview:self.backgroundImageView];
-    UIImage *originalImage = [UIImage imageNamed:@"alvaro.png"];
-    self.userImageView.image = [[originalImage resizedImage:(CGSize){160, 160} interpolationQuality:kCGInterpolationDefault] roundedCornerImage:80 borderSize:0];
     [self.view addSubview:self.userImageView];
     [self.view addSubview:self.fullNameLabel];
     [self.view addSubview:self.usernameLabel];
@@ -210,14 +208,23 @@
     self.commentLabel.frame         = CGRectMake(20, 300, 280, 150);
     self.logoutButton.frame         = CGRectMake(20, 400, 150, 30);
     
-    self.fullNameLabel.text = @"Alvaro Medina Ballester";
-    self.usernameLabel.text = @"@alvaro";
+    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_code"];
+    User *userProfile = [User MR_findFirstByAttribute:@"identifier" withValue:userId];
+    
+    __weak UIImageView *weakUserImageView = self.userImageView;
+    NSString *imagePath = [NSString stringWithFormat:@"http://tapapp.com/%@", userProfile.path_imagen];
+    [self.userImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imagePath]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        weakUserImageView.image = [[image resizedImage:CGSizeMake(160, 160) interpolationQuality:kCGInterpolationDefault] roundedCornerImage:80 borderSize:0];
+    } failure:nil];
+    
+    self.fullNameLabel.text = userProfile.nombre;
+    self.usernameLabel.text = [NSString stringWithFormat:@"@%@", userProfile.username];
     self.checkinLabel.text = @"Check-ins";
     self.commentsLabel.text = @"Comentarios";
     self.favsLabel.text = @"Favoritos";
-    self.checkinNumberLabel.text = @"27";
-    self.commentsNumberLabel.text = @"12";
-    self.favsNumberLabel.text = @"53";
+    self.checkinNumberLabel.text = [userProfile.checkins stringValue];
+    self.commentsNumberLabel.text = [userProfile.comments stringValue];
+    self.favsNumberLabel.text = [userProfile.favoritos stringValue];
     self.commentAuthorLabel.text = @"@alvaro en Bar Bosch";
     self.commentLabel.text = @"\"Las langostas (bocatas con pan de llonguet) son las mejores que he probado! Recomiendo la de tortilla de patatas, increible!!!\"";
     [self.commentLabel sizeToFit];

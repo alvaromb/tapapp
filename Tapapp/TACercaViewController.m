@@ -70,10 +70,15 @@
         annotation.title = local.nombre;
         [self.mapView addAnnotation:annotation];
     }
-    if (self.fetchedResultsController.fetchedObjects.count > 0) {
+    MKPointAnnotation *userPositionAnnotation = [[MKPointAnnotation alloc] init];
+    userPositionAnnotation.coordinate = [[TALocationManager sharedInstance] lastLocation].coordinate;
+    userPositionAnnotation.title = @"Yo";
+    [self.mapView addAnnotation:userPositionAnnotation];
+    
+//    if (self.fetchedResultsController.fetchedObjects.count > 0) {
         MKCoordinateRegion region = MKCoordinateRegionForMapRect([self mapRectToFitAllAnnotations]);
         [self.mapView setRegion:region];
-    }    
+//    }    
 }
 
 - (void)viewWillAppear:(BOOL)animated
