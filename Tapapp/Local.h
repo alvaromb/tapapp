@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 @class Comentario, Tapa;

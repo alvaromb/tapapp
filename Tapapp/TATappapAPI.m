@@ -97,4 +97,21 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
     }];
 }
 
+- (void)listNearLocalsWithinLocation:(CLLocationCoordinate2D)coordinate
+                     completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSDictionary *parameters = @{@"latitud"     : @(coordinate.latitude),
+                                 @"longitud"    : @(coordinate.longitude),
+                                 @"distancia"   : @(4000)};
+    [self GET:@"/local/near" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        AMBLog(@"Success: %@", responseObject);
+        NSLog(@"%@", responseObject);
+        if (completionBlock) {
+            completionBlock(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        AMBLog(@"%@ %@", error, [error userInfo]);
+    }];
+}
+
 @end

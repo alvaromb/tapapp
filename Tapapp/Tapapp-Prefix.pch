@@ -17,6 +17,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import "Log.h"
+    #import "Mantle.h"
     #import "AFNetworking.h"
     #import "UIImage+RoundedCorner.h"
     #import "UIImage+RoundedImage.h"

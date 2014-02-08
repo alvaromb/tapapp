@@ -30,4 +30,9 @@ typedef void (^TATapappCompletionBlock)(id response);
                  password:(NSString *)password
           completionBlock:(TATapappCompletionBlock)completionBlock;
 
+#pragma mark - Locals
+
+- (void)listNearLocalsWithinLocation:(CLLocationCoordinate2D)coordinate
+                     completionBlock:(TATapappCompletionBlock)completionBlock;
+
 @end

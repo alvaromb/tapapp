@@ -153,6 +153,7 @@
 		38A07D7318564F6200545211 /* TALocalMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalMapper.m; sourceTree = "<group>"; };
 		38A07D751856573200545211 /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
 		38A07D761856573200545211 /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
+		38A35A6718A64B5200A55EE0 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 		38CDB2DE189589B1009764BF /* TALoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALoginRegisterViewController.h; sourceTree = "<group>"; };
 		38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALoginRegisterViewController.m; sourceTree = "<group>"; };
 		38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseViewController.h; sourceTree = "<group>"; };
@@ -318,6 +319,7 @@
 		383FEB7518A407F3008FE503 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				38A35A6718A64B5200A55EE0 /* Log.h */,
 				388FCB80189EB48700FB7531 /* Networking */,
 				384D9D80186F68DD00ED6D18 /* Library */,
 				389C1C14185CD6E00064A523 /* Location */,
