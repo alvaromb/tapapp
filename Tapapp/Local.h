@@ -2,10 +2,11 @@
 //  Local.h
 //  Tapapp
 //
-//  Created by Álvaro on 23/01/14.
+//  Created by Álvaro on 09/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 @class Comentario, Tapa;
@@ -19,20 +20,22 @@
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSString * path_imagen;
 @property (nonatomic, retain) NSNumber * zip;
-@property (nonatomic, retain) NSSet *tapas;
+@property (nonatomic, retain) NSNumber * identifier;
+@property (nonatomic, retain) NSString * descripcion;
 @property (nonatomic, retain) NSSet *comentarios;
+@property (nonatomic, retain) NSSet *tapas;
 @end
 
 @interface Local (CoreDataGeneratedAccessors)
-
-- (void)addTapasObject:(Tapa *)value;
-- (void)removeTapasObject:(Tapa *)value;
-- (void)addTapas:(NSSet *)values;
-- (void)removeTapas:(NSSet *)values;
 
 - (void)addComentariosObject:(Comentario *)value;
 - (void)removeComentariosObject:(Comentario *)value;
 - (void)addComentarios:(NSSet *)values;
 - (void)removeComentarios:(NSSet *)values;
+
+- (void)addTapasObject:(Tapa *)value;
+- (void)removeTapasObject:(Tapa *)value;
+- (void)addTapas:(NSSet *)values;
+- (void)removeTapas:(NSSet *)values;
 
 @end

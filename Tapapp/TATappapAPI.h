@@ -7,11 +7,12 @@
 //
 
 #import "User.h"
+#import "MTLLocal.h"
 #import "AFHTTPSessionManager.h"
 
 typedef void (^TATapappCompletionBlock)(id response);
 
-@interface TATappapAPI : AFHTTPSessionManager
+@interface TATappapAPI : OVCClient
 
 + (instancetype)sharedInstance;
 

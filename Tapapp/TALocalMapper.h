@@ -7,6 +7,7 @@
 //
 
 #import "Local.h"
+#import "MTLLocal.h"
 #import "Comentario.h"
 
 @interface TALocalMapper : NSObject

@@ -19,6 +19,7 @@
     #import <CoreData/CoreData.h>
     #import "Log.h"
     #import "Mantle.h"
+    #import "Overcoat.h"
     #import "AFNetworking.h"
     #import "UIImage+RoundedCorner.h"
     #import "UIImage+RoundedImage.h"

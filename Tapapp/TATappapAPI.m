@@ -17,8 +17,7 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
     static TATappapAPI *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        sharedInstance = [[TATappapAPI alloc] initWithBaseURL:[NSURL URLWithString:TAAPIURL] sessionConfiguration:sessionConfiguration];
+        sharedInstance = [[TATappapAPI alloc] initWithBaseURL:[NSURL URLWithString:TAAPIURL]];
     });
     return sharedInstance;
 }
@@ -47,9 +46,9 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
                                  @"username"    : username,
                                  @"nombre"      : name};
     [self POST:@"/user" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        NSData *imageData = UIImagePNGRepresentation(image);
-        [formData appendPartWithFileData:imageData name:@"imagen" fileName:@"imagen" mimeType:@"image/png"];
-    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.7);
+        [formData appendPartWithFileData:imageData name:@"imagen" fileName:@"imagen" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@ %@", [responseObject class], responseObject);
         NSString *username = responseObject[@"data"][@"username"];
         [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
@@ -72,7 +71,7 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
                 completionBlock(responseObject);
             }
         }];
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"<%@> : %@ : ERROR %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
     }];
 }
@@ -82,7 +81,7 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
           completionBlock:(TATapappCompletionBlock)completionBlock
 {
     [self setBasicAuthorizationWithUsername:username password:password];
-    [self POST:@"/user/check/credential" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self POST:@"/user/check/credential" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@ %@", [responseObject class], responseObject);
         NSString *username = responseObject[@"data"][@"username"];
         [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
@@ -92,7 +91,7 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
         if (completionBlock) {
             completionBlock(responseObject);
         }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"<%@> : %@ : ERROR %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
     }];
 }
@@ -102,15 +101,29 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
 {
     NSDictionary *parameters = @{@"latitud"     : @(coordinate.latitude),
                                  @"longitud"    : @(coordinate.longitude),
-                                 @"distancia"   : @(4000)};
-    [self GET:@"/local/near" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        AMBLog(@"Success: %@", responseObject);
-        NSLog(@"%@", responseObject);
-        if (completionBlock) {
-            completionBlock(responseObject);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        AMBLog(@"%@ %@", error, [error userInfo]);
+                                 @"distancia"   : @(5000)};
+    [self GET:@"/local/near" parameters:parameters resultClass:MTLLocal.class resultKeyPath:@"data.data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        AMBLog(@"local result %@", responseObject);
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            for (MTLLocal *local in responseObject) {
+                NSError *error = nil;
+                Local *localObj = [MTLManagedObjectAdapter managedObjectFromModel:local
+                                                             insertingIntoContext:localContext
+                                                                            error:&error];
+                if (error) {
+                    NSLog(@"error creating MTLManagedObjectAdapter %@", error);
+                }
+                CLLocation *location = [[CLLocation alloc] initWithLatitude:[localObj.latitud doubleValue] longitude:[localObj.longitud doubleValue]];
+                localObj.distancia = @([[TALocationManager sharedInstance].lastLocation distanceFromLocation:location]);
+            }
+        } completion:^(BOOL success, NSError *error) {
+            if (!success) {
+                NSLog(@"error saving locals %@", error);
+            }
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
+        }];
     }];
 }
 

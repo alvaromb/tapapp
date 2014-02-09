@@ -41,12 +41,13 @@
 		3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145B18904A8600EE92C7 /* TAComentarioCell.m */; };
 		3863145F18904F7B00EE92C7 /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145E18904F7B00EE92C7 /* Comentario.m */; };
 		386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */; };
-		386314651891A2DF00EE92C7 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314641891A2DF00EE92C7 /* Local.m */; };
+		386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314641891A2DF00EE92C7 /* MTLLocal.m */; };
 		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
 		386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */; };
 		387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387110ED1894289E008AD1E6 /* TAAddTapaViewController.m */; };
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
 		387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812141872F5FD00DDA967 /* TAMainViewController.m */; };
+		388E149818A7D74E00D6B2CD /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 388E149718A7D74E00D6B2CD /* Local.m */; };
 		388FCB83189EB52B00FB7531 /* TATappapAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 388FCB82189EB52B00FB7531 /* TATappapAPI.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
 		389C1C17185DCA200064A523 /* TALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 389C1C16185DCA200064A523 /* TALocationManager.m */; };
@@ -125,8 +126,8 @@
 		3863145E18904F7B00EE92C7 /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
 		386314601890635A00EE92C7 /* TANuevoComentarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoComentarioViewController.h; sourceTree = "<group>"; };
 		386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoComentarioViewController.m; sourceTree = "<group>"; };
-		386314631891A2DF00EE92C7 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
-		386314641891A2DF00EE92C7 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
+		386314631891A2DF00EE92C7 /* MTLLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLLocal.h; sourceTree = "<group>"; };
+		386314641891A2DF00EE92C7 /* MTLLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLLocal.m; sourceTree = "<group>"; };
 		386B382C188C04D7004B49DC /* TABaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseTableViewController.h; sourceTree = "<group>"; };
 		386B382D188C04D7004B49DC /* TABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseTableViewController.m; sourceTree = "<group>"; };
 		386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseFetchedViewController.h; sourceTree = "<group>"; };
@@ -137,6 +138,8 @@
 		3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoBarViewController.m; sourceTree = "<group>"; };
 		387812131872F5FD00DDA967 /* TAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAMainViewController.h; sourceTree = "<group>"; };
 		387812141872F5FD00DDA967 /* TAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAMainViewController.m; sourceTree = "<group>"; };
+		388E149618A7D74E00D6B2CD /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		388E149718A7D74E00D6B2CD /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		388FCB81189EB52B00FB7531 /* TATappapAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATappapAPI.h; sourceTree = "<group>"; };
 		388FCB82189EB52B00FB7531 /* TATappapAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATappapAPI.m; sourceTree = "<group>"; };
 		389C1C12185CD68F0064A523 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -429,10 +432,12 @@
 			isa = PBXGroup;
 			children = (
 				38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */,
+				388E149618A7D74E00D6B2CD /* Local.h */,
+				388E149718A7D74E00D6B2CD /* Local.m */,
+				386314631891A2DF00EE92C7 /* MTLLocal.h */,
+				386314641891A2DF00EE92C7 /* MTLLocal.m */,
 				383FEB7918A40F78008FE503 /* User.h */,
 				383FEB7A18A40F78008FE503 /* User.m */,
-				386314631891A2DF00EE92C7 /* Local.h */,
-				386314641891A2DF00EE92C7 /* Local.m */,
 				3863145D18904F7B00EE92C7 /* Comentario.h */,
 				3863145E18904F7B00EE92C7 /* Comentario.m */,
 				38A07D751856573200545211 /* Tapa.h */,
@@ -626,9 +631,10 @@
 				3815FBBA1870A6EC00BEB85A /* TACheckInViewController.m in Sources */,
 				384D9D83186F68EC00ED6D18 /* UIImage+RoundedImage.m in Sources */,
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,
+				388E149818A7D74E00D6B2CD /* Local.m in Sources */,
 				3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */,
 				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
-				386314651891A2DF00EE92C7 /* Local.m in Sources */,
+				386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */,
 				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
 				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
 //
 
+#import "Local.h"
 #import "TALocalMapper.h"
 #import "TALocalCercaCell.h"
 #import "TABaseTableViewController.h"

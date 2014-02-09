@@ -2,7 +2,7 @@
 //  Local.m
 //  Tapapp
 //
-//  Created by Álvaro on 23/01/14.
+//  Created by Álvaro on 09/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -20,7 +20,9 @@
 @dynamic nombre;
 @dynamic path_imagen;
 @dynamic zip;
-@dynamic tapas;
+@dynamic identifier;
+@dynamic descripcion;
 @dynamic comentarios;
+@dynamic tapas;
 
 @end
