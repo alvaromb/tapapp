@@ -38,7 +38,7 @@
              @"latitud"     : @"latitud",
              @"longitud"    : @"longitud",
              @"nombre"      : @"nombre",
-             @"path_imagen" : @"path_imagen",
+             @"imagen"      : @"path_imagen",
              @"zip"         : @"zip",
              @"identifier"  : @"identifier",
              @"descripcion" : @"descripcion",};
@@ -60,6 +60,11 @@
     } reverseBlock:^(NSNumber *lonNumber) {
         return lonNumber;
     }];
+}
+
++ (NSSet *)propertyKeysForManagedObjectUniquing
+{
+    return [NSSet setWithObject:@"identifier"];
 }
 
 //+ (NSValueTransformer *)tapasEntityAttributeTransformer

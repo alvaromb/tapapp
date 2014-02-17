@@ -8,7 +8,7 @@
 
 #import "TATappapAPI.h"
 
-static NSString * const TAAPIURL = @"http://tapapp.com/";
+NSString * const TAAPIURL = @"http://tapapp.com/";
 
 @implementation TATappapAPI
 
@@ -96,6 +96,8 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
     }];
 }
 
+#pragma mark - Locals
+
 - (void)listNearLocalsWithinLocation:(CLLocationCoordinate2D)coordinate
                      completionBlock:(TATapappCompletionBlock)completionBlock
 {
@@ -103,7 +105,6 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
                                  @"longitud"    : @(coordinate.longitude),
                                  @"distancia"   : @(5000)};
     [self GET:@"/local/near" parameters:parameters resultClass:MTLLocal.class resultKeyPath:@"data.data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
-        AMBLog(@"local result %@", responseObject);
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             for (MTLLocal *local in responseObject) {
                 NSError *error = nil;
@@ -124,6 +125,61 @@ static NSString * const TAAPIURL = @"http://tapapp.com/";
                 completionBlock(responseObject);
             }
         }];
+    }];
+}
+
+- (void)postLocalWithLocal:(MTLLocal *)local
+           completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSDictionary *parameters = @{};
+    [self POST:@"/local" parameters:parameters resultClass:MTLLocal.class resultKeyPath:@"" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        NSLog(@"local response %@", responseObject);
+    }];
+}
+
+- (void)checkinLocal:(MTLLocal *)local
+     completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSString *route = [NSString stringWithFormat:@"/local/%d/checkin", [local.identifier integerValue]];
+    [self POST:route parameters:nil resultClass:MTLLocal.class resultKeyPath:@"data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@", [error localizedDescription]]];
+            return;
+        }
+        MTLLocal *localCheckIn = (MTLLocal *)responseObject;
+        NSLog(@"checkin response %@", responseObject);
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Te tenemos en %@", localCheckIn.nombre]];
+        if (completionBlock) {
+            completionBlock(responseObject);
+        }
+    }];
+}
+
+#pragma mark - User
+
+- (void)getSelfUserWithCompletionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSString *route = [NSString stringWithFormat:@"/user"];
+    [self GET:route parameters:nil resultClass:MTLUser.class resultKeyPath:@"data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        NSLog(@"User %@ %@", [responseObject class], responseObject);
+        MTLUser *mtlUser = (MTLUser *)responseObject;
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            NSError *errorMantle = nil;
+            User *user = [MTLManagedObjectAdapter managedObjectFromModel:mtlUser insertingIntoContext:localContext error:&errorMantle];
+            NSLog(@"user %@", user);
+        } completion:^(BOOL success, NSError *error) {
+            //
+        }];
+    }];
+}
+
+- (void)getUserWithCode:(NSInteger)code
+        completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSString *route = [NSString stringWithFormat:@"/user/%d", code];
+    [self GET:route parameters:nil resultClass:MTLUser.class resultKeyPath:@"data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        NSLog(@"User %@ %@", [responseObject class], responseObject);
+        
     }];
 }
 

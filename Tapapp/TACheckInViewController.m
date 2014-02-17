@@ -87,13 +87,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    NSString *checkInMessage = [NSString stringWithFormat:@"Check-in en %@", local.nombre];
-    UIAlertView *checkIn = [[UIAlertView alloc] initWithTitle:@"Check-in"
-                                                      message:checkInMessage
-                                                     delegate:self
-                                            cancelButtonTitle:nil
-                                            otherButtonTitles:@"Ok", nil];
-    [checkIn show];
+    [[TATappapAPI sharedInstance] checkinLocal:[MTLManagedObjectAdapter modelOfClass:MTLLocal.class fromManagedObject:local error:nil] completionBlock:^(id response) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+//    NSString *checkInMessage = [NSString stringWithFormat:@"Check-in en %@", local.nombre];
+//    UIAlertView *checkIn = [[UIAlertView alloc] initWithTitle:@"Check-in"
+//                                                      message:checkInMessage
+//                                                     delegate:self
+//                                            cancelButtonTitle:nil
+//                                            otherButtonTitles:@"Ok", nil];
+//    [checkIn show];
 }
 
 #pragma mark - UIAlertViewDelegate

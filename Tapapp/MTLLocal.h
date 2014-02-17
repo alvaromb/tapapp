@@ -21,6 +21,8 @@
 @property (copy, nonatomic, readonly) NSString * nombre;
 @property (copy, nonatomic, readonly) NSString * path_imagen;
 @property (copy, nonatomic, readonly) NSNumber * zip;
-//@property (copy, nonatomic, readonly) NSSet *tapas;
-//@property (copy, nonatomic, readonly) NSSet *comentarios;
+
+@property (strong, nonatomic) NSArray *tapas;
+@property (strong, nonatomic) NSArray *comentarios;
+
 @end

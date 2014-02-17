@@ -18,6 +18,7 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "Log.h"
+    #import "SVProgressHUD.h"
     #import "Mantle.h"
     #import "Overcoat.h"
     #import "AFNetworking.h"

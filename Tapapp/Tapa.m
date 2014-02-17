@@ -2,8 +2,8 @@
 //  Tapa.m
 //  Tapapp
 //
-//  Created by Álvaro on 09/12/13.
-//  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
+//  Created by Álvaro on 17/02/14.
+//  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
 #import "Tapa.h"
@@ -16,7 +16,9 @@
 @dynamic nombre;
 @dynamic path_imagen;
 @dynamic rating;
-@dynamic tipo;
+@dynamic desc;
+@dynamic fechaCreacion;
 @dynamic local;
+@dynamic tipo;
 
 @end

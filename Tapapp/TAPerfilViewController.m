@@ -212,7 +212,7 @@
     User *userProfile = [User MR_findFirstByAttribute:@"identifier" withValue:userId];
     
     __weak UIImageView *weakUserImageView = self.userImageView;
-    NSString *imagePath = [NSString stringWithFormat:@"http://tapapp.com/%@", userProfile.path_imagen];
+    NSString *imagePath = userProfile.path_imagen;
     [self.userImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imagePath]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         weakUserImageView.image = [[image resizedImage:CGSizeMake(160, 160) interpolationQuality:kCGInterpolationDefault] roundedCornerImage:80 borderSize:0];
     } failure:nil];
@@ -228,6 +228,14 @@
     self.commentAuthorLabel.text = @"@alvaro en Bar Bosch";
     self.commentLabel.text = @"\"Las langostas (bocatas con pan de llonguet) son las mejores que he probado! Recomiendo la de tortilla de patatas, increible!!!\"";
     [self.commentLabel sizeToFit];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[TATappapAPI sharedInstance] getSelfUserWithCompletionBlock:^(id response) {
+        NSLog(@"user downloaded");
+    }];
 }
 
 - (void)didReceiveMemoryWarning

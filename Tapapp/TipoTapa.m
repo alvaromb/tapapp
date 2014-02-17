@@ -2,8 +2,8 @@
 //  TipoTapa.m
 //  Tapapp
 //
-//  Created by Álvaro on 09/12/13.
-//  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
+//  Created by Álvaro on 17/02/14.
+//  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
 #import "TipoTapa.h"
@@ -13,6 +13,7 @@
 @implementation TipoTapa
 
 @dynamic tipo;
+@dynamic identifier;
 @dynamic tapas;
 
 @end

@@ -105,6 +105,7 @@
     [self.activityIndicator stopAnimating];
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    NSLog(@"Logged in with credentials %@, %@", username, password);
     if (username && password) {
         [[TATappapAPI sharedInstance] setBasicAuthorizationWithUsername:username password:password];
         [self presentAppOnceLoggedIn];

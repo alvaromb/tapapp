@@ -8,7 +8,10 @@
 
 #import "User.h"
 #import "MTLLocal.h"
+#import "MTLUser.h"
 #import "AFHTTPSessionManager.h"
+
+extern NSString * const TAAPIURL;
 
 typedef void (^TATapappCompletionBlock)(id response);
 
@@ -35,5 +38,16 @@ typedef void (^TATapappCompletionBlock)(id response);
 
 - (void)listNearLocalsWithinLocation:(CLLocationCoordinate2D)coordinate
                      completionBlock:(TATapappCompletionBlock)completionBlock;
+- (void)postLocalWithLocal:(MTLLocal *)local
+           completionBlock:(TATapappCompletionBlock)completionBlock;
+- (void)checkinLocal:(MTLLocal *)local
+     completionBlock:(TATapappCompletionBlock)completionBlock;
+
+
+#pragma mark - User
+
+- (void)getSelfUserWithCompletionBlock:(TATapappCompletionBlock)completionBlock;
+- (void)getUserWithCode:(NSInteger)code
+        completionBlock:(TATapappCompletionBlock)completionBlock;
 
 @end

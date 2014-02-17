@@ -2,8 +2,8 @@
 //  TipoTapa.h
 //  Tapapp
 //
-//  Created by Álvaro on 09/12/13.
-//  Copyright (c) 2013 Álvaro Medina Ballester. All rights reserved.
+//  Created by Álvaro on 17/02/14.
+//  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,6 +14,7 @@
 @interface TipoTapa : NSManagedObject
 
 @property (nonatomic, retain) NSString * tipo;
+@property (nonatomic, retain) NSNumber * identifier;
 @property (nonatomic, retain) NSSet *tapas;
 @end
 
