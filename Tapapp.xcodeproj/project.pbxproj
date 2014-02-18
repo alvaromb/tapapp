@@ -28,7 +28,13 @@
 		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
-		383FEB7B18A40F78008FE503 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 383FEB7A18A40F78008FE503 /* User.m */; };
+		383F7BAC18B3E6C000737FCD /* MTLComentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BAB18B3E6C000737FCD /* MTLComentario.m */; };
+		383F7BB218B3F79F00737FCD /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB118B3F79F00737FCD /* Comentario.m */; };
+		383F7BB518B3F79F00737FCD /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB418B3F79F00737FCD /* Local.m */; };
+		383F7BB818B3F79F00737FCD /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB718B3F79F00737FCD /* Tapa.m */; };
+		383F7BBB18B3F79F00737FCD /* TipoTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BBA18B3F79F00737FCD /* TipoTapa.m */; };
+		383F7BBE18B3F79F00737FCD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BBD18B3F79F00737FCD /* User.m */; };
+		383F7BC218B3F96C00737FCD /* TAPrivateMOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BC118B3F96C00737FCD /* TAPrivateMOC.m */; };
 		3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */; };
 		384D9D7D186E017800ED6D18 /* TATapaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D7C186E017800ED6D18 /* TATapaCell.m */; };
 		384D9D7F186F673A00ED6D18 /* perfil-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 384D9D7E186F673A00ED6D18 /* perfil-bg@2x.png */; };
@@ -39,7 +45,6 @@
 		384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 384D9D8B186F6AB000ED6D18 /* UIImage+RoundedCorner.m */; };
 		386314591890458100EE92C7 /* TAComentariosLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314581890458100EE92C7 /* TAComentariosLocalViewController.m */; };
 		3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145B18904A8600EE92C7 /* TAComentarioCell.m */; };
-		3863145F18904F7B00EE92C7 /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145E18904F7B00EE92C7 /* Comentario.m */; };
 		386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */; };
 		386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314641891A2DF00EE92C7 /* MTLLocal.m */; };
 		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
@@ -48,7 +53,6 @@
 		3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3878120D1871A06F00DDA967 /* TANuevoBarViewController.m */; };
 		387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387812141872F5FD00DDA967 /* TAMainViewController.m */; };
 		3879A25B18B0F979006BB1B9 /* MTLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3879A25A18B0F979006BB1B9 /* MTLUser.m */; };
-		388E149818A7D74E00D6B2CD /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 388E149718A7D74E00D6B2CD /* Local.m */; };
 		388FCB83189EB52B00FB7531 /* TATappapAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 388FCB82189EB52B00FB7531 /* TATappapAPI.m */; };
 		389C1C13185CD68F0064A523 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C1C12185CD68F0064A523 /* CoreLocation.framework */; };
 		389C1C17185DCA200064A523 /* TALocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 389C1C16185DCA200064A523 /* TALocationManager.m */; };
@@ -61,8 +65,6 @@
 		38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */; };
 		38FA115918B2966700EA21AB /* MTLTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA115818B2966700EA21AB /* MTLTapa.m */; };
 		38FA115C18B296FE00EA21AB /* MTLTipoTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA115B18B296FE00EA21AB /* MTLTipoTapa.m */; };
-		38FA115F18B299E900EA21AB /* TipoTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA115E18B299E900EA21AB /* TipoTapa.m */; };
-		38FA116218B2B51700EA21AB /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA116118B2B51700EA21AB /* Tapa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +107,20 @@
 		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
 		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
-		383FEB7918A40F78008FE503 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		383FEB7A18A40F78008FE503 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		383F7BAA18B3E6C000737FCD /* MTLComentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLComentario.h; sourceTree = "<group>"; };
+		383F7BAB18B3E6C000737FCD /* MTLComentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLComentario.m; sourceTree = "<group>"; };
+		383F7BB018B3F79E00737FCD /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
+		383F7BB118B3F79F00737FCD /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
+		383F7BB318B3F79F00737FCD /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		383F7BB418B3F79F00737FCD /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
+		383F7BB618B3F79F00737FCD /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
+		383F7BB718B3F79F00737FCD /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
+		383F7BB918B3F79F00737FCD /* TipoTapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoTapa.h; sourceTree = "<group>"; };
+		383F7BBA18B3F79F00737FCD /* TipoTapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoTapa.m; sourceTree = "<group>"; };
+		383F7BBC18B3F79F00737FCD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		383F7BBD18B3F79F00737FCD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		383F7BC018B3F96C00737FCD /* TAPrivateMOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPrivateMOC.h; sourceTree = "<group>"; };
+		383F7BC118B3F96C00737FCD /* TAPrivateMOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPrivateMOC.m; sourceTree = "<group>"; };
 		3841BB3D1857A1C9004BC85D /* TALocalCercaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocalCercaCell.h; sourceTree = "<group>"; };
 		3841BB3E1857A1C9004BC85D /* TALocalCercaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalCercaCell.m; sourceTree = "<group>"; };
 		384D9D7B186E017800ED6D18 /* TATapaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapaCell.h; sourceTree = "<group>"; };
@@ -125,8 +139,6 @@
 		386314581890458100EE92C7 /* TAComentariosLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAComentariosLocalViewController.m; sourceTree = "<group>"; };
 		3863145A18904A8600EE92C7 /* TAComentarioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAComentarioCell.h; sourceTree = "<group>"; };
 		3863145B18904A8600EE92C7 /* TAComentarioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAComentarioCell.m; sourceTree = "<group>"; };
-		3863145D18904F7B00EE92C7 /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
-		3863145E18904F7B00EE92C7 /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
 		386314601890635A00EE92C7 /* TANuevoComentarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANuevoComentarioViewController.h; sourceTree = "<group>"; };
 		386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoComentarioViewController.m; sourceTree = "<group>"; };
 		386314631891A2DF00EE92C7 /* MTLLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLLocal.h; sourceTree = "<group>"; };
@@ -143,8 +155,6 @@
 		387812141872F5FD00DDA967 /* TAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAMainViewController.m; sourceTree = "<group>"; };
 		3879A25918B0F979006BB1B9 /* MTLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLUser.h; sourceTree = "<group>"; };
 		3879A25A18B0F979006BB1B9 /* MTLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLUser.m; sourceTree = "<group>"; };
-		388E149618A7D74E00D6B2CD /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
-		388E149718A7D74E00D6B2CD /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		388FCB81189EB52B00FB7531 /* TATappapAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATappapAPI.h; sourceTree = "<group>"; };
 		388FCB82189EB52B00FB7531 /* TATappapAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATappapAPI.m; sourceTree = "<group>"; };
 		389C1C12185CD68F0064A523 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -166,10 +176,6 @@
 		38FA115818B2966700EA21AB /* MTLTapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLTapa.m; sourceTree = "<group>"; };
 		38FA115A18B296FE00EA21AB /* MTLTipoTapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLTipoTapa.h; sourceTree = "<group>"; };
 		38FA115B18B296FE00EA21AB /* MTLTipoTapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLTipoTapa.m; sourceTree = "<group>"; };
-		38FA115D18B299E900EA21AB /* TipoTapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoTapa.h; sourceTree = "<group>"; };
-		38FA115E18B299E900EA21AB /* TipoTapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoTapa.m; sourceTree = "<group>"; };
-		38FA116018B2B51700EA21AB /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
-		38FA116118B2B51700EA21AB /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
 		47A1506FFE03482A86698F5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2F78734A19458D8677FF94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -447,6 +453,8 @@
 				38A07D6A1854BBB500545211 /* TATapaMapper.m */,
 				38A07D7218564F6200545211 /* TALocalMapper.h */,
 				38A07D7318564F6200545211 /* TALocalMapper.m */,
+				383F7BC018B3F96C00737FCD /* TAPrivateMOC.h */,
+				383F7BC118B3F96C00737FCD /* TAPrivateMOC.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -491,6 +499,8 @@
 				38FA115818B2966700EA21AB /* MTLTapa.m */,
 				38FA115A18B296FE00EA21AB /* MTLTipoTapa.h */,
 				38FA115B18B296FE00EA21AB /* MTLTipoTapa.m */,
+				383F7BAA18B3E6C000737FCD /* MTLComentario.h */,
+				383F7BAB18B3E6C000737FCD /* MTLComentario.m */,
 			);
 			name = Mantle;
 			sourceTree = "<group>";
@@ -498,16 +508,16 @@
 		38FA115618B294A000EA21AB /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				38FA116018B2B51700EA21AB /* Tapa.h */,
-				38FA116118B2B51700EA21AB /* Tapa.m */,
-				38FA115D18B299E900EA21AB /* TipoTapa.h */,
-				38FA115E18B299E900EA21AB /* TipoTapa.m */,
-				388E149618A7D74E00D6B2CD /* Local.h */,
-				388E149718A7D74E00D6B2CD /* Local.m */,
-				383FEB7918A40F78008FE503 /* User.h */,
-				383FEB7A18A40F78008FE503 /* User.m */,
-				3863145D18904F7B00EE92C7 /* Comentario.h */,
-				3863145E18904F7B00EE92C7 /* Comentario.m */,
+				383F7BBC18B3F79F00737FCD /* User.h */,
+				383F7BBD18B3F79F00737FCD /* User.m */,
+				383F7BB918B3F79F00737FCD /* TipoTapa.h */,
+				383F7BBA18B3F79F00737FCD /* TipoTapa.m */,
+				383F7BB618B3F79F00737FCD /* Tapa.h */,
+				383F7BB718B3F79F00737FCD /* Tapa.m */,
+				383F7BB318B3F79F00737FCD /* Local.h */,
+				383F7BB418B3F79F00737FCD /* Local.m */,
+				383F7BB018B3F79E00737FCD /* Comentario.h */,
+				383F7BB118B3F79F00737FCD /* Comentario.m */,
 			);
 			name = "Managed Objects";
 			sourceTree = "<group>";
@@ -661,12 +671,10 @@
 				386314591890458100EE92C7 /* TAComentariosLocalViewController.m in Sources */,
 				3815FBBA1870A6EC00BEB85A /* TACheckInViewController.m in Sources */,
 				384D9D83186F68EC00ED6D18 /* UIImage+RoundedImage.m in Sources */,
-				38FA115F18B299E900EA21AB /* TipoTapa.m in Sources */,
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,
-				388E149818A7D74E00D6B2CD /* Local.m in Sources */,
 				3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */,
-				38FA116218B2B51700EA21AB /* Tapa.m in Sources */,
 				38FA115918B2966700EA21AB /* MTLTapa.m in Sources */,
+				383F7BAC18B3E6C000737FCD /* MTLComentario.m in Sources */,
 				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
 				386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */,
 				3879A25B18B0F979006BB1B9 /* MTLUser.m in Sources */,
@@ -674,24 +682,28 @@
 				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
 				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
 				38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */,
+				383F7BC218B3F96C00737FCD /* TAPrivateMOC.m in Sources */,
 				3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */,
 				386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */,
 				387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */,
-				3863145F18904F7B00EE92C7 /* Comentario.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
-				383FEB7B18A40F78008FE503 /* User.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
 				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
 				3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */,
+				383F7BBB18B3F79F00737FCD /* TipoTapa.m in Sources */,
 				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
+				383F7BB518B3F79F00737FCD /* Local.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
 				386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */,
 				384D9D7D186E017800ED6D18 /* TATapaCell.m in Sources */,
+				383F7BB218B3F79F00737FCD /* Comentario.m in Sources */,
 				3812616F1853999200F59EE4 /* TAPerfilViewController.m in Sources */,
 				386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */,
 				387812151872F5FD00DDA967 /* TAMainViewController.m in Sources */,
 				388FCB83189EB52B00FB7531 /* TATappapAPI.m in Sources */,
+				383F7BBE18B3F79F00737FCD /* User.m in Sources */,
+				383F7BB818B3F79F00737FCD /* Tapa.m in Sources */,
 				38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);

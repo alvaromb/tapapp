@@ -105,11 +105,11 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
                                  @"longitud"    : @(coordinate.longitude),
                                  @"distancia"   : @(5000)};
     [self GET:@"/local/near" parameters:parameters resultClass:MTLLocal.class resultKeyPath:@"data.data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
-        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        [TAPrivateMOC backgroundSaveWithBlock:^(NSManagedObjectContext *privateContext) {
             for (MTLLocal *local in responseObject) {
                 NSError *error = nil;
                 Local *localObj = [MTLManagedObjectAdapter managedObjectFromModel:local
-                                                             insertingIntoContext:localContext
+                                                             insertingIntoContext:privateContext
                                                                             error:&error];
                 if (error) {
                     NSLog(@"error creating MTLManagedObjectAdapter %@", error);

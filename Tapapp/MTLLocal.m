@@ -18,13 +18,8 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{@"identifier"  : @"id",
-             @"descripcion" : @"descripcion",
              @"path_imagen" : @"imagen",
-             @"calle"       : @"calle",
-             @"zip"         : @"codigo_postal",
-             @"latitud"     : @"latitud",
-             @"longitud"    : @"longitud",
-             @"nombre"      : @"nombre"};
+             @"zip"         : @"codigo_postal"};
 }
 
 + (NSString *)managedObjectEntityName
@@ -34,14 +29,7 @@
 
 + (NSDictionary *)managedObjectKeysByPropertyKey
 {
-    return @{@"calle"       : @"calle",
-             @"latitud"     : @"latitud",
-             @"longitud"    : @"longitud",
-             @"nombre"      : @"nombre",
-             @"imagen"      : @"path_imagen",
-             @"zip"         : @"zip",
-             @"identifier"  : @"identifier",
-             @"descripcion" : @"descripcion",};
+    return @{};
 }
 
 + (NSValueTransformer *)latitudEntityAttributeTransformer
@@ -67,11 +55,30 @@
     return [NSSet setWithObject:@"identifier"];
 }
 
-//+ (NSValueTransformer *)tapasEntityAttributeTransformer
-//{
-//    return [MTLValueTransformer reversibleTransformerWithBlock:^(NSDictionary *tapa) {
-//        return @"tapa";
-//    }];
-//}
++ (NSValueTransformer *)tapasJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:MTLTapa.class];
+}
+
++ (NSValueTransformer *)tapasEntityAttributeTransformer
+{
+    return [[self tapasJSONTransformer] mtl_invertedTransformer];
+}
+
++ (NSValueTransformer *)comentariosJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:MTLComentario.class];
+}
+
++ (NSValueTransformer *)comentariosEntityAttributeTransformer
+{
+    return [[self comentariosJSONTransformer] mtl_invertedTransformer];
+}
+
++ (NSDictionary *)relationshipModelClassesByPropertyKey
+{
+    return @{@"tapas"       : MTLTapa.class,
+             @"comentarios" : MTLComentario.class};
+}
 
 @end

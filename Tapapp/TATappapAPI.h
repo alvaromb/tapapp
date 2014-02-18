@@ -10,6 +10,7 @@
 #import "MTLLocal.h"
 #import "MTLUser.h"
 #import "AFHTTPSessionManager.h"
+#import "TAPrivateMOC.h"
 
 extern NSString * const TAAPIURL;
 

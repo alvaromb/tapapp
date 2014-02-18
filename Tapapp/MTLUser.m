@@ -51,7 +51,7 @@
 
 + (NSSet *)propertyKeysForManagedObjectUniquing
 {
-    return @"identifier";
+    return [NSSet setWithObject:@"identifier"];
 }
 
 @end

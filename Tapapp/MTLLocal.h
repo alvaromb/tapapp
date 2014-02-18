@@ -7,6 +7,8 @@
 //
 
 #import <CoreData/CoreData.h>
+#import "MTLTapa.h"
+#import "MTLComentario.h"
 
 @class Comentario, Tapa;
 

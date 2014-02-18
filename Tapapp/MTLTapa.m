@@ -16,7 +16,8 @@
 {
     return @{@"desc"            : @"descripcion",
              @"fechaCreacion"   : @"fecha_creacion",
-             @"identifier"      : @"id"};
+             @"identifier"      : @"id",
+             @"tipoTapa"        : @"tipo"};
 }
 
 + (NSValueTransformer *)tipoTapaJSONTransformer
@@ -52,11 +53,10 @@
              @"tipoTapa": @"tipo"};
 }
 
-//@property (nonatomic, retain) NSString * nombre;
-//@property (nonatomic, retain) NSString * path_imagen;
-//@property (nonatomic, retain) NSNumber * rating;
-//@property (nonatomic, retain) TipoTapa *tipo;
-//@property (nonatomic, retain) Local *local;
++ (NSDictionary *)relationshipModelClassesByPropertyKey
+{
+    return @{@"tipoTapa" : MTLTipoTapa.class};
+}
 
 + (NSString *)managedObjectEntityName
 {

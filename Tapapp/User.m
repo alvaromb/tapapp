@@ -2,7 +2,7 @@
 //  User.m
 //  Tapapp
 //
-//  Created by Álvaro on 06/02/14.
+//  Created by Álvaro on 18/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -11,13 +11,13 @@
 
 @implementation User
 
-@dynamic nombre;
-@dynamic username;
-@dynamic email;
-@dynamic path_imagen;
-@dynamic comments;
-@dynamic favoritos;
 @dynamic checkins;
+@dynamic comments;
+@dynamic email;
+@dynamic favoritos;
 @dynamic identifier;
+@dynamic nombre;
+@dynamic path_imagen;
+@dynamic username;
 
 @end

@@ -2,7 +2,7 @@
 //  Comentario.h
 //  Tapapp
 //
-//  Created by Álvaro on 22/01/14.
+//  Created by Álvaro on 18/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -13,9 +13,9 @@
 
 @interface Comentario : NSManagedObject
 
-@property (nonatomic, retain) NSString * texto;
 @property (nonatomic, retain) NSString * autor;
 @property (nonatomic, retain) NSDate * fecha;
+@property (nonatomic, retain) NSString * texto;
 @property (nonatomic, retain) Local *local;
 
 @end

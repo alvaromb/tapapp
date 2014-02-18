@@ -2,7 +2,7 @@
 //  Local.h
 //  Tapapp
 //
-//  Created by Álvaro on 09/02/14.
+//  Created by Álvaro on 18/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -14,14 +14,14 @@
 @interface Local : NSManagedObject
 
 @property (nonatomic, retain) NSString * calle;
+@property (nonatomic, retain) NSString * descripcion;
 @property (nonatomic, retain) NSNumber * distancia;
+@property (nonatomic, retain) NSNumber * identifier;
 @property (nonatomic, retain) NSNumber * latitud;
 @property (nonatomic, retain) NSNumber * longitud;
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSString * path_imagen;
 @property (nonatomic, retain) NSNumber * zip;
-@property (nonatomic, retain) NSNumber * identifier;
-@property (nonatomic, retain) NSString * descripcion;
 @property (nonatomic, retain) NSSet *comentarios;
 @property (nonatomic, retain) NSSet *tapas;
 @end

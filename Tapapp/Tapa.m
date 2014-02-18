@@ -2,7 +2,7 @@
 //  Tapa.m
 //  Tapapp
 //
-//  Created by Álvaro on 17/02/14.
+//  Created by Álvaro on 18/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -13,11 +13,12 @@
 
 @implementation Tapa
 
+@dynamic desc;
+@dynamic fechaCreacion;
 @dynamic nombre;
 @dynamic path_imagen;
 @dynamic rating;
-@dynamic desc;
-@dynamic fechaCreacion;
+@dynamic identifier;
 @dynamic local;
 @dynamic tipo;
 

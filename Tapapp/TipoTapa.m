@@ -2,7 +2,7 @@
 //  TipoTapa.m
 //  Tapapp
 //
-//  Created by Álvaro on 17/02/14.
+//  Created by Álvaro on 18/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 
 @implementation TipoTapa
 
-@dynamic tipo;
 @dynamic identifier;
+@dynamic tipo;
 @dynamic tapas;
 
 @end
