@@ -2,7 +2,7 @@
 //  Local.h
 //  Tapapp
 //
-//  Created by Álvaro on 18/02/14.
+//  Created by Álvaro on 19/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSNumber * longitud;
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSString * path_imagen;
-@property (nonatomic, retain) NSNumber * zip;
+@property (nonatomic, retain) NSString * zip;
 @property (nonatomic, retain) NSSet *comentarios;
 @property (nonatomic, retain) NSSet *tapas;
 @end

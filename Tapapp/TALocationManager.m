@@ -63,6 +63,13 @@
 //    if ([lastLocation.timestamp timeIntervalSinceNow] > 10) {
 //        return;
 //    }
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:self.lastLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (!error) {
+            self.placemark = [placemarks objectAtIndex:0];
+            NSLog(@"placemark");
+        }
+    }];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
 }
 

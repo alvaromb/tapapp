@@ -39,7 +39,8 @@ typedef void (^TATapappCompletionBlock)(id response);
 
 - (void)listNearLocalsWithinLocation:(CLLocationCoordinate2D)coordinate
                      completionBlock:(TATapappCompletionBlock)completionBlock;
-- (void)postLocalWithLocal:(MTLLocal *)local
+- (void)postLocalWithLocal:(NSDictionary *)local
+                     image:(UIImage *)image
            completionBlock:(TATapappCompletionBlock)completionBlock;
 - (void)checkinLocal:(MTLLocal *)local
      completionBlock:(TATapappCompletionBlock)completionBlock;

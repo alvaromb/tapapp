@@ -15,7 +15,7 @@
         <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path_imagen" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="zip" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="comentarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comentario" inverseName="local" inverseEntity="Comentario" syncable="YES"/>
         <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="local" inverseEntity="Tapa" syncable="YES"/>
     </entity>

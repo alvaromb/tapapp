@@ -12,12 +12,21 @@
 
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) TTTLocationFormatter *locationFormatter;
 
 @end
 
 @implementation TACercaViewController
 
 #pragma mark - Lazy instantiation
+
+- (TTTLocationFormatter *)locationFormatter
+{
+    if (!_locationFormatter) {
+        _locationFormatter = [[TTTLocationFormatter alloc] init];
+    }
+    return _locationFormatter;
+}
 
 - (MKMapView *)mapView
 {
@@ -120,7 +129,9 @@
 {
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.localLabel.text = local.nombre;
-    cell.distanceLabel.text = [NSString stringWithFormat:@"A %@", local.distancia];
+    NSString *distancia = [self.locationFormatter stringFromDistance:[local.distancia doubleValue]];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"A %@", distancia];
+    [cell.localImageView setImageWithURL:[NSURL URLWithString:[TAAPIURL stringByAppendingString:local.path_imagen]]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

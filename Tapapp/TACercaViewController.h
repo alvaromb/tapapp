@@ -12,6 +12,7 @@
 #import "TALocalMapper.h"
 #import "TALocalCercaCell.h"
 #import "TAInfoLocalViewController.h"
+#import "TTTLocationFormatter.h"
 
 @interface TACercaViewController : TABaseViewController <MKMapViewDelegate>
 

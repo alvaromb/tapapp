@@ -28,9 +28,9 @@
 		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
+		3825E3F718B547F600BA2979 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 3825E3F618B547F600BA2979 /* Local.m */; };
 		383F7BAC18B3E6C000737FCD /* MTLComentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BAB18B3E6C000737FCD /* MTLComentario.m */; };
 		383F7BB218B3F79F00737FCD /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB118B3F79F00737FCD /* Comentario.m */; };
-		383F7BB518B3F79F00737FCD /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB418B3F79F00737FCD /* Local.m */; };
 		383F7BB818B3F79F00737FCD /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB718B3F79F00737FCD /* Tapa.m */; };
 		383F7BBB18B3F79F00737FCD /* TipoTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BBA18B3F79F00737FCD /* TipoTapa.m */; };
 		383F7BBE18B3F79F00737FCD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BBD18B3F79F00737FCD /* User.m */; };
@@ -107,12 +107,12 @@
 		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
 		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
+		3825E3F518B547F600BA2979 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		3825E3F618B547F600BA2979 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		383F7BAA18B3E6C000737FCD /* MTLComentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLComentario.h; sourceTree = "<group>"; };
 		383F7BAB18B3E6C000737FCD /* MTLComentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLComentario.m; sourceTree = "<group>"; };
 		383F7BB018B3F79E00737FCD /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
 		383F7BB118B3F79F00737FCD /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
-		383F7BB318B3F79F00737FCD /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
-		383F7BB418B3F79F00737FCD /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		383F7BB618B3F79F00737FCD /* Tapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tapa.h; sourceTree = "<group>"; };
 		383F7BB718B3F79F00737FCD /* Tapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tapa.m; sourceTree = "<group>"; };
 		383F7BB918B3F79F00737FCD /* TipoTapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoTapa.h; sourceTree = "<group>"; };
@@ -508,14 +508,14 @@
 		38FA115618B294A000EA21AB /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
+				3825E3F518B547F600BA2979 /* Local.h */,
+				3825E3F618B547F600BA2979 /* Local.m */,
 				383F7BBC18B3F79F00737FCD /* User.h */,
 				383F7BBD18B3F79F00737FCD /* User.m */,
 				383F7BB918B3F79F00737FCD /* TipoTapa.h */,
 				383F7BBA18B3F79F00737FCD /* TipoTapa.m */,
 				383F7BB618B3F79F00737FCD /* Tapa.h */,
 				383F7BB718B3F79F00737FCD /* Tapa.m */,
-				383F7BB318B3F79F00737FCD /* Local.h */,
-				383F7BB418B3F79F00737FCD /* Local.m */,
 				383F7BB018B3F79E00737FCD /* Comentario.h */,
 				383F7BB118B3F79F00737FCD /* Comentario.m */,
 			);
@@ -691,8 +691,8 @@
 				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
 				3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */,
 				383F7BBB18B3F79F00737FCD /* TipoTapa.m in Sources */,
+				3825E3F718B547F600BA2979 /* Local.m in Sources */,
 				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
-				383F7BB518B3F79F00737FCD /* Local.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,
 				386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */,

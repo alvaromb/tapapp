@@ -13,12 +13,13 @@
 @property (strong, nonatomic) UIButton *closeButton;
 @property (strong, nonatomic) UIButton *newBarButton;
 @property (strong, nonatomic) UITextField *nombreTextField;
-@property (strong, nonatomic) UITextField *descripcionTextField;
+@property (strong, nonatomic) UITextField *telefonoTextField;
 @property (strong, nonatomic) UISwitch *creditCardSwitch;
 @property (strong, nonatomic) UILabel *creditCardLabel;
 @property (strong, nonatomic) UIButton *addPhotoButton;
 @property (strong, nonatomic) UIImagePickerController *picker;
 @property (strong, nonatomic) UIButton *selectedImageButton;
+@property (strong, nonatomic) UIImage *selectedImage;
 @property (nonatomic) BOOL deleteImageButtonPressed;
 
 @end
@@ -58,13 +59,13 @@
     return _nombreTextField;
 }
 
-- (UITextField *)descripcionTextField
+- (UITextField *)telefonoTextField
 {
-    if (!_descripcionTextField) {
-        _descripcionTextField = [[UITextField alloc] init];
-        _descripcionTextField.placeholder = @"Descripcion";
+    if (!_telefonoTextField) {
+        _telefonoTextField = [[UITextField alloc] init];
+        _telefonoTextField.placeholder = @"Telefono (opcional)";
     }
-    return _descripcionTextField;
+    return _telefonoTextField;
 }
 
 - (UISwitch *)creditCardSwitch
@@ -144,7 +145,7 @@
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.nombreTextField];
-    [self.view addSubview:self.descripcionTextField];
+    [self.view addSubview:self.telefonoTextField];
     [self.view addSubview:self.creditCardSwitch];
     [self.view addSubview:self.creditCardLabel];
     [self.view addSubview:self.addPhotoButton];
@@ -155,7 +156,7 @@
 {
     [super viewWillAppear:animated];
     self.nombreTextField.frame      = CGRectMake(10, 10, 300, 30);
-    self.descripcionTextField.frame = CGRectMake(10, 55, 300, 30);
+    self.telefonoTextField.frame    = CGRectMake(10, 55, 300, 30);
     self.creditCardSwitch.frame     = CGRectMake(260, 100, 0, 0);
     self.creditCardLabel.frame      = CGRectMake(10, 106, 240, 18);
     self.addPhotoButton.frame       = CGRectMake(10, 140, 100, 30);
@@ -179,6 +180,7 @@
     if (selectedImage) {
         [self.selectedImageButton setImage:selectedImage forState:UIControlStateNormal];
         self.selectedImageButton.enabled = YES;
+        self.selectedImage = selectedImage;
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -226,12 +228,22 @@
 
 - (void)createBar
 {
-    UIAlertView *createBar = [[UIAlertView alloc] initWithTitle:@"Crear"
-                                                        message:@"Crea un nuevo bar"
-                                                       delegate:nil
-                                              cancelButtonTitle:nil
-                                              otherButtonTitles:@"Ok", nil];
-    [createBar show];
+    NSDictionary *localData = @{@"nombre"           : self.nombreTextField.text,
+                                @"latitud"          : @([TALocationManager sharedInstance].lastLocation.coordinate.latitude),
+                                @"longitud"         : @([TALocationManager sharedInstance].lastLocation.coordinate.longitude),
+                                @"calle"            : [TALocationManager sharedInstance].placemark.addressDictionary[@"Street"],
+                                @"distrito"         : [TALocationManager sharedInstance].placemark.administrativeArea,
+                                @"tipo_calle"       : [TALocationManager sharedInstance].placemark.subThoroughfare,
+                                @"tipo_direccion"   : [TALocationManager sharedInstance].placemark.thoroughfare,
+                                @"codigo_postal"    : [TALocationManager sharedInstance].placemark.postalCode,
+                                @"pais"             : [TALocationManager sharedInstance].placemark.country,
+                                @"telefono"         : ([self.telefonoTextField.text isEqualToString:@""]) ? @"" : self.telefonoTextField.text,
+                                @"tipo_local"       : @(1)};
+    // TODO tipo_local
+    [[TATappapAPI sharedInstance] postLocalWithLocal:localData image:self.selectedImage completionBlock:^(id response) {
+        [SVProgressHUD showSuccessWithStatus:@"Local creado!"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 - (void)addPhoto

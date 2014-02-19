@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *lastLocation;
+@property (strong, nonatomic) CLPlacemark *placemark;
 
 + (TALocationManager *)sharedInstance;
 - (void)setup;

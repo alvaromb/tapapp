@@ -128,12 +128,23 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
     }];
 }
 
-- (void)postLocalWithLocal:(MTLLocal *)local
+- (void)postLocalWithLocal:(NSDictionary *)local
+                     image:(UIImage *)image
            completionBlock:(TATapappCompletionBlock)completionBlock
 {
-    NSDictionary *parameters = @{};
-    [self POST:@"/local" parameters:parameters resultClass:MTLLocal.class resultKeyPath:@"" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    [self POST:@"/local" parameters:local resultClass:MTLLocal.class resultKeyPath:@"data" constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.7);
+        [formData appendPartWithFileData:imageData name:@"imagen" fileName:@"imagen" mimeType:@"image/jpeg"];
+    } completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
         NSLog(@"local response %@", responseObject);
+        MTLLocal *local = (MTLLocal *)responseObject;
+        [TAPrivateMOC backgroundSaveWithBlock:^(NSManagedObjectContext *privateContext) {
+            [MTLManagedObjectAdapter managedObjectFromModel:local insertingIntoContext:privateContext error:nil];
+        } completion:^(BOOL success, NSError *error) {
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
+        }];
     }];
 }
 
