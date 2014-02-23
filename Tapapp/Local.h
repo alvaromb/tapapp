@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Comentario, Tapa, TipoLocal;
+@class Comentario, Tapa, TipoLocal, User;
 
 @interface Local : NSManagedObject
 
@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSSet *comentarios;
 @property (nonatomic, retain) NSSet *tapas;
 @property (nonatomic, retain) TipoLocal *tipo;
+@property (nonatomic, retain) User *userFaver;
 @end
 
 @interface Local (CoreDataGeneratedAccessors)

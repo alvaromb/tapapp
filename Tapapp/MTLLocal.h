@@ -10,6 +10,7 @@
 #import "MTLTapa.h"
 #import "MTLComentario.h"
 #import "MTLTipoLocal.h"
+#import "MTLUser.h"
 
 @class Comentario, Tapa;
 
@@ -28,5 +29,6 @@
 @property (strong, nonatomic) NSArray *tapas;
 @property (strong, nonatomic) NSArray *comentarios;
 @property (strong, nonatomic) MTLTipoLocal *tipo;
+@property (strong, nonatomic) MTLUser *userFaver;
 
 @end

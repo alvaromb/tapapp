@@ -15,7 +15,8 @@
     return @{@"identifier"      : @"id",
              @"numCheckins"     : @"numero_checkins",
              @"numComentarios"  : @"numero_comentarios",
-             @"numFavoritos"    : @"numero_favoritos"};
+             @"numFavoritos"    : @"numero_favoritos",
+             @"favs"            : [NSNull null]};
 }
 
 + (NSString *)managedObjectEntityName
@@ -25,10 +26,10 @@
 
 + (NSDictionary *)managedObjectKeysByPropertyKey
 {
-    return @{@"imagen" : @"path_imagen",
-             @"numCheckins": @"checkins",
-             @"numComentarios": @"comments",
-             @"numFavoritos": @"favoritos"};
+    return @{@"imagen"          : @"path_imagen",
+             @"numCheckins"     : @"checkins",
+             @"numComentarios"  : @"comments",
+             @"numFavoritos"    : @"favoritos"};
 }
 
 + (NSValueTransformer *)imagenJSONTransformer
@@ -47,6 +48,16 @@
     } reverseBlock:^id(NSString *str) {
         return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", TAAPIURL, str]];
     }];
+}
+
++ (NSValueTransformer *)favsJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:MTLLocal.class];
+}
+
++ (NSValueTransformer *)favsEntityAttributeTransformer
+{
+    return [[self favsJSONTransformer] mtl_invertedTransformer];
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing

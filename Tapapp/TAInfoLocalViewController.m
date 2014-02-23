@@ -174,12 +174,18 @@
 
 - (void)addFavorito
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Añadir favorito"
-                                                        message:[NSString stringWithFormat:@"%@ añadido a favoritos", self.local.nombre]
-                                                       delegate:nil
-                                              cancelButtonTitle:nil
-                                              otherButtonTitles:@"Ok", nil];
-    [alertView show];
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    NSString *userCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_code"];
+    User *selfUser = [User MR_findFirstByAttribute:@"identifier" withValue:userCode inContext:context];
+    [selfUser addFavsObject:self.local];
+    NSError *error = nil;
+    [context save:&error];
+    if (error) {
+        NSLog(@"Error putting favorites %@", error);
+    }
+    else {
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ añadido a favoritos", self.local.nombre]];
+    }
 }
 
 - (void)viewComments

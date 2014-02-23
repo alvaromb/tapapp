@@ -19,7 +19,8 @@
 {
     return @{@"identifier"  : @"id",
              @"path_imagen" : @"imagen",
-             @"zip"         : @"codigo_postal"};
+             @"zip"         : @"codigo_postal",
+             @"userFaver"   : [NSNull null]};
 }
 
 + (NSString *)managedObjectEntityName
@@ -29,6 +30,7 @@
 
 + (NSDictionary *)managedObjectKeysByPropertyKey
 {
+//    return @{@"userFaver" : [NSNull null]};
     return @{};
 }
 
@@ -85,11 +87,22 @@
     return [[self tipoJSONTransformer] mtl_invertedTransformer];
 }
 
++ (NSValueTransformer *)userFaverJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:MTLUser.class];
+}
+
++ (NSValueTransformer *)userFaverEntityAttributeTransformer
+{
+    return [[self userFaverJSONTransformer] mtl_invertedTransformer];
+}
+
 + (NSDictionary *)relationshipModelClassesByPropertyKey
 {
     return @{@"tapas"       : MTLTapa.class,
              @"comentarios" : MTLComentario.class,
-             @"tipo"        : MTLTipoLocal.class};
+             @"tipo"        : MTLTipoLocal.class,
+             @"userFaver"   : MTLUser.class};
 }
 
 @end

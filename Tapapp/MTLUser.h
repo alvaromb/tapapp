@@ -7,6 +7,7 @@
 //
 
 #import "MTLModel.h"
+#import "MTLLocal.h"
 
 @interface MTLUser : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
@@ -17,5 +18,6 @@
 @property (nonatomic, copy) NSNumber *numCheckins;
 @property (nonatomic, copy) NSNumber *numComentarios;
 @property (nonatomic, copy) NSNumber *numFavoritos;
+@property (nonatomic, copy) NSArray *favs;
 
 @end

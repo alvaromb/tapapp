@@ -19,6 +19,7 @@
         <relationship name="comentarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comentario" inverseName="local" inverseEntity="Comentario" syncable="YES"/>
         <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="local" inverseEntity="Tapa" syncable="YES"/>
         <relationship name="tipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoLocal" inverseName="locales" inverseEntity="TipoLocal" syncable="YES"/>
+        <relationship name="userFaver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favs" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Tapa" representedClassName="Tapa" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -49,13 +50,14 @@
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path_imagen" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="favs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Local" inverseName="userFaver" inverseEntity="Local" syncable="YES"/>
     </entity>
     <elements>
         <element name="Comentario" positionX="0" positionY="0" width="128" height="105"/>
-        <element name="Local" positionX="279" positionY="-18" width="128" height="223"/>
+        <element name="Local" positionX="279" positionY="-18" width="128" height="238"/>
         <element name="Tapa" positionX="72" positionY="-261" width="128" height="165"/>
         <element name="TipoTapa" positionX="412" positionY="-144" width="128" height="90"/>
-        <element name="User" positionX="-182" positionY="-72" width="128" height="165"/>
+        <element name="User" positionX="-108" positionY="153" width="128" height="178"/>
         <element name="TipoLocal" positionX="457" positionY="81" width="128" height="88"/>
     </elements>
 </model>

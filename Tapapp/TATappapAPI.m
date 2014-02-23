@@ -86,6 +86,7 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
         NSString *username = responseObject[@"data"][@"username"];
         [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
         [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"data"][@"id"] forKey:@"user_code"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self setBasicAuthorizationWithUsername:username password:password];
         if (completionBlock) {

@@ -2,11 +2,12 @@
 //  User.m
 //  Tapapp
 //
-//  Created by Álvaro on 18/02/14.
+//  Created by Álvaro on 23/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
 #import "User.h"
+#import "Local.h"
 
 
 @implementation User
@@ -19,5 +20,6 @@
 @dynamic nombre;
 @dynamic path_imagen;
 @dynamic username;
+@dynamic favs;
 
 @end

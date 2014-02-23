@@ -10,6 +10,7 @@
 #import "Comentario.h"
 #import "Tapa.h"
 #import "TipoLocal.h"
+#import "User.h"
 
 
 @implementation Local
@@ -26,5 +27,6 @@
 @dynamic comentarios;
 @dynamic tapas;
 @dynamic tipo;
+@dynamic userFaver;
 
 @end
