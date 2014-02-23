@@ -129,13 +129,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.localLabel.frame = CGRectMake(0, 20, self.view.bounds.size.width, 22);
-    self.descripcionLabel.frame = CGRectMake(0, 50, self.view.bounds.size.width, 20);
-    self.localImageView.frame = CGRectMake(0, 0, 0, 0);
-    self.favoritoButton.frame = CGRectMake(10, 140, 150, 30);
-    self.comentariosButton.frame = CGRectMake(160, 140, 150, 30);
-    self.addTapaButton.frame = CGRectMake(10, 175, 150, 30);
-    self.tableView.frame = CGRectMake(0, 210, 320, self.view.frame.size.height - 210);
+    self.localLabel.frame           = CGRectMake(0, 20, self.view.bounds.size.width, 22);
+    self.descripcionLabel.frame     = CGRectMake(0, 50, self.view.bounds.size.width, 20);
+    self.localImageView.frame       = CGRectMake(0, 0, 0, 0);
+    self.favoritoButton.frame       = CGRectMake(10, 140, 150, 30);
+    self.comentariosButton.frame    = CGRectMake(160, 140, 150, 30);
+    self.addTapaButton.frame        = CGRectMake(10, 175, 150, 30);
+    self.tableView.frame            = CGRectMake(0, 210, 320, self.view.frame.size.height - 210);
     
     self.localLabel.text = self.local.nombre;
     self.descripcionLabel.text = self.local.calle;

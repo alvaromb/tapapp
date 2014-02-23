@@ -130,6 +130,13 @@ withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsControl
     return 50.0f;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TATapaViewController *tapaViewController = [[TATapaViewController alloc] init];
+    [tapaViewController setTapa:[self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:tapaViewController animated:YES];
+}
+
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller

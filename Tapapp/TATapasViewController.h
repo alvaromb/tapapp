@@ -9,6 +9,7 @@
 #import "TATapaMapper.h"
 #import "TATapaCell.h"
 #import "TTTLocationFormatter.h"
+#import "TATapaViewController.h"
 
 @interface TATapasViewController : TABaseViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 
