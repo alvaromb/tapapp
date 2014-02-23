@@ -154,8 +154,9 @@
 - (void)loginRegisterDidFinishedWithSuccess:(TALoginRegisterViewController *)viewController
 {
     [viewController dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Enhorabuena!"
-                                                            message:@"Te has registrado correctamente"
+                                                            message:@"Has entrado correctamente"
                                                            delegate:nil
                                                   cancelButtonTitle:nil
                                                   otherButtonTitles:@"Ok", nil];

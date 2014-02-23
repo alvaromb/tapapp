@@ -229,6 +229,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (void)sendRegisterLogin
 {
+    void (^loginBlock)() = ^void{
+        [self dismissViewControllerAnimated:YES completion:^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
+        }];
+    };
     if (self.isRegistering) {
         [[TATappapAPI sharedInstance]
          registerWithEmail:self.emailTextField.text
@@ -237,9 +242,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
          name:self.nombreTextField.text
          image:self.profileImageButton.imageView.image
          completionBlock:^(id response) {
-             [self dismissViewControllerAnimated:YES completion:^{
-                 [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
-             }];
+             [self.delegate loginRegisterDidFinishedWithSuccess:self];
          }];
     }
     else {
@@ -247,10 +250,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
          loginWithUsername:self.usernameTextField.text
          password:self.passwordTextField.text
          completionBlock:^(id response) {
-             NSLog(@"Me he logueado");
+             [self.delegate loginRegisterDidFinishedWithSuccess:self];
          }];
     }
-//    [self.delegate loginRegisterDidFinishedWithSuccess:self];
 }
 
 @end
