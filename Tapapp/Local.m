@@ -2,13 +2,14 @@
 //  Local.m
 //  Tapapp
 //
-//  Created by Álvaro on 19/02/14.
+//  Created by Álvaro on 23/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
 #import "Local.h"
 #import "Comentario.h"
 #import "Tapa.h"
+#import "TipoLocal.h"
 
 
 @implementation Local
@@ -24,5 +25,6 @@
 @dynamic zip;
 @dynamic comentarios;
 @dynamic tapas;
+@dynamic tipo;
 
 @end

@@ -18,6 +18,7 @@
         <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="comentarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comentario" inverseName="local" inverseEntity="Comentario" syncable="YES"/>
         <relationship name="tapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tapa" inverseName="local" inverseEntity="Tapa" syncable="YES"/>
+        <relationship name="tipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoLocal" inverseName="locales" inverseEntity="TipoLocal" syncable="YES"/>
     </entity>
     <entity name="Tapa" representedClassName="Tapa" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,6 +29,11 @@
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="local" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Local" inverseName="tapas" inverseEntity="Local" syncable="YES"/>
         <relationship name="tipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoTapa" inverseName="tapas" inverseEntity="TipoTapa" syncable="YES"/>
+    </entity>
+    <entity name="TipoLocal" representedClassName="TipoLocal" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="locales" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Local" inverseName="tipo" inverseEntity="Local" syncable="YES"/>
     </entity>
     <entity name="TipoTapa" representedClassName="TipoTapa" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -45,10 +51,11 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Comentario" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Local" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Tapa" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="TipoTapa" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Comentario" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Local" positionX="279" positionY="-18" width="128" height="223"/>
+        <element name="Tapa" positionX="72" positionY="-261" width="128" height="165"/>
+        <element name="TipoTapa" positionX="412" positionY="-144" width="128" height="90"/>
+        <element name="User" positionX="-182" positionY="-72" width="128" height="165"/>
+        <element name="TipoLocal" positionX="457" positionY="81" width="128" height="88"/>
     </elements>
 </model>

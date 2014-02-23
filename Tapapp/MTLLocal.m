@@ -75,10 +75,21 @@
     return [[self comentariosJSONTransformer] mtl_invertedTransformer];
 }
 
++ (NSValueTransformer *)tipoJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:MTLTipoLocal.class];
+}
+
++ (NSValueTransformer *)tipoEntityAttributeTransformer
+{
+    return [[self tipoJSONTransformer] mtl_invertedTransformer];
+}
+
 + (NSDictionary *)relationshipModelClassesByPropertyKey
 {
     return @{@"tapas"       : MTLTapa.class,
-             @"comentarios" : MTLComentario.class};
+             @"comentarios" : MTLComentario.class,
+             @"tipo"        : MTLTipoLocal.class};
 }
 
 @end

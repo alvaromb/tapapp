@@ -98,6 +98,15 @@
     self.tableView.frame = CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - navigationBarHeight);
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        [self.refreshControl beginRefreshing];
+        [self refreshTapas];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

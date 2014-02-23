@@ -9,6 +9,7 @@
 #import "TACercaViewController.h"
 #import "TATapasViewController.h"
 #import "TAPerfilViewController.h"
+#import "TipoLocal.h"
 #import "TALoginRegisterViewController.h"
 
 @interface TAMainViewController : UIViewController <TALoginDelegate>

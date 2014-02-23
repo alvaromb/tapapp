@@ -99,9 +99,11 @@
 - (void)locationAvailable
 {
 //    [TATapaMapper insertDummyTapas];
+    [TipoLocal MR_truncateAll];
     [TipoTapa MR_truncateAll];
     [Tapa MR_truncateAll];
     [Local MR_truncateAll];
+    [self createLocalTypes];
     [self.activityIndicator stopAnimating];
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
@@ -112,6 +114,30 @@
     }
     else {
         [self presentLoginWindow];
+    }
+}
+
+- (void)createLocalTypes
+{
+    MTLTipoLocal *tipoBar = [[MTLTipoLocal alloc] init];
+    tipoBar.identifier = @(1);
+    tipoBar.tipo = @"Bar";
+    MTLTipoLocal *tipoRestaurante = [[MTLTipoLocal alloc] init];
+    tipoRestaurante.identifier = @(2);
+    tipoRestaurante.tipo = @"Restaurante";
+    NSError *error = nil;
+    TipoLocal *bar = [MTLManagedObjectAdapter managedObjectFromModel:tipoBar
+                                                insertingIntoContext:[NSManagedObjectContext MR_defaultContext]
+                                                               error:&error];
+    TipoLocal *restaurante = [MTLManagedObjectAdapter managedObjectFromModel:tipoRestaurante
+                                                        insertingIntoContext:[NSManagedObjectContext MR_defaultContext]
+                                                                       error:&error];
+    if (bar && restaurante) {
+        [[NSManagedObjectContext MR_defaultContext] save:&error];
+        NSAssert(!error, @"Error saving in default context %@", error);
+    }
+    else {
+        NSLog(@"Error : %@", error);
     }
 }
 

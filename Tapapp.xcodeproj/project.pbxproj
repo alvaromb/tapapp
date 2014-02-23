@@ -28,7 +28,6 @@
 		381680D418539E12003ADAE1 /* perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D118539E12003ADAE1 /* perfil@2x.png */; };
 		381680D518539E12003ADAE1 /* tapas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D218539E12003ADAE1 /* tapas@2x.png */; };
 		381680D618539E12003ADAE1 /* cerca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381680D318539E12003ADAE1 /* cerca@2x.png */; };
-		3825E3F718B547F600BA2979 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 3825E3F618B547F600BA2979 /* Local.m */; };
 		383F7BAC18B3E6C000737FCD /* MTLComentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BAB18B3E6C000737FCD /* MTLComentario.m */; };
 		383F7BB218B3F79F00737FCD /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB118B3F79F00737FCD /* Comentario.m */; };
 		383F7BB818B3F79F00737FCD /* Tapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F7BB718B3F79F00737FCD /* Tapa.m */; };
@@ -61,6 +60,9 @@
 		38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D631854BB0600545211 /* Tapapp.xcdatamodeld */; };
 		38A07D6B1854BBB500545211 /* TATapaMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D6A1854BBB500545211 /* TATapaMapper.m */; };
 		38A07D7418564F6200545211 /* TALocalMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A07D7318564F6200545211 /* TALocalMapper.m */; };
+		38CAEE9A18BA5B8D0086D709 /* MTLTipoLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEE9918BA5B8D0086D709 /* MTLTipoLocal.m */; };
+		38CAEE9D18BA5F940086D709 /* TipoLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEE9C18BA5F940086D709 /* TipoLocal.m */; };
+		38CAEEA018BA5F940086D709 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEE9F18BA5F940086D709 /* Local.m */; };
 		38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */; };
 		38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */; };
 		38FA115918B2966700EA21AB /* MTLTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA115818B2966700EA21AB /* MTLTapa.m */; };
@@ -107,8 +109,6 @@
 		381680D118539E12003ADAE1 /* perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perfil@2x.png"; sourceTree = "<group>"; };
 		381680D218539E12003ADAE1 /* tapas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapas@2x.png"; sourceTree = "<group>"; };
 		381680D318539E12003ADAE1 /* cerca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cerca@2x.png"; sourceTree = "<group>"; };
-		3825E3F518B547F600BA2979 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
-		3825E3F618B547F600BA2979 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		383F7BAA18B3E6C000737FCD /* MTLComentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLComentario.h; sourceTree = "<group>"; };
 		383F7BAB18B3E6C000737FCD /* MTLComentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLComentario.m; sourceTree = "<group>"; };
 		383F7BB018B3F79E00737FCD /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
@@ -168,6 +168,12 @@
 		38A07D7218564F6200545211 /* TALocalMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocalMapper.h; sourceTree = "<group>"; };
 		38A07D7318564F6200545211 /* TALocalMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocalMapper.m; sourceTree = "<group>"; };
 		38A35A6718A64B5200A55EE0 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		38CAEE9818BA5B8D0086D709 /* MTLTipoLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLTipoLocal.h; sourceTree = "<group>"; };
+		38CAEE9918BA5B8D0086D709 /* MTLTipoLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLTipoLocal.m; sourceTree = "<group>"; };
+		38CAEE9B18BA5F940086D709 /* TipoLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoLocal.h; sourceTree = "<group>"; };
+		38CAEE9C18BA5F940086D709 /* TipoLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoLocal.m; sourceTree = "<group>"; };
+		38CAEE9E18BA5F940086D709 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		38CAEE9F18BA5F940086D709 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		38CDB2DE189589B1009764BF /* TALoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALoginRegisterViewController.h; sourceTree = "<group>"; };
 		38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALoginRegisterViewController.m; sourceTree = "<group>"; };
 		38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseViewController.h; sourceTree = "<group>"; };
@@ -501,6 +507,8 @@
 				38FA115B18B296FE00EA21AB /* MTLTipoTapa.m */,
 				383F7BAA18B3E6C000737FCD /* MTLComentario.h */,
 				383F7BAB18B3E6C000737FCD /* MTLComentario.m */,
+				38CAEE9818BA5B8D0086D709 /* MTLTipoLocal.h */,
+				38CAEE9918BA5B8D0086D709 /* MTLTipoLocal.m */,
 			);
 			name = Mantle;
 			sourceTree = "<group>";
@@ -508,8 +516,10 @@
 		38FA115618B294A000EA21AB /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				3825E3F518B547F600BA2979 /* Local.h */,
-				3825E3F618B547F600BA2979 /* Local.m */,
+				38CAEE9E18BA5F940086D709 /* Local.h */,
+				38CAEE9F18BA5F940086D709 /* Local.m */,
+				38CAEE9B18BA5F940086D709 /* TipoLocal.h */,
+				38CAEE9C18BA5F940086D709 /* TipoLocal.m */,
 				383F7BBC18B3F79F00737FCD /* User.h */,
 				383F7BBD18B3F79F00737FCD /* User.m */,
 				383F7BB918B3F79F00737FCD /* TipoTapa.h */,
@@ -678,6 +688,7 @@
 				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
 				386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */,
 				3879A25B18B0F979006BB1B9 /* MTLUser.m in Sources */,
+				38CAEE9D18BA5F940086D709 /* TipoLocal.m in Sources */,
 				38FA115C18B296FE00EA21AB /* MTLTipoTapa.m in Sources */,
 				384D9D8E186F6AB000ED6D18 /* UIImage+RoundedCorner.m in Sources */,
 				384D9D8D186F6AB000ED6D18 /* UIImage+Resize.m in Sources */,
@@ -687,11 +698,12 @@
 				386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */,
 				387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */,
 				3841BB3F1857A1C9004BC85D /* TALocalCercaCell.m in Sources */,
+				38CAEEA018BA5F940086D709 /* Local.m in Sources */,
 				3812616D1853999200F59EE4 /* TACercaViewController.m in Sources */,
+				38CAEE9A18BA5B8D0086D709 /* MTLTipoLocal.m in Sources */,
 				38A07D7418564F6200545211 /* TALocalMapper.m in Sources */,
 				3878120E1871A06F00DDA967 /* TANuevoBarViewController.m in Sources */,
 				383F7BBB18B3F79F00737FCD /* TipoTapa.m in Sources */,
-				3825E3F718B547F600BA2979 /* Local.m in Sources */,
 				38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */,
 				3812613F1853993200F59EE4 /* TAAppDelegate.m in Sources */,
 				38A07D651854BB0600545211 /* Tapapp.xcdatamodeld in Sources */,

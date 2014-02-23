@@ -2,14 +2,14 @@
 //  Local.h
 //  Tapapp
 //
-//  Created by Álvaro on 19/02/14.
+//  Created by Álvaro on 23/02/14.
 //  Copyright (c) 2014 Álvaro Medina Ballester. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Comentario, Tapa;
+@class Comentario, Tapa, TipoLocal;
 
 @interface Local : NSManagedObject
 
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSString * zip;
 @property (nonatomic, retain) NSSet *comentarios;
 @property (nonatomic, retain) NSSet *tapas;
+@property (nonatomic, retain) TipoLocal *tipo;
 @end
 
 @interface Local (CoreDataGeneratedAccessors)

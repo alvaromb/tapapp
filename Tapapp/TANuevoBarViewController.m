@@ -239,7 +239,7 @@
                                 @"pais"             : [TALocationManager sharedInstance].placemark.country,
                                 @"telefono"         : ([self.telefonoTextField.text isEqualToString:@""]) ? @"" : self.telefonoTextField.text,
                                 @"tipo_local"       : @(1)};
-    // TODO tipo_local
+    // TODO tipo_local  
     [[TATappapAPI sharedInstance] postLocalWithLocal:localData image:self.selectedImage completionBlock:^(id response) {
         [SVProgressHUD showSuccessWithStatus:@"Local creado!"];
         [self dismissViewControllerAnimated:YES completion:nil];
