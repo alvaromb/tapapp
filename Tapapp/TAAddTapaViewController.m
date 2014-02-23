@@ -12,16 +12,27 @@
 
 @property (strong, nonatomic) UIButton *closeViewButton;
 @property (strong, nonatomic) UIButton *addTapaButton;
-@property (strong, nonatomic) UITextView *tapaTextView;
+@property (strong, nonatomic) UITextField *nombreTextField;
+@property (strong, nonatomic) UITextField *tapaTextView;
 @property (strong, nonatomic) UIPickerView *tipoTapaControl;
 @property (strong, nonatomic) NSArray *tipoTapaArray;
 @property (strong, nonatomic) TipoTapa *selectedTipoTapa;
+@property (strong, nonatomic) UIButton *tapaImageButton;
 
 @end
 
 @implementation TAAddTapaViewController
 
 #pragma mark - Lazy instantiation
+
+- (UITextField *)nombreTextField
+{
+    if (!_nombreTextField) {
+        _nombreTextField = [[UITextField alloc] init];
+        _nombreTextField.placeholder = @"Nombre de la tapa";
+    }
+    return _nombreTextField;
+}
 
 - (UIButton *)closeViewButton
 {
@@ -47,12 +58,12 @@
     return _addTapaButton;
 }
 
-- (UITextView *)tapaTextView
+- (UITextField *)tapaTextView
 {
     if (!_tapaTextView) {
-        _tapaTextView = [[UITextView alloc] init];
+        _tapaTextView = [[UITextField alloc] init];
         _tapaTextView.backgroundColor = [UIColor greenColor];
-        _tapaTextView.text = @"";
+        _tapaTextView.placeholder = @"Descripcion";
     }
     return _tapaTextView;
 }
@@ -66,6 +77,18 @@
         _tipoTapaControl.backgroundColor = [UIColor redColor];
     }
     return _tipoTapaControl;
+}
+
+- (UIButton *)tapaImageButton
+{
+    if (!_tapaImageButton) {
+        _tapaImageButton = [[UIButton alloc] init];
+        [_tapaImageButton setBackgroundColor:[UIColor lightGrayColor]];
+        _tapaImageButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        _tapaImageButton.imageView.clipsToBounds = YES;
+        [_tapaImageButton addTarget:self action:@selector(setTapaImage) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _tapaImageButton;
 }
 
 #pragma mark - Lifecycle
@@ -91,16 +114,20 @@
 {
     [super viewDidLoad];
     self.tipoTapaArray = [TipoTapa MR_findAll];
+    [self.view addSubview:self.nombreTextField];
     [self.view addSubview:self.tapaTextView];
     [self.view addSubview:self.tipoTapaControl];
+    [self.view addSubview:self.tapaImageButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.tapaTextView.frame = CGRectMake(5, 5, 310, 50);
-    self.tipoTapaControl.frame = CGRectMake(0, 60, 320, 162);
-    [self.tapaTextView becomeFirstResponder];
+    self.nombreTextField.frame  = CGRectMake(5, 5, 310, 30);
+    self.tapaTextView.frame     = CGRectMake(5, 35, 310, 30);
+    self.tipoTapaControl.frame  = CGRectMake(0, 70, 320, 162);
+    self.tapaImageButton.frame  = CGRectMake(10, 236, 50, 50);
+    [self.nombreTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,6 +161,51 @@
     self.selectedTipoTapa = self.tipoTapaArray[row];
 }
 
+#pragma mark - UIImagePickerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+    if(!img) {
+        img = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    [self.tapaImageButton setImage:img forState:UIControlStateNormal];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self.tapaTextView becomeFirstResponder];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0: {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            picker.allowsEditing = YES;
+            [self presentViewController:picker animated:YES completion:nil];
+            break;
+        }
+        case 1: {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            picker.allowsEditing = YES;
+            [self presentViewController:picker animated:YES completion:nil];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 #pragma mark - Actions
 
 - (void)closeView
@@ -154,6 +226,16 @@
     [[NSManagedObjectContext MR_contextForCurrentThread] save:nil];
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+}
+
+- (void)setTapaImage
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Elige desde donde obtener la imagen"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancelar"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Camara", @"Album", nil];
+    [actionSheet showInView:self.view];
 }
 
 @end

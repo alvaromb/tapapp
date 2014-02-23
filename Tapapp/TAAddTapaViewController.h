@@ -10,7 +10,7 @@
 #import "TipoTapa.h"
 #import "TABaseTableViewController.h"
 
-@interface TAAddTapaViewController : TABaseTableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface TAAddTapaViewController : TABaseTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) Local *local;
 
