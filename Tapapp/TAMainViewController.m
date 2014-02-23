@@ -99,7 +99,6 @@
 - (void)locationAvailable
 {
 //    [TATapaMapper insertDummyTapas];
-    [TipoLocal MR_truncateAll];
     [TipoTapa MR_truncateAll];
     [Tapa MR_truncateAll];
     [Local MR_truncateAll];
@@ -119,6 +118,8 @@
 
 - (void)createLocalTypes
 {
+    NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
+    [TipoLocal MR_truncateAllInContext:defaultContext];
     MTLTipoLocal *tipoBar = [[MTLTipoLocal alloc] init];
     tipoBar.identifier = @(1);
     tipoBar.tipo = @"Bar";
@@ -127,10 +128,10 @@
     tipoRestaurante.tipo = @"Restaurante";
     NSError *error = nil;
     TipoLocal *bar = [MTLManagedObjectAdapter managedObjectFromModel:tipoBar
-                                                insertingIntoContext:[NSManagedObjectContext MR_defaultContext]
+                                                insertingIntoContext:defaultContext
                                                                error:&error];
     TipoLocal *restaurante = [MTLManagedObjectAdapter managedObjectFromModel:tipoRestaurante
-                                                        insertingIntoContext:[NSManagedObjectContext MR_defaultContext]
+                                                        insertingIntoContext:defaultContext
                                                                        error:&error];
     if (bar && restaurante) {
         [[NSManagedObjectContext MR_defaultContext] save:&error];

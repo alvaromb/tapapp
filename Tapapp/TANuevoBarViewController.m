@@ -20,6 +20,9 @@
 @property (strong, nonatomic) UIImagePickerController *picker;
 @property (strong, nonatomic) UIButton *selectedImageButton;
 @property (strong, nonatomic) UIImage *selectedImage;
+@property (strong, nonatomic) UIPickerView *pickerView;
+@property (strong, nonatomic) NSArray *tipoLocales;
+@property (strong, nonatomic) NSNumber *tipoIdentifier;
 @property (nonatomic) BOOL deleteImageButtonPressed;
 
 @end
@@ -121,6 +124,16 @@
     return _selectedImageButton;
 }
 
+- (UIPickerView *)pickerView
+{
+    if (!_pickerView) {
+        _pickerView = [[UIPickerView alloc] init];
+        _pickerView.delegate = self;
+        _pickerView.dataSource = self;
+    }
+    return _pickerView;
+}
+
 #pragma mark - Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -144,12 +157,14 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
+    self.tipoLocales = [TipoLocal MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
     [self.view addSubview:self.nombreTextField];
     [self.view addSubview:self.telefonoTextField];
     [self.view addSubview:self.creditCardSwitch];
     [self.view addSubview:self.creditCardLabel];
     [self.view addSubview:self.addPhotoButton];
     [self.view addSubview:self.selectedImageButton];
+    [self.view addSubview:self.pickerView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -161,6 +176,7 @@
     self.creditCardLabel.frame      = CGRectMake(10, 106, 240, 18);
     self.addPhotoButton.frame       = CGRectMake(10, 140, 100, 30);
     self.selectedImageButton.frame  = CGRectMake(140, 140, 50, 50);
+    self.pickerView.frame           = CGRectMake(0, 200, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning
@@ -219,6 +235,33 @@
     }
 }
 
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.tipoLocales.count;
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    TipoLocal *tipoLocal = self.tipoLocales[row];
+    return tipoLocal.tipo;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    TipoLocal *selected = self.tipoLocales[row];
+    NSLog(@"selected tipo local %@", selected.tipo);
+    self.tipoIdentifier = selected.identifier;
+}
+
 #pragma mark - Actions
 
 - (void)cancelCheckIn
@@ -238,7 +281,7 @@
                                 @"codigo_postal"    : [TALocationManager sharedInstance].placemark.postalCode,
                                 @"pais"             : [TALocationManager sharedInstance].placemark.country,
                                 @"telefono"         : ([self.telefonoTextField.text isEqualToString:@""]) ? @"" : self.telefonoTextField.text,
-                                @"tipo_local"       : @(1)};
+                                @"tipo_local"       : (self.tipoIdentifier) ? self.tipoIdentifier : @(1)};
     // TODO tipo_local  
     [[TATappapAPI sharedInstance] postLocalWithLocal:localData image:self.selectedImage completionBlock:^(id response) {
         [SVProgressHUD showSuccessWithStatus:@"Local creado!"];

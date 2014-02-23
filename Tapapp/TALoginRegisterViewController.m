@@ -229,11 +229,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (void)sendRegisterLogin
 {
-    void (^loginBlock)() = ^void{
-        [self dismissViewControllerAnimated:YES completion:^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
-        }];
-    };
+//    void (^loginBlock)() = ^void{
+//        [self dismissViewControllerAnimated:YES completion:^{
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"locationAvailable" object:nil];
+//        }];
+//    };
     if (self.isRegistering) {
         [[TATappapAPI sharedInstance]
          registerWithEmail:self.emailTextField.text

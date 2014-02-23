@@ -14,7 +14,7 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
-    return @{};
+    return @{@"identifier"  : @"id"};
 }
 
 #pragma mark - MTLManagedObjectSerializing
