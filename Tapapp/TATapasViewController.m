@@ -13,12 +13,21 @@
 @property (strong, nonatomic) NSFetchedResultsController *searchedResultsController;
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) UISearchDisplayController *searchController;
+@property (strong, nonatomic) TTTLocationFormatter *locationFormatter;
 
 @end
 
 @implementation TATapasViewController
 
 #pragma mark - Lazy instantiation
+
+- (TTTLocationFormatter *)locationFormatter
+{
+    if (!_locationFormatter) {
+        _locationFormatter = [[TTTLocationFormatter alloc] init];
+    }
+    return _locationFormatter;
+}
 
 - (NSFetchedResultsController *)searchedResultsController
 {
@@ -107,7 +116,11 @@ withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsControl
 {
     Tapa *tapa = [fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.tapaLabel.text = tapa.nombre;
-    cell.distanciaLabel.text = [NSString stringWithFormat:@"A %@", tapa.local.distancia];
+    NSString *distancia = [self.locationFormatter stringFromDistance:[tapa.local.distancia doubleValue]];
+    cell.distanciaLabel.text = [NSString stringWithFormat:@"A %@", distancia];
+    if (tapa.path_imagen) {
+        [cell.tapaImageView setImageWithURL:[NSURL URLWithString:[TAAPIURL stringByAppendingString:tapa.path_imagen]]];
+    }
 }
 
 #pragma mark - UITableViewDelegate
