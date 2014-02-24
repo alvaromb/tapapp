@@ -42,6 +42,9 @@ typedef void (^TATapappCompletionBlock)(id response);
            completionBlock:(TATapappCompletionBlock)completionBlock;
 - (void)checkinLocal:(MTLLocal *)local
      completionBlock:(TATapappCompletionBlock)completionBlock;
+- (void)addComentario:(NSString *)comentario
+             forLocal:(MTLLocal *)local
+      completionBlock:(TATapappCompletionBlock)completionBlock;
 
 #pragma mark - User
 - (void)getSelfUserWithCompletionBlock:(TATapappCompletionBlock)completionBlock;

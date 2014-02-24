@@ -12,7 +12,6 @@
 
 @property (nonatomic, copy, readonly) NSNumber *identifier;
 @property (nonatomic, copy, readonly) NSString *texto;
-@property (nonatomic, copy, readonly) NSString *autor;
 @property (nonatomic, copy, readonly) NSDate *fecha;
 
 @end

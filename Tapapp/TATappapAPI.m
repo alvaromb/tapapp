@@ -167,6 +167,26 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
     }];
 }
 
+- (void)addComentario:(NSString *)comentario
+             forLocal:(MTLLocal *)local
+      completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSParameterAssert(comentario);
+    NSParameterAssert(local);
+    NSString *route = [NSString stringWithFormat:@"/local/%d/comentario", local.identifier.integerValue];
+    NSDictionary *parameters = @{@"comment" : comentario};
+    [self POST:route parameters:parameters resultClass:MTLLocal.class resultKeyPath:@"data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        MTLLocal *local = (MTLLocal *)responseObject;
+        [TAPrivateMOC backgroundSaveWithBlock:^(NSManagedObjectContext *privateContext) {
+            [MTLManagedObjectAdapter managedObjectFromModel:local insertingIntoContext:privateContext error:NULL];
+        } completion:^(BOOL success, NSError *error) {
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
+        }];
+    }];
+}
+
 #pragma mark - User
 
 - (void)getSelfUserWithCompletionBlock:(TATapappCompletionBlock)completionBlock

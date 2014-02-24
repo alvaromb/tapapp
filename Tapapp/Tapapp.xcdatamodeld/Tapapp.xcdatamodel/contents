@@ -3,6 +3,7 @@
     <entity name="Comentario" representedClassName="Comentario" syncable="YES">
         <attribute name="autor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fecha" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="texto" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="local" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Local" inverseName="comentarios" inverseEntity="Local" syncable="YES"/>
     </entity>
@@ -53,11 +54,11 @@
         <relationship name="favs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Local" inverseName="userFaver" inverseEntity="Local" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Comentario" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Comentario" positionX="-45" positionY="-36" width="128" height="118"/>
         <element name="Local" positionX="279" positionY="-18" width="128" height="238"/>
         <element name="Tapa" positionX="72" positionY="-261" width="128" height="165"/>
+        <element name="TipoLocal" positionX="457" positionY="81" width="128" height="88"/>
         <element name="TipoTapa" positionX="412" positionY="-144" width="128" height="90"/>
         <element name="User" positionX="-108" positionY="153" width="128" height="178"/>
-        <element name="TipoLocal" positionX="457" positionY="81" width="128" height="88"/>
     </elements>
 </model>

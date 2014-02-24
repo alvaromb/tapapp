@@ -94,16 +94,23 @@
 
 - (void)sendNewComment
 {
-    if (self.textView.text.length <= 0) {
+    NSString *comment = [self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (comment.length <= 0) {
         return;
     }
-    Comentario *nuevoComentario = [Comentario MR_createInContext:[NSManagedObjectContext MR_contextForCurrentThread]];
-    nuevoComentario.local = self.local;
-    nuevoComentario.fecha = [NSDate new];
-    nuevoComentario.texto = self.textView.text;
-    nuevoComentario.autor = @"Alf";
-    [[NSManagedObjectContext MR_contextForCurrentThread] save:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    MTLLocal *local = [MTLManagedObjectAdapter modelOfClass:MTLLocal.class fromManagedObject:self.local error:NULL];
+    [[TATappapAPI sharedInstance] addComentario:comment forLocal:local completionBlock:^(id response) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            //
+        }];
+    }];
+//    Comentario *nuevoComentario = [Comentario MR_createInContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+//    nuevoComentario.local = self.local;
+//    nuevoComentario.fecha = [NSDate new];
+//    nuevoComentario.texto = self.textView.text;
+//    nuevoComentario.autor = @"Alf";
+//    [[NSManagedObjectContext MR_contextForCurrentThread] save:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)close
