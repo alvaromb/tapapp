@@ -167,7 +167,9 @@
     Tapa *tapa = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     TATapaCell *tapaCell = (TATapaCell *)cell;
     tapaCell.tapaLabel.text = tapa.nombre;
-//    tapaCell.distanciaLabel.text = [NSString stringWithFormat:@"A %@", tapa.local.distancia];
+    if (tapa.path_imagen) {
+        [tapaCell.tapaImageView setImageWithURL:[NSURL URLWithString:tapa.path_imagen]];
+    }
 }
 
 #pragma mark - Actions

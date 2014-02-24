@@ -65,7 +65,7 @@
 
 + (NSValueTransformer *)imagenEntityAttributeTransformer
 {
-    return [[self fechaCreacionJSONTransformer] mtl_invertedTransformer];
+    return [[self imagenJSONTransformer] mtl_invertedTransformer];
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing

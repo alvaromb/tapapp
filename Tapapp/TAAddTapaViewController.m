@@ -236,7 +236,7 @@
       @"nombre"     : self.nombreTextField.text};
     [[TATappapAPI sharedInstance] postTapa:tapa imagen:self.tapaImageButton.imageView.image forLocal:self.local.objectID completionBlock:^(id response) {
         [self dismissViewControllerAnimated:YES completion:^{
-            //
+            [SVProgressHUD showSuccessWithStatus:@"Tapa creada!"];
         }];
     }];
 }
