@@ -7,6 +7,7 @@
 //
 
 #import "MTLModel.h"
+#import "MTLLocal.h"
 #import "MTLTipoTapa.h"
 
 @interface MTLTapa : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>

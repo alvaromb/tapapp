@@ -128,6 +128,8 @@
     self.tipoTapaControl.frame  = CGRectMake(0, 70, 320, 162);
     self.tapaImageButton.frame  = CGRectMake(10, 236, 50, 50);
     [self.nombreTextField becomeFirstResponder];
+    [self.tipoTapaControl selectRow:0 inComponent:0 animated:NO];
+    self.selectedTipoTapa = [self.tipoTapaArray objectAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -216,16 +218,27 @@
 
 - (void)addTapa
 {
-    Tapa *newTapa = [Tapa MR_createEntity];
-    // TODO: control that tipo is selected
-    newTapa.tipo = self.selectedTipoTapa;
-    newTapa.nombre = self.tapaTextView.text;
-    newTapa.local = self.local;
-    newTapa.rating = @(5);
-    newTapa.path_imagen = @"";
-    [[NSManagedObjectContext MR_contextForCurrentThread] save:nil];
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+//    $local = Local::findOrFail(Input::get('local'));
+//    $tapa->setTipoTapa(TipoTapa::findOrFail(Input::get('tipo_tapa')));
+//    $tapa->setDescripcion(Input::get('descripcion'));
+//    $tapa->setNombre(Input::get('nombre'));
+//    Tapa *newTapa = [Tapa MR_createEntity];
+//    // TODO: control that tipo is selected
+//    newTapa.tipo = self.selectedTipoTapa;
+//    newTapa.nombre = self.tapaTextView.text;
+//    newTapa.local = self.local;
+//    newTapa.rating = @(5);
+//    newTapa.path_imagen = @"";
+    NSDictionary *tapa =
+    @{@"local"      : self.local.identifier,
+      @"tipo_tapa"  : self.selectedTipoTapa.identifier,
+      @"descripcion": self.tapaTextView.text,
+      @"nombre"     : self.nombreTextField.text};
+    [[TATappapAPI sharedInstance] postTapa:tapa imagen:self.tapaImageButton.imageView.image forLocal:self.local.objectID completionBlock:^(id response) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            //
+        }];
+    }];
 }
 
 - (void)setTapaImage

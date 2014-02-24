@@ -24,7 +24,6 @@ typedef void (^TATapappCompletionBlock)(id response);
                                  password:(NSString *)password;
 
 #pragma mark - Login y registro
-
 - (void)registerWithEmail:(NSString *)email
                  password:(NSString *)password
                  username:(NSString *)username
@@ -36,7 +35,6 @@ typedef void (^TATapappCompletionBlock)(id response);
           completionBlock:(TATapappCompletionBlock)completionBlock;
 
 #pragma mark - Locals
-
 - (void)listNearLocalsWithinLocation:(CLLocationCoordinate2D)coordinate
                      completionBlock:(TATapappCompletionBlock)completionBlock;
 - (void)postLocalWithLocal:(NSDictionary *)local
@@ -45,11 +43,15 @@ typedef void (^TATapappCompletionBlock)(id response);
 - (void)checkinLocal:(MTLLocal *)local
      completionBlock:(TATapappCompletionBlock)completionBlock;
 
-
 #pragma mark - User
-
 - (void)getSelfUserWithCompletionBlock:(TATapappCompletionBlock)completionBlock;
 - (void)getUserWithCode:(NSInteger)code
         completionBlock:(TATapappCompletionBlock)completionBlock;
+
+#pragma mark - Tapas
+- (void)postTapa:(NSDictionary *)tapa
+          imagen:(UIImage *)imagen
+        forLocal:(NSManagedObjectID *)local
+ completionBlock:(TATapappCompletionBlock)completionBlock;
 
 @end

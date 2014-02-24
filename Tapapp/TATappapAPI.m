@@ -180,7 +180,9 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
             User *user = [MTLManagedObjectAdapter managedObjectFromModel:mtlUser insertingIntoContext:localContext error:&errorMantle];
             NSLog(@"user %@", user);
         } completion:^(BOOL success, NSError *error) {
-            //
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
         }];
     }];
 }
@@ -191,7 +193,39 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
     NSString *route = [NSString stringWithFormat:@"/user/%d", code];
     [self GET:route parameters:nil resultClass:MTLUser.class resultKeyPath:@"data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
         NSLog(@"User %@ %@", [responseObject class], responseObject);
-        
+        MTLUser *user = (MTLUser *)responseObject;
+        [TAPrivateMOC backgroundSaveWithBlock:^(NSManagedObjectContext *privateContext) {
+            [MTLManagedObjectAdapter managedObjectFromModel:user insertingIntoContext:privateContext error:NULL];
+        } completion:^(BOOL success, NSError *error) {
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
+        }];
+    }];
+}
+
+#pragma mark - Tapas
+
+- (void)postTapa:(NSDictionary *)tapa
+          imagen:(UIImage *)imagen
+        forLocal:(NSManagedObjectID *)local
+ completionBlock:(TATapappCompletionBlock)completionBlock
+{
+    NSString *route = @"/tapa";
+    [self POST:route parameters:tapa resultClass:MTLTapa.class resultKeyPath:@"data" constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSData *imageData = UIImageJPEGRepresentation(imagen, 0.7);
+        [formData appendPartWithFileData:imageData name:@"imagen" fileName:@"imagen" mimeType:@"image/jpeg"];
+    } completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        MTLTapa *tapa = (MTLTapa *)responseObject;
+        [TAPrivateMOC backgroundSaveWithBlock:^(NSManagedObjectContext *privateContext) {
+            Tapa *newTapa = [MTLManagedObjectAdapter managedObjectFromModel:tapa insertingIntoContext:privateContext error:NULL];
+            Local *MOClocal = (Local *)[privateContext objectWithID:local];
+            [MOClocal addTapasObject:newTapa];
+        } completion:^(BOOL success, NSError *error) {
+            if (completionBlock) {
+                completionBlock(responseObject);
+            }
+        }];
     }];
 }
 
