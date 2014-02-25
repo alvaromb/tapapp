@@ -172,6 +172,15 @@
     }
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TATapaViewController *tapaViewController = [[TATapaViewController alloc] init];
+    [tapaViewController setTapa:[self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:tapaViewController animated:YES];
+}
+
 #pragma mark - Actions
 
 - (void)addFavorito

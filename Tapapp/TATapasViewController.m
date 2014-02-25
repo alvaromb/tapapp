@@ -119,7 +119,7 @@ withFetchedResultsController:(NSFetchedResultsController *)fetchedResultsControl
     NSString *distancia = [self.locationFormatter stringFromDistance:[tapa.local.distancia doubleValue]];
     cell.distanciaLabel.text = [NSString stringWithFormat:@"A %@", distancia];
     if (tapa.path_imagen) {
-        [cell.tapaImageView setImageWithURL:[NSURL URLWithString:[TAAPIURL stringByAppendingString:tapa.path_imagen]]];
+        [cell.tapaImageView setImageWithURL:[NSURL URLWithString:tapa.path_imagen]];
     }
 }
 

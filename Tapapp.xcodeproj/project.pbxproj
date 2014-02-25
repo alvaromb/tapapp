@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2EA3126191E547A38136C5D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A1506FFE03482A86698F5C /* libPods.a */; };
 		3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803102218788444008A012E /* TAInfoLocalViewController.m */; };
+		381036E518BD26970035B2B2 /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 381036E418BD26970035B2B2 /* Comentario.m */; };
+		381036E818BD26970035B2B2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 381036E718BD26970035B2B2 /* User.m */; };
 		3812612F1853993200F59EE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3812612E1853993200F59EE4 /* Foundation.framework */; };
 		381261311853993200F59EE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261301853993200F59EE4 /* CoreGraphics.framework */; };
 		381261331853993200F59EE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381261321853993200F59EE4 /* UIKit.framework */; };
@@ -44,7 +46,6 @@
 		3863145C18904A8600EE92C7 /* TAComentarioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3863145B18904A8600EE92C7 /* TAComentarioCell.m */; };
 		386314621890635A00EE92C7 /* TANuevoComentarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */; };
 		386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 386314641891A2DF00EE92C7 /* MTLLocal.m */; };
-		386441D918BBF737001F2AA5 /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = 386441D818BBF737001F2AA5 /* Comentario.m */; };
 		386B382E188C04D7004B49DC /* TABaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B382D188C04D7004B49DC /* TABaseTableViewController.m */; };
 		386B3835188C08AF004B49DC /* TABaseFetchedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386B3834188C08AF004B49DC /* TABaseFetchedViewController.m */; };
 		387110EE1894289E008AD1E6 /* TAAddTapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387110ED1894289E008AD1E6 /* TAAddTapaViewController.m */; };
@@ -63,7 +64,6 @@
 		38CAEE9D18BA5F940086D709 /* TipoLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEE9C18BA5F940086D709 /* TipoLocal.m */; };
 		38CAEEA618BA6F790086D709 /* TATapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEEA518BA6F790086D709 /* TATapaViewController.m */; };
 		38CAEEA918BA7D770086D709 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEEA818BA7D770086D709 /* Local.m */; };
-		38CAEEAC18BA7D770086D709 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CAEEAB18BA7D770086D709 /* User.m */; };
 		38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */; };
 		38DFBAE61869B4AC00B1D369 /* TABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DFBAE51869B4AC00B1D369 /* TABaseViewController.m */; };
 		38FA115918B2966700EA21AB /* MTLTapa.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA115818B2966700EA21AB /* MTLTapa.m */; };
@@ -83,6 +83,10 @@
 /* Begin PBXFileReference section */
 		3803102118788444008A012E /* TAInfoLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAInfoLocalViewController.h; sourceTree = "<group>"; };
 		3803102218788444008A012E /* TAInfoLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAInfoLocalViewController.m; sourceTree = "<group>"; };
+		381036E318BD26970035B2B2 /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
+		381036E418BD26970035B2B2 /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
+		381036E618BD26970035B2B2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		381036E718BD26970035B2B2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		3812612B1853993200F59EE4 /* Tapapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tapapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3812612E1853993200F59EE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		381261301853993200F59EE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,8 +144,6 @@
 		386314611890635A00EE92C7 /* TANuevoComentarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANuevoComentarioViewController.m; sourceTree = "<group>"; };
 		386314631891A2DF00EE92C7 /* MTLLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLLocal.h; sourceTree = "<group>"; };
 		386314641891A2DF00EE92C7 /* MTLLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLLocal.m; sourceTree = "<group>"; };
-		386441D718BBF737001F2AA5 /* Comentario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comentario.h; sourceTree = "<group>"; };
-		386441D818BBF737001F2AA5 /* Comentario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comentario.m; sourceTree = "<group>"; };
 		386B382C188C04D7004B49DC /* TABaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseTableViewController.h; sourceTree = "<group>"; };
 		386B382D188C04D7004B49DC /* TABaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABaseTableViewController.m; sourceTree = "<group>"; };
 		386B3833188C08AF004B49DC /* TABaseFetchedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseFetchedViewController.h; sourceTree = "<group>"; };
@@ -175,8 +177,6 @@
 		38CAEEA518BA6F790086D709 /* TATapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapaViewController.m; sourceTree = "<group>"; };
 		38CAEEA718BA7D770086D709 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
 		38CAEEA818BA7D770086D709 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
-		38CAEEAA18BA7D770086D709 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		38CAEEAB18BA7D770086D709 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		38CDB2DE189589B1009764BF /* TALoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALoginRegisterViewController.h; sourceTree = "<group>"; };
 		38CDB2DF189589B1009764BF /* TALoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALoginRegisterViewController.m; sourceTree = "<group>"; };
 		38DFBAE41869B4AC00B1D369 /* TABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABaseViewController.h; sourceTree = "<group>"; };
@@ -521,10 +521,10 @@
 		38FA115618B294A000EA21AB /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				386441D718BBF737001F2AA5 /* Comentario.h */,
-				386441D818BBF737001F2AA5 /* Comentario.m */,
-				38CAEEAA18BA7D770086D709 /* User.h */,
-				38CAEEAB18BA7D770086D709 /* User.m */,
+				381036E618BD26970035B2B2 /* User.h */,
+				381036E718BD26970035B2B2 /* User.m */,
+				381036E318BD26970035B2B2 /* Comentario.h */,
+				381036E418BD26970035B2B2 /* Comentario.m */,
 				38CAEEA718BA7D770086D709 /* Local.h */,
 				38CAEEA818BA7D770086D709 /* Local.m */,
 				38CAEE9B18BA5F940086D709 /* TipoLocal.h */,
@@ -690,7 +690,7 @@
 				389C1C17185DCA200064A523 /* TALocationManager.m in Sources */,
 				3803102318788444008A012E /* TAInfoLocalViewController.m in Sources */,
 				38FA115918B2966700EA21AB /* MTLTapa.m in Sources */,
-				38CAEEAC18BA7D770086D709 /* User.m in Sources */,
+				381036E818BD26970035B2B2 /* User.m in Sources */,
 				383F7BAC18B3E6C000737FCD /* MTLComentario.m in Sources */,
 				384D9D8C186F6AB000ED6D18 /* UIImage+Alpha.m in Sources */,
 				386314651891A2DF00EE92C7 /* MTLLocal.m in Sources */,
@@ -722,7 +722,7 @@
 				388FCB83189EB52B00FB7531 /* TATappapAPI.m in Sources */,
 				383F7BB818B3F79F00737FCD /* Tapa.m in Sources */,
 				38CDB2E0189589B1009764BF /* TALoginRegisterViewController.m in Sources */,
-				386441D918BBF737001F2AA5 /* Comentario.m in Sources */,
+				381036E518BD26970035B2B2 /* Comentario.m in Sources */,
 				3812616E1853999200F59EE4 /* TATapasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

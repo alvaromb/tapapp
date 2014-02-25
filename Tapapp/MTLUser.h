@@ -19,5 +19,6 @@
 @property (nonatomic, copy) NSNumber *numComentarios;
 @property (nonatomic, copy) NSNumber *numFavoritos;
 @property (nonatomic, copy) NSArray *favs;
+@property (nonatomic, copy, readonly) NSArray *comentarios;
 
 @end

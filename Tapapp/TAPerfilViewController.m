@@ -208,6 +208,27 @@
     self.commentLabel.frame         = CGRectMake(20, 300, 280, 150);
     self.logoutButton.frame         = CGRectMake(20, 400, 150, 30);
     
+    [self configureUserData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[TATappapAPI sharedInstance] getSelfUserWithCompletionBlock:^(id response) {
+        [self configureUserData];
+    }];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+- (void)configureUserData
+{
     NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_code"];
     User *userProfile = [User MR_findFirstByAttribute:@"identifier" withValue:userId];
     
@@ -225,26 +246,13 @@
     self.checkinNumberLabel.text = [userProfile.checkins stringValue];
     self.commentsNumberLabel.text = [userProfile.comments stringValue];
     self.favsNumberLabel.text = [userProfile.favoritos stringValue];
-    self.commentAuthorLabel.text = @"@alvaro en Bar Bosch";
-    self.commentLabel.text = @"\"Las langostas (bocatas con pan de llonguet) son las mejores que he probado! Recomiendo la de tortilla de patatas, increible!!!\"";
-    [self.commentLabel sizeToFit];
+    Comentario *comentario = [userProfile.comentarios anyObject];
+    if (comentario) {
+        self.commentAuthorLabel.text = [NSString stringWithFormat:@"@%@ en %@", userProfile.username, comentario.local.nombre];
+        self.commentLabel.text = comentario.texto;
+        [self.commentLabel sizeToFit];
+    }
 }
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [[TATappapAPI sharedInstance] getSelfUserWithCompletionBlock:^(id response) {
-        NSLog(@"user downloaded");
-    }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Actions
 
 - (void)logoutAction
 {

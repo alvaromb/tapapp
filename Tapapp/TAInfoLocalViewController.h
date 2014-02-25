@@ -8,6 +8,7 @@
 
 #import "TATapaCell.h"
 #import "TATapaMapper.h"
+#import "TATapaViewController.h"
 #import "TAAddTapaViewController.h"
 #import "TAComentariosLocalViewController.h"
 

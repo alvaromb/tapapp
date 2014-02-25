@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B3116" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Comentario" representedClassName="Comentario" syncable="YES">
         <attribute name="autor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fecha" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="texto" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="local" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Local" inverseName="comentarios" inverseEntity="Local" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="comentarios" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Local" representedClassName="Local" syncable="YES">
         <attribute name="calle" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,14 +52,15 @@
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path_imagen" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comentarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comentario" inverseName="usuario" inverseEntity="Comentario" syncable="YES"/>
         <relationship name="favs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Local" inverseName="userFaver" inverseEntity="Local" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Comentario" positionX="-45" positionY="-36" width="128" height="118"/>
+        <element name="Comentario" positionX="7" positionY="-52" width="128" height="133"/>
         <element name="Local" positionX="279" positionY="-18" width="128" height="238"/>
         <element name="Tapa" positionX="72" positionY="-261" width="128" height="165"/>
         <element name="TipoLocal" positionX="457" positionY="81" width="128" height="88"/>
         <element name="TipoTapa" positionX="412" positionY="-144" width="128" height="90"/>
-        <element name="User" positionX="-108" positionY="153" width="128" height="178"/>
+        <element name="User" positionX="-243" positionY="38" width="128" height="193"/>
     </elements>
 </model>

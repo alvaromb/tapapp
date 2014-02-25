@@ -11,12 +11,21 @@
 @interface TACheckInViewController ()
 
 @property (strong, nonatomic) UIButton *closeButton;
+@property (strong, nonatomic) TTTLocationFormatter *locationFormatter;
 
 @end
 
 @implementation TACheckInViewController
 
 #pragma mark - Lazy instantiation
+
+- (TTTLocationFormatter *)locationFormatter
+{
+    if (!_locationFormatter) {
+        _locationFormatter = [[TTTLocationFormatter alloc] init];
+    }
+    return _locationFormatter;
+}
 
 - (UIButton *)closeButton
 {
@@ -81,7 +90,9 @@
 {
     Local *local = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
     cell.localLabel.text = local.nombre;
-    cell.distanceLabel.text = @"A 5 minutos";
+    NSString *distancia = [self.locationFormatter stringFromDistance:[local.distancia doubleValue]];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"A %@", distancia];
+    [cell.localImageView setImageWithURL:[NSURL URLWithString:[TAAPIURL stringByAppendingString:local.path_imagen]]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,13 +101,6 @@
     [[TATappapAPI sharedInstance] checkinLocal:[MTLManagedObjectAdapter modelOfClass:MTLLocal.class fromManagedObject:local error:nil] completionBlock:^(id response) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
-//    NSString *checkInMessage = [NSString stringWithFormat:@"Check-in en %@", local.nombre];
-//    UIAlertView *checkIn = [[UIAlertView alloc] initWithTitle:@"Check-in"
-//                                                      message:checkInMessage
-//                                                     delegate:self
-//                                            cancelButtonTitle:nil
-//                                            otherButtonTitles:@"Ok", nil];
-//    [checkIn show];
 }
 
 #pragma mark - UIAlertViewDelegate

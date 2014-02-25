@@ -9,6 +9,7 @@
 #import "Local.h"
 #import "TALocalMapper.h"
 #import "TALocalCercaCell.h"
+#import "TTTLocationFormatter.h"
 #import "TABaseTableViewController.h"
 
 @interface TACheckInViewController : TABaseTableViewController <UIAlertViewDelegate>

@@ -195,10 +195,12 @@ NSString * const TAAPIURL = @"http://tapapp.com/";
     [self GET:route parameters:nil resultClass:MTLUser.class resultKeyPath:@"data" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
         NSLog(@"User %@ %@", [responseObject class], responseObject);
         MTLUser *mtlUser = (MTLUser *)responseObject;
-        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        [TAPrivateMOC backgroundSaveWithBlock:^(NSManagedObjectContext *privateContext) {
             NSError *errorMantle = nil;
-            User *user = [MTLManagedObjectAdapter managedObjectFromModel:mtlUser insertingIntoContext:localContext error:&errorMantle];
-            NSLog(@"user %@", user);
+            User *user = [MTLManagedObjectAdapter managedObjectFromModel:mtlUser
+                                                    insertingIntoContext:privateContext
+                                                                   error:&errorMantle];
+            NSLog(@"user %@ ERROR %@", user, error);
         } completion:^(BOOL success, NSError *error) {
             if (completionBlock) {
                 completionBlock(responseObject);

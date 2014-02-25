@@ -60,6 +60,16 @@
     return [[self favsJSONTransformer] mtl_invertedTransformer];
 }
 
++ (NSValueTransformer *)comentariosJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:MTLComentario.class];
+}
+
++ (NSValueTransformer *)comentariosEntityAttributeTransformer
+{
+    return [[self comentariosJSONTransformer] mtl_invertedTransformer];
+}
+
 + (NSSet *)propertyKeysForManagedObjectUniquing
 {
     return [NSSet setWithObject:@"identifier"];
