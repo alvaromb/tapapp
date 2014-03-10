@@ -11,6 +11,7 @@
 #import "TATapaViewController.h"
 #import "TAAddTapaViewController.h"
 #import "TAComentariosLocalViewController.h"
+#import <MapKit/MapKit.h>
 
 @interface TAInfoLocalViewController : TABaseTableViewController
 

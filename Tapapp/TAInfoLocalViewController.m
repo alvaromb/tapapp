@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UIButton *favoritoButton;
 @property (strong, nonatomic) UIButton *comentariosButton;
 @property (strong, nonatomic) UIButton *addTapaButton;
+@property (strong, nonatomic) UIButton *directionsButton;
 
 @end
 
@@ -98,6 +99,18 @@
     return _addTapaButton;
 }
 
+- (UIButton *)directionsButton
+{
+    if (!_directionsButton) {
+        _directionsButton = [[UIButton alloc] init];
+        _directionsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [_directionsButton setTitle:@"Cómo llegar" forState:UIControlStateNormal];
+        [_directionsButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+        [_directionsButton addTarget:self action:@selector(getDirections) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _directionsButton;
+}
+
 #pragma mark - Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -121,6 +134,7 @@
     [self.view addSubview:self.comentariosButton];
     [self.view addSubview:self.addTapaButton];
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.directionsButton];
 //    self.fetchedResultsController = [TATapaMapper fetchedTapasForLocal:self.local
 //                                                              delegate:self
 //                                                             inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
@@ -136,6 +150,7 @@
     self.comentariosButton.frame    = CGRectMake(160, 140, 150, 30);
     self.addTapaButton.frame        = CGRectMake(10, 175, 150, 30);
     self.tableView.frame            = CGRectMake(0, 210, 320, self.view.frame.size.height - 210);
+    self.directionsButton.frame     = CGRectMake(160, 175, 150, 30);
     
     self.localLabel.text = self.local.nombre;
     self.descripcionLabel.text = self.local.calle;
@@ -213,6 +228,18 @@
     [vc setLocal:self.local];
     UINavigationController *addTapaViewController = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:addTapaViewController animated:YES completion:nil];
+}
+
+- (void)getDirections
+{
+    MKPlacemark *place = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.local.latitud.floatValue, self.local.longitud.floatValue) addressDictionary: nil];
+    MKMapItem* destination = [[MKMapItem alloc] initWithPlacemark: place];
+    destination.name = self.local.nombre;
+    NSArray* items = [[NSArray alloc] initWithObjects: destination, nil];
+    NSDictionary* options = [[NSDictionary alloc] initWithObjectsAndKeys:
+                             MKLaunchOptionsDirectionsModeDriving,
+                             MKLaunchOptionsDirectionsModeKey, nil];
+    [MKMapItem openMapsWithItems: items launchOptions: options];
 }
 
 @end
